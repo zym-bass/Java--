@@ -4,7 +4,7 @@ public class Bird extends Animal  {
     }
 
     //鸟也有自己的方法
-    public void sing(){
+    public void sing01(){
         System.out.println("鸟儿在唱歌");
     }
 }

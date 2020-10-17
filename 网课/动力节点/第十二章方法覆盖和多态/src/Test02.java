@@ -9,7 +9,7 @@ public class Test02 {
         Animal  y = new Cat();
         if(x instanceof Bird){
             Bird a1 = (Bird) x;
-            a1.sing();
+            a1.sing01();
         }else if(x instanceof Cat){
             Cat a1 = (Cat) x;
             a1.catchMouse();
@@ -19,7 +19,7 @@ public class Test02 {
             a2.catchMouse();
         }else if(y instanceof Bird){
             Bird a2 = (Bird) y;
-            a2.sing();
+            a2.sing01();
         }
     }
 }

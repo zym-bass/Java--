@@ -15,6 +15,8 @@
 *       编译阶段：绑定父类的方法
 *       运行阶段，动态绑定了类型对象的方法
 *       多种形态：
+*   3.什么时候必须向下转型？
+*       父类方法中没有，只有子类有，并且需要
 *
 * */
 public class Test01 {
@@ -52,5 +54,48 @@ public class Test01 {
         Animal a6 = new Cat();//底层是一只猫
         //在Java编译的时候 .class文件中Animal类中没有catchMouse()方法及找不到
         //a6.catchMouse();
+        //假设代码运行到到了55行//a6.catchMouse();
+        // 在编译阶段 JVM认为a6还是Animal对象就去Animal类中找catchMouse（）方法但是没有找到
+        // ，编译器报错找不到符号
+        //向上转型只能运行方法覆盖的方法但是不能运行其子类特有的方法
+        // 但是要能运行必须父类方法与子类方法 之间形成方法覆盖 即：不在同一类中 返回类型相同 方法名相同 形式参数相同
+        //向下转型的目的：调用子类特有的方法，
+        //向下转型前必须先进行向上转型
+        ((Cat)a6).catchMouse();//父类转换成子类 用向下转型
+        //向下转型风险：
+        Animal a7 = new Bird();//表面上a6是一个Animal，但在运行时a7转换成了Bird的方法，即会被方法覆盖
+
+        //编译阶段
+        //a7还是Animal 在a7向下转型为Cat，符合向下类型转换条件
+
+        //运行阶段
+        //a7动态绑定 即a7成为Bird
+        // 再进行Cat类型转换，即子类向子类转换，两者之间没有继承关系，运行出问题
+        //运行时出现异常，java.lang.ClassCastException
+
+       /* Cat y = (Cat)a7;
+        System.out.println("\n");
+        y.catchMouse();*/
+
+        //怎么避免ClassCastException异常的发生？
+        /*  instanceof(运行阶段动态判断)
+            第一：instanceof可以在运行阶段动态判断
+        *   第二：instanceof的语法
+                （引用 instanceof 类型）
+            第三：instanceof运算符的结果只能是：true false
+            第四：c 是一个引用  c 变量保存了内存地址指向类堆中的对象
+                假设（c instanceof Cat）为true 表示
+                    c引用指向的堆内存空间中的Java对象是一个Cat
+                假设（c instanceof  Cat）为false 表示
+                    c引用指向的堆内存空间中的Java对象不是一个Cat
+        * */
+        if(a7 instanceof Cat){
+            System.out.println("对象类型符合向下转型");
+            Cat y =(Cat) a7;
+            y.catchMouse();
+        }else{
+            System.out.println("对象类型不符合向下转型");
+        }
+
     }
 }

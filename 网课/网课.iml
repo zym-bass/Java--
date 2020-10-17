@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/动力节点/Method" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/动力节点/第八章面向对象/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/动力节点/第九章对象的创建即使用/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,34 @@
+package com.ujiuye.homework;
+import java.util.Scanner;
+public class HomeWork04 {
+	public static void main(String[] args) {
+		//创建键盘扫描仪
+		Scanner s = new Scanner(System.in);
+		System.out.println("请选择数字对应的功能：");
+		int number = s.nextInt();
+		while(true) {
+			switch(number) {
+			case 1:
+				System.out.println("你选择了矩形");
+				continue;
+			case 2:
+				System.out.println("你选择了三角形");
+				continue;
+			case 3:
+				System.out.println("你选择了园");
+				continue;
+			case 4:
+				System.out.println("退出界面，拜拜");
+				break;
+			}
+		}
+	}
+	
+	//菜单
+	public static void menu() {
+		System.out.println("计算面积");
+		System.out.println("1.矩形    2.三角形    3.园    4.退出");
+	}
+	//矩形
+	public static void 
+}

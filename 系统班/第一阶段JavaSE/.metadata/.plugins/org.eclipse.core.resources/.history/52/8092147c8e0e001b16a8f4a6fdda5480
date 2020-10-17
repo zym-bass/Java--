@@ -1,0 +1,9 @@
+package com.ujiuye.fordemo;
+
+public class Demo03 {
+	public static void main(String[] args) {
+		//¥Ú”°1-100¿€º”∫Õ
+		System.out.println((1+100)*100/2);
+	}
+
+}

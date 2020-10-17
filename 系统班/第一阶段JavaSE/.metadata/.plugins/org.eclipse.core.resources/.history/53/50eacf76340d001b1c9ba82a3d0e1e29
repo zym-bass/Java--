@@ -1,0 +1,10 @@
+package com.ujiuye.variable;
+
+public class Demo02 {
+	public static void main(String[] args) {
+		System.out.println(5);
+		int i = 10 ;
+		char x=23433;
+		System.out.println(x);
+	}
+}

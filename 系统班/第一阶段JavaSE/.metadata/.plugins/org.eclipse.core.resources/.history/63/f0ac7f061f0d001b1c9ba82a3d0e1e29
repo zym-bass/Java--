@@ -1,0 +1,11 @@
+package com.ujiuye.variable;
+
+public class Dem01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float f = 3.14F;
+		System.out.println(f);
+	}
+
+}

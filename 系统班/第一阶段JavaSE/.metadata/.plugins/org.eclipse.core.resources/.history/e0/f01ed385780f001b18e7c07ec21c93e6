@@ -1,0 +1,10 @@
+package day05;
+
+public class ArrayTest05 {
+	public static void main(String[] args) {
+		int[] arr = {12,234,4,32,525};
+		arr[-1] = 14;
+		
+	}
+
+}

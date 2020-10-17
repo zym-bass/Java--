@@ -1,0 +1,25 @@
+package com.ujiuye.cal;
+
+import java.util.Scanner;
+public class Demo04 {
+
+	public static void main(String[] args) {
+		// 需求 : 通过键盘录入三个整数, 求三个整数中的最大值
+		Scanner sc = new Scanner(System.in);
+		// 多次调用nextInt方法功能, 需要三个整数
+		System.out.println("请输入第一个整数:");
+		int first = sc.nextInt();
+		System.out.println("请输入第二个整数:");
+		int second = sc.nextInt();
+		System.out.println("请输入第三个整数:");
+		int third = sc.nextInt();
+		// 三个数比较最大值 : 思路就是两两比较
+		// 1) 让first和second比较出一个较大值
+		// 2) 让较大值与third比出最大值
+		// max表示最大值
+		int max = first >= second ? first : second;
+		max = max >= third ? max : third;
+		System.out.println("三个数中的最大值为: " + max);
+	
+	}
+}

@@ -1,0 +1,47 @@
+package com.ujiuye.homework;
+import java.util.Scanner;
+public class HomeWork04 {
+	public static void main(String[] args) {
+		//创建键盘扫描仪
+		Scanner s = new Scanner(System.in);
+		
+		
+		while(true) {
+			menu();
+			System.out.println("请选择数字对应的功能：");
+			int number = s.nextInt();
+			switch(number) {
+			case 1:
+				System.out.println("你选择了矩形");
+				System.out.println("请输入矩形的长：");
+				double number11 = s.nextDouble();
+				System.out.println("你选择了矩形的宽：");
+				double number12 = s.nextDouble();
+				System.out.println("矩形的面积为："+number02*number01);
+				continue;
+			case 2:
+				System.out.println("你选择了三角形");
+				System.out.println("请输入三角形的高：");
+				double number21 = s.nextDouble();
+				System.out.println("你选择了三角形的长：");
+				double number22 = s.nextDouble();
+				System.out.println("三角形的面积为："+number22*number21/2);
+				continue;
+			case 3:
+				System.out.println("你选择了园");
+				continue;
+			case 4:
+				System.out.println("退出界面，拜拜");
+				return;
+			}
+		}
+	}
+	
+	//菜单
+	public static void menu() {
+		System.out.println("计算面积");
+		System.out.println("1.矩形    2.三角形    3.园    4.退出");
+	}
+	//矩形
+	//public static void 
+}

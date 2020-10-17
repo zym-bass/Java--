@@ -1,0 +1,20 @@
+package com.ujiuye.work;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class HomeWork03 {
+	public static void main(String[] args) {}
+	Random s = new Random();
+	Scanner a = new Scanner(System.in);
+	syso
+	int bull = s.nextInt();
+	System.out.print("请输入");
+	
+	//蓝色球数
+	int buleBall = s.nextInt(16)+1;
+	//红色球数
+	int radBall = s.nextInt(32)+1;
+	
+	
+}

@@ -1,0 +1,18 @@
+package day05;
+
+public class practice01 {
+	public static void main(String[] args) {
+		int[] arr = {12,23,3,4,35,2,5,};
+		if(arr != null && arr.length>0) {
+			int x = arr[0];
+			for(int i = 1 ; i<arr.length; i++) {
+				if(x<arr[i]) {
+					x = arr[i];
+				}
+			}
+			System.out.println(x);
+		}else {
+			System.out.println("数组为null或者没有元素，无效遍历");
+		}
+	}
+}

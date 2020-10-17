@@ -1,0 +1,9 @@
+package com.ujiuye.work;
+
+public class HomeWork02 {
+	public static void main(String[] args) {
+		int x = 1;
+		int y =  
+	}
+
+}

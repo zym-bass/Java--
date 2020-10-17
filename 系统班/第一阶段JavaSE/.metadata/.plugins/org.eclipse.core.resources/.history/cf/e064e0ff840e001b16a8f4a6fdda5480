@@ -1,0 +1,52 @@
+package com.ujiuye.work;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class HomeWork03 {
+	private static Random s;
+	
+	public static Random getS() {
+		return s;
+	}
+
+	public static void setS(Random s) {
+		HomeWork03.s = s;
+	}
+	
+	private static Scanner a;
+	
+	
+	public static Scanner getA() {
+		return a;
+	}
+
+	public static void setA(Scanner a) {
+		HomeWork03.a = a;
+	}
+
+	public static void main(String[] args) {
+		s = new Random();
+		a = new Scanner(System.in);
+		
+		System.out.print("请输入红球号");
+		int radb = a.nextInt();
+		
+		System.out.print("请输入蓝球号");
+		int buleb = a.nextInt();	
+		//蓝色球数
+		int buleBall = s.nextInt(16)+1;
+		//红色球数
+		int radBall = s.nextInt(32)+1;
+		
+		if(buleb ==buleBall && radb == radBall  ) {
+			System.out.println("蓝球，红球中奖1等奖,50万元");
+		}else if (radb == radBall ) {
+			System.out.println("蓝球，红球中奖2等奖,30万元");
+		}else if(buleb == buleBall) {
+			System.out.println("蓝球，红球中奖3等奖,10万元");
+		}else {
+			System.out.println("没中奖别等了");
+		}
+	}
+}

@@ -1,0 +1,46 @@
+package day05;
+
+public class practice01 {
+	public static void main(String[] args) {
+		int[] arr = {1,2,4,5,6,7,8};
+		//inMax(arr);
+		inversion(arr);
+		for(int x : arr) {
+			System.out.println(x);
+		}
+	}
+	public static void inMax(int [] arr ) {
+		if(arr != null && arr.length>0) {
+			int x = arr[0];
+			for(int i = 1 ; i<arr.length; i++) {
+				if(x < arr[i]) {
+					x = arr[i];
+				}
+			}
+			System.out.println("该数组的最大值为："+x);
+		}else {
+			System.out.println("数组为null或者没有元素，无效遍历");
+		}
+	}
+	public static int[] inversion(int[] arr){
+		if(arr !=null &&  arr.length>0) {
+			int x = arr.length;
+			for(int i= 0 ; i< x/2 ; i++) {
+				/*if(i<x-1-i) {
+				int j = arr[i];
+				arr [i] =  arr[x-1-i];
+				arr[x-1-i] = j ;
+				}else {
+					break;
+				}*/
+				int j = arr[i];
+				arr [i] =  arr[x-1-i];
+				arr[x-1-i] = j ;
+			}
+		}else {
+			System.out.println("该数组为null或者没有元素，无效遍历。");
+			return arr;
+		}
+		return arr;
+	}
+}

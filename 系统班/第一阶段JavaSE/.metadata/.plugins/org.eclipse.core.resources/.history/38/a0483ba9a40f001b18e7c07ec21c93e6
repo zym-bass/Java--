@@ -1,0 +1,26 @@
+package com.ujiuye.homework;
+//随机数导包
+import java.util.Random;
+public class HomeWork02 {
+	public static void main(String[] args) {
+		//创建随机数对象
+		Random s = new Random();
+		//创建长度为52的Sting类型数组
+		String[] card = new String[52];
+		//创建A~K的数组
+		String[] leter = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+		//创建桃，花，片
+		String[] arr = {"黑桃","红桃","梅花","方片"};
+		int m=0 ;
+		for(int i = 0; i<arr.length ; i++) {
+			for(int j = 0 ; j<leter.length ; j++) {
+				card[m++] = arr[i]+leter[j];
+			}
+		}
+		
+		for (String m : card) {
+			System.out.println(m);
+		}
+		
+	}
+}

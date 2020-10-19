@@ -29,17 +29,24 @@ public class HomeWork02 {
 		
 		//i randnu的下标
 		for(int i  = 0 ; i<randnu.length; i++) {
-			
+			q= s.nextInt(52);
+			//判断重复次数
+			int x =0;
 			for(int j = 0 ;j<randnu.length  ;j++) {
-				q= s.nextInt(52);
-				if(randnu[j]== q) {
-					j--;
-					continue;
+				/*System.out.println("当前数组下标"+i);
+				System.out.println("随机数："+q);
+				System.out.println("比较下标值"+randnu[j]);*/
+				if(randnu[j] == q  ) {
+					x++;
 				}
-				
 			}
 			//System.out.println("抽到第"+(q+1)+"张"+card[q]);
+			if(x==0) {
 			randnu[i]=q;
+			System.out.println("w"+randnu[i]);
+			}else {
+				i--;
+			}
 		}
 		//对取出来的下标排列
 		for(int i= 0 ;i<randnu.length ;i++) {

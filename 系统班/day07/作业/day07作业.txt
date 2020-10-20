@@ -1,0 +1,137 @@
+﻿
+
+
+1.给出下面的类
+  public class Sample{
+    long length; 
+    public Sample(long a){ length = a; } 
+    public static void main(String arg[]){
+      Sample s1, s2, s3;
+      s1 = new Sample(21L);
+      s2 = new Sample(21L); 
+      s3 = s2;
+      long m = 21L;
+    }
+  }
+  哪个表达式返回true? (B )
+A. s1 == s2; 
+B. s2 == s3; 
+C. m == s1.length;
+
+
+
+
+
+2. 看程序写出结果:
+package com.ujiuye.staticdemo;
+
+public class Test {
+    public static void main(String[] args) {
+		Foo f1 = new Foo();//f1,id=0 ; i=1;
+		Foo f2 = new Foo();//f2.id=1;i=2
+		Foo f3 = new Foo();
+		System.out.println(f1.id + "---" + f2.id + "---" + f3.id + "----" + Foo.i);
+	}
+}
+
+
+class Foo{
+	int id;
+	static int i = 0;
+	public Foo() {
+		id = i++;
+      }
+	
+}
+0--1--2--3
+
+
+
+
+
+3. 看程序,写结果
+package com.ujiuye.staticdemo;
+
+public class Animal {
+	String name;
+	String color;
+	public Animal(String name, String color) {
+		this.name = name;
+		this.color = color;
+	}
+	
+	public void eat() {
+		String name = "猫";
+		System.out.println(name+"在吃...");
+		System.out.println(this.name + "在吃饭");
+	}
+	
+	public void sleep() {
+		System.out.println(name + "在睡觉");
+		
+	}
+	
+	public static void main(String[] args) {
+		Animal a1 = new Animal("小狗", "白色");
+		Animal a2 = new Animal("小马", "棕色");
+		a1.sleep();
+		a2.eat();
+	}
+}
+小狗在睡觉
+猫在吃
+小马在吃饭
+
+
+
+
+
+
+
+4. 看程序,写结果
+package com.ujiuye.staticdemo;
+
+public class Person{
+    private String name = "张三";
+    private int age = 20;
+    public Person(){
+       System.out.println("构造执行了");
+    }
+
+   public static void main(String[] args){
+       Person p1 = new Person();
+       p1.info();
+       
+       
+       Person p2 = new Person();
+       p2.name = "豆豆";
+       p2.age = 19;
+       p2.info();
+
+       new Person();
+  }
+   
+   private void info() {
+	   System.out.println(this.name + "今年" +this.age +"岁");
+   }
+}
+构造执行了
+张三今年20岁
+构造执行了
+豆豆今年19岁
+构造执行了
+
+   
+
+
+
+
+5. 根据需求，完成如下代码（按照标准格式写：私有属性、空参有参构造、getset方法）
+    动物类Animal, 属性:姓名name,年龄age ; 行为:吃饭eat，在方法eat中输出成员变量数据, 要求通过构造方法给成员变量进行赋值, 测试eat方法功能
+    动物猫:  姓名 : 花猫   年龄: 3
+    动物狗:  姓名 : 斑点   年龄 : 2
+
+
+
+
+

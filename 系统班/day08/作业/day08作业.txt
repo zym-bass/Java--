@@ -1,0 +1,121 @@
+﻿
+今天课上代码保证自己敲一遍,写代码记得加注释,明白代码原理(不懂的及时问)
+
+
+一. 代码分析5题：
+	第一个：分析如下代码，是否有错, 若有错判断哪行报错，并说出报错原因
+		class Demo{
+			final int a = 10; 
+		}
+
+		class Test{
+			public static void main(String[] args) {
+				Demo d = new Demo(); 
+				d = new Demo(); 
+				d.a = 20; //出错：
+			}
+		}
+
+答：fianl修饰a即a的值不可更改
+
+
+	第二个：分析如下代码,是否有错, 若有错判断哪行报错，并说出报错原因
+		class Demo{
+			int a = 10; 
+		}
+
+		class Test{
+			public static void main(String[] args) {
+				final Demo d = new Demo();
+				d = new Demo();//出错 
+				d.a = 20; 
+			}
+		}
+  
+
+答：final修饰的引用类型变量的地址值不可更改
+
+
+
+	第三个：分析如下代码,是否有错, 若有错判断哪行报错，并说出报错原因
+		class Demo{
+			final int a = 10;
+		}
+
+		class Test{
+			public static void main(String[] args) {
+				final Demo d = new Demo();
+				d = new Demo();//出错
+				d.a = 20;   //出错
+			}
+		}
+
+答：fianl修饰a即a的值不可更改 final修饰的引用类型变量的地址值不可更改
+   
+ 
+
+	第四个：分析如下代码，是否有错, 若有错判断哪行报错，并说出报错原因
+		class Demo{
+			int a = 10; 
+		}
+
+		class Test{
+			public static void main(String[] args) {
+				Demo d = new Demo();
+				d = new Demo();
+				d.a = 20;
+			}
+		}
+
+
+
+答： 没有错。
+
+  
+
+	第五个：分析如下代码，是否有错, 若有错判断哪行报错，并说出报错原因
+		class Demo{
+			final int a; //报错
+		}
+
+		class Test{
+			public static void main(String[] args) {
+				Demo d = new Demo();
+				d = new Demo();
+				d.a = 20; //报错
+
+
+			}
+		}
+
+
+
+答：final修饰的变量a未被赋值 fianl修饰a即a的值不可更改
+	
+
+   
+ 二 . 编程题
+编写出学生和教师的信息打印程序.具体要求
+1. 定义出一个Person类,包含编号,姓名两字段
+2. Person派生出的两个类 : Teacher类和Student类,其中Teacher类额外包含职称,部门两个字段,以及messagePrint()方法打印出教师所有信息
+   ;Student类额外包含班级号,成绩两个字段,messagePrint()方法,用于打印学生全部信息
+3. 测试类中进行学生和教师信息的测试,
+   学生数据信息 :  姓名 : 小明   编号 : 1001  班级号 :  12   成绩: 88
+   教师数据信息 : 姓名 : 李花花  编号: 449   职称 : 教授   部门 : 网络编程
+
+
+
+
+
+
+
+
+三. 编程题
+    现有两种事物，【手机】和【智能手机】
+   【手机Phone】带有（属性:品牌brand,价格price）（行为:打电话call,发短信sendMessage,玩游戏playGame）
+  【智能手机SmartPhone】需要在手机的功能之上，将打电话的功能做进一步增强（视频通话），请结合继承思想来设计两个类，
+    另外，假设所有的手机都有属性屏幕的尺寸(int size)，而且假设所有手机的屏幕尺寸固定不变为6，该如何设计代码？
+
+
+
+

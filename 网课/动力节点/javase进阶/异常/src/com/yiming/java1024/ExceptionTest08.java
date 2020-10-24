@@ -6,26 +6,26 @@ public class ExceptionTest08 {
         m.printStackTrace();
         String age = m.getMessage();
         System.out.println(age);*/
-        int i = 0;
-        for( i = 0 ; i<200;i++){
+       int i = 0;
+         /*for( i = 0 ; i<200;i++){
             try{
                 doSome(i);
             }catch(MyException e){
                 System.out.println(e.getMessage());
             }
         }
-        System.out.println(i);
-        /*try{
+        System.out.println(i);*/
+        try{
             for( i = 0 ; i<200;i++) {
                 doSome(i);
             }
         }catch(MyException e){
             System.out.println(e.getMessage());
         }
-        System.out.println(i);*/
+        System.out.println(i);
 
     }
-    public static void doSome(int i)throws MyException {
+    public static void doSome(int i){
         if (i == 100) {
             throw new MyException("i的值到达100");
         }

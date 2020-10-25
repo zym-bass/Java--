@@ -10,7 +10,7 @@ import java.util.List;
 */
 public class  GenericTest02 {
     public static void main(String[]  args){
-        //Array
+        //ArrayList<这里的类型会自动推断>() ,前提是JDK8之后才允许的
         List<Animal01> myList = new ArrayList<>();
         Cat c = new Cat();
         Bird b = new Bird();

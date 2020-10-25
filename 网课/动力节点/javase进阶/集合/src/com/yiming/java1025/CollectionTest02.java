@@ -32,11 +32,16 @@ public class CollectionTest02 {
         //void      remove()  //从迭代器指向的collection中移除迭代器返回的最后一个元素（可选操作）
         //第二步：通过以上获取的迭代器对象开始迭代/遍历集合
         while(it.hasNext()){
-            /*Object o = it.next();
-            System.out.println(o);*/
-            System.out.println(it.next());
+            Object o = it.next();
+            //采用集合删除，迭代器不更新出现异常，
+            //c.remove(o);
+            //采用迭代器删除，不仅将迭代器更新，还更新了集合
+            it.remove();
+            System.out.println(o);
+            //System.out.println(it.next());
 
         }
+        System.out.println("该集合的长度为："+c.size());
         /*boolean hasNext = it.hasNext();
         System.out.println(hasNext);
         if(hasNext){

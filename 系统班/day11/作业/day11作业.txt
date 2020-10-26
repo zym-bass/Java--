@@ -1,0 +1,53 @@
+﻿
+
+
+1. 看代码,写出结果
+public class Homework03 {
+	public static void main(String[] args) {
+		String s1 = "hello";
+		String s2 = "hello";
+		String s3 = "he"+"llo";
+		String s4 = new String("hello");
+		String s5 = new String("hello");
+		char[] ch = {'h','e','l','l','o'};
+		
+		System.out.println(s1 == s2);//true
+		System.out.println(s2 == s3);//ture
+		System.out.println(s1 == s4);//false
+		System.out.println(s4 == s5);//false
+		System.out.println(ch.equals(s1));//
+	}
+}
+
+
+
+
+ 
+
+
+2. 模拟用户登录
+   正确的用户名为admin,密码为adm123
+   键盘录入用户名和密码,一共有三次机会,如果录入错误,提示剩下几次机会,最后一次提示"登录机会已用完"
+   登录成功,提示登录成功
+ 
+
+
+
+
+
+
+
+
+3.分析以下需求，并用代码实现
+(1)定义字符串Hello12345World
+(2)将字符串中大写字母变成小写字母，小写字母变成大写字母，其它字符用"*"代替
+		举例:
+			输出结果：hELLO*****wORLD
+
+
+
+
+
+
+4. 找出字符串"o"在字符串HelloWorld中,每次出现的索引位置
+

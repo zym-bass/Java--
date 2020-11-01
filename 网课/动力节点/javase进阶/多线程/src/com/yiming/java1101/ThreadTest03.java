@@ -1,3 +1,5 @@
+package com.yiming.java1101;
+
 public class ThreadTest03 {
     public static void main(String[] args){
 

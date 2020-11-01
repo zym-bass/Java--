@@ -1,5 +1,4 @@
-
-
+package com.yiming.java1101;
 
 
 public class ThreadTest01 {

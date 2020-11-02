@@ -16,13 +16,7 @@ public class ThreadTest09 {
         t2.setName("消费者线程");
         t1.start();
         t2.start();
-        try {
-            Thread.sleep(5000);
-            t1.join();
-            t2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
 }
@@ -47,10 +41,10 @@ class Producer implements Runnable{
 
     @Override
     public void run() {
+        int i =0;
         while(true){
-            int i = 1 ;
             synchronized(list) {
-                if (list.size() > 10) {
+                if (list.size() > 0) {
                     //当前线程进入等待状态
                     try {
                         list.wait();
@@ -64,7 +58,7 @@ class Producer implements Runnable{
                         e.printStackTrace();
                     }
 
-                    list.add(i);
+                    list.add(i++);
                     System.out.println(list);
                     list.notify();
                 }

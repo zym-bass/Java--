@@ -5,14 +5,14 @@ package com.ujiuye.java1022;
 
         基本数据类型              包装类型
      --------------------------------------
-          byte                  java.long.Byte
-          short                 java.long.Short
-          int                   java.long.Integer
-          long                  java.long.Long
-          float                 java.long.Float
-          double                java.long.Double
-          char                  java.long.Character
-          boolean               java.long.Boolean
+          byte                  java.long.Byte          1
+          short                 java.long.Short         2
+          int                   java.long.Integer       4
+          long                  java.long.Long          8
+          float                 java.long.Float         4
+          double                java.long.Double        8
+          char                  java.long.Character     2
+          boolean               java.long.Boolean       1
 */
 public class IntegerTest01 {
 

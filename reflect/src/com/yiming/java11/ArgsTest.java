@@ -24,6 +24,10 @@ public class ArgsTest {
         m2("lalalal",123,1313,13,13,1,31,3,1,3,13,1,31,3,1);
 
     }
+    public static int s(String name , int m){
+        System.out.println(name+m);
+        return 10;
+    }
     public static void m(int...args){
         System.out.println(args.length);
         for(int i =0 ;i<args.length ;i++){

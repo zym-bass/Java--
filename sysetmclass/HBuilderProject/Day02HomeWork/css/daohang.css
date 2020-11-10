@@ -1,0 +1,55 @@
+.aa{
+	border: 100% ;
+	height: 10%;
+	width: 100%;
+	background-color: rgb(227,228,229);
+	display: block;
+	
+}
+ .aa tr{
+	 
+	 height: 0.5%;
+	  width: 0.5%;
+	 height: 0.125rem;
+	 align-content: center;
+ }
+ .aa td{
+	 height: 0.5%;
+	  width: 0.5%;
+	border: 0.0625rem;
+	border-color: rgb(204,204,204);
+	border-right-style: solid ;
+	padding: 10px 5px;
+	
+	line-height: 4px;
+}
+a{
+				color: rgb(153,153,153); 
+				text-decoration: none;
+			}
+			
+			a:link{ 
+				/*匹配没有访问过的超链接*/ 
+				color:rgb(153,153,153); 
+				
+				text-decoration: none;
+			}
+			a:visited{
+				/*匹配访问过的超链接*/ 
+				color: rgb(153,153,153); 
+				
+				
+				text-decoration: none;
+			}
+			a:hover{
+				/*鼠标放在超链接上*/ 
+				color: red;
+				
+				text-decoration: none;
+			}
+			
+			a:active{ 
+				/*激活状态的超链接*/ 
+				color: red; 
+				text-decoration: none;
+			}

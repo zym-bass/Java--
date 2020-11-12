@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function do1(){
+				console.log("点击事件触发");
+			}
+			function do2(){
+				console.log("onmouseover 鼠标移入事件");
+			}
+			function d03(){
+				console.log("就这"+event.keyCode.toString());
+			}
+			function d04(){
+				console.log(" 就这？？？？？");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="啦啦啦"  onclick="do1()" onmouseover="do2()" />
+		<input type="text"  value="啦啦啦"  onkeyup="d03()";  onkeydown="d04()" />
+	</body>
+</html>

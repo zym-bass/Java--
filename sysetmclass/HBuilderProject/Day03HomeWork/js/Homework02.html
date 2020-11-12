@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+<select id="sheng">
+    <option>山西</option>
+    <option>河南</option>
+    <option>东北</option>
+
+</select>
+
+<select name="shi">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+
+</select>
+<script type="text/javascript">
+    var dizhi = document.getElementById("sheng");
+    var shi = document.getElementsByName("shi")[0];
+    console.log(dizhi.value);
+    dizhi.onchange = function () {
+        console.log(dizhi.value);
+
+        if (dizhi.value == "山西") {
+            shi.innerHTML = "<option >1</option><option >2</option><option >3</option>";
+            console.log(shi.value);
+        } else if (dizhi.value == "河南") {
+            console.log(shi.value);
+            shi.innerHTML = "<option >a</option><option >b</option><option >c</option>";
+        } else if (dizhi.value == "东北") {
+            console.log(shi.value);
+            shi.innerHTML = "<option >A</option><option >B</option><option >C</option>";
+        }
+        ;
+    };
+
+</script>
+</body>
+
+</html>

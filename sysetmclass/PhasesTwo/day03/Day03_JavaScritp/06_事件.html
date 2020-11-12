@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 1px solid red;
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			function demo(){
+				console.log("事件触发了....");
+			}
+			window.onload=function(){
+				//获取按钮标签
+				var btn= document.getElementById("d1");
+				btn.onclick=function(){
+					console.log("第二个按钮点击事件触发了...");
+				}
+			}
+			function missFoc(){//失去焦点事件
+				console.log("失去焦点事件触发了...");
+			}
+			function getFoc(){//获取焦点事件
+				console.log("获取焦点事件触发了...");
+			}
+			function demo2(){
+				console.log("内容改变事件触发了....");
+			}
+			function demo3(){
+				console.log("内容改变事件触发了...");
+			}
+			function demo4(){
+				console.log("鼠标的移入事件触发了...");
+			}
+			function demo5(){
+				console.log("鼠标的移出事件触发了...");
+			}
+			function demo6(){
+				console.log("键盘摁下事件触发了...");
+			}
+			function demo7(){
+				console.log("键盘松开事件触发了...");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="demo()" value="方式一"/>
+		<input type="button"  value="方式二" id="d1"/>
+		<input type="text" onblur="missFoc()" onfocus="getFoc()" onchange="demo2()"/>
+		<select name="" onchange="demo3()">
+			<option value="">上海</option>
+			<option value="">南京</option>
+			<option value="">北京</option>
+		</select>
+		<div onmouseover="demo4()" onmouseout="demo5()" >
+			
+		</div>
+		<input type="text" onkeydown="demo6()" onkeyup="demo7()"/>
+	</body>
+</html>

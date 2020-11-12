@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span {
+				color: #fc0303;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			window.onload = function(){
+				//获取username的span标签
+				var usernameErrorSpan = document.getElementById("usernameError")
+				//给用户名文本框绑定blur事件
+				var usernameElt=document.getElementById("username");
+				usernameElt.onblur=function(){
+					/* alert(111); */
+					/* 获取对象名 */
+					var username = usernameElt.value;
+					//去除空白
+					username=username.trim();
+					/* alert(username); */
+					
+					/* var usernameErrorSpan = document.getElementById("usernameError"); */
+					
+					if(username){
+						/* alert("username = "+username); */
+						if(username.length<6 || username.length>14){
+							usernameErrorSpan.innerText="用户名范围在6~14";
+							
+						}else{
+							//判断用户名长度是否合法
+							var regExp = /^[A-Za-z0-9]+$/;
+							var ok = regExp.test(username);
+							if(ok){
+								
+							}else{
+								usernameErrorSpan.innerText="用户名符号不合法,只能由数字和字母组成";
+							}
+						}
+					}else{
+						/* alert("usernamenull = "+username); */
+						usernameErrorSpan.innerText="用户名不能为空";
+					}
+				}
+				usernameElt.onfocus = function(){
+						//清空非法的value
+					if(usernameErrorSpan.innerText!=""){
+						usernameElt.value="";
+					}
+					//清空span
+					usernameErrorSpan.innerText="";
+					
+				}
+
+				//获取密码事件
+				var passwordElt = document.getElementById("password0");
+
+				//获取密码span事件
+				var passwordspan = document.getElementById("passwordError0");
+
+				passwordElt.onblur = function (){
+					var password = passwordElt.value;
+					if(password){
+						var regExp = /^\s*$/;
+						var ok = regExp.test(password);
+						if(ok){
+							passwordspan.innerText="密码不能有空格";
+						}
+					}else {
+						passwordspan.innerText="密码不能为空";
+					}
+
+					passwordElt.onfocus = function (){
+						if(passwordspan.innerText!="") {
+							passwordElt.value = "";
+						}
+						passwordspan.innerText="";
+					}
+				}
+
+
+				//获取确认密码id
+				var password1Elt = document.getElementById("password1");
+				//获取span事件
+				var passwordError2Elt = document.getElementById("passwordError2");
+				//绑定blur事件
+				password1Elt.onblur = function(){
+					/* alert(111); */
+					//获取密码和确认密码
+					var passwordElt = document.getElementById("password");
+					var password = passwordElt.value;
+					var password1 = password1Elt.value;
+					
+					if(password!=password1){
+						passwordError2Elt.innerText="密码不一致";
+					}
+				
+					password1Elt.onfocus = function(){
+						if(passwordError2Elt.innerText!=""){
+						 password1Elt.value="";
+						}
+						passwordError2Elt.innerText="";
+						 /* passwordError2Elt.innerText=""; */
+					 
+					}	
+				}
+				
+				
+				//获取手机号blur事件
+				var cellnumberElt = document.getElementById("cellnumber");
+				var cellnumberspan = document.getElementById("cellnumberError");
+				
+				//获取手机号span 事件
+				cellnumberElt.onblur = function(){
+					/* alert(111); */
+					var cellnumbert = cellnumberElt.value;
+					if(cellnumbert){
+							/* alert("username = "+username); */
+								//判断用户名长度是否合法
+								var regExp =/^15\d{9}$/;
+								var ok = regExp.test(cellnumbert);
+								if(ok){
+									
+								}else{
+									cellnumberspan.innerText="手机号不合法";
+								}
+							
+					}else{
+						/* alert("usernamenull = "+username); */
+						cellnumberspan.innerText="手机号不能为空";
+					}
+					
+					cellnumberElt.onfocus = function(){
+						if(cellnumberspan.innerText!=""){
+						 cellnumberElt.value="";
+						}
+						cellnumberspan.innerText="";
+						 /* passwordError2Elt.innerText=""; */
+					 
+					}	
+				}
+				
+				
+				//给邮箱绑定blur事件
+				var emailElt = document.getElementById("email");
+				//绑定邮箱emailError事件
+				var emailErrorElt = document.getElementById("emailError");
+				emailElt.onblur = function(){
+					var email= emailElt.value;
+					
+					var emailRegRxp= /^[\w\-]+@[a-zA-Z\d\-]+(\.[a-zA-Z]{2,8}){1,2}$/;
+					var ok = emailRegRxp.test(email);
+					if(ok){
+						
+					}else{
+						emailErrorElt.innerText="邮箱不符合要求";
+					}
+					
+					
+					
+					emailElt.onfocus = function(){
+						if(emailErrorElt.innerText!=""){
+						 emailElt.value="";
+						}
+						emailErrorElt.innerText="";
+						 /* passwordError2Elt.innerText=""; */
+					 
+					}	
+					
+				}
+				
+				//绑定按钮事件
+				var submitBtElt = document.getElementById("submitBt");
+				
+				submitBtElt.onclick=function(){
+					usernameElt.focus();
+					usernameElt.blur();
+
+					passwordElt.focus();
+					passwordElt.blur();
+
+					password1Elt.focus();
+					password1Elt.blur();
+
+					cellnumberElt.focus();
+					cellnumberElt.blur();
+
+					emailElt.focus();
+					emailElt.blur();
+
+					
+					if(usernameErrorSpan.innerText=="" && passwordError2Elt.innerText=="" && emailErrorElt.innerText=="" && passwordspan.innerText=="" && cellnumberspan.innerText=="" ){
+						
+						var userFormElt =document.getElementById("userFrom");
+						userFormElt.action="https://zhuanlan.zhihu.com/p/26612754"
+						userFormElt.submit();
+						
+					}else {
+						alert("不符合要求，你是笨笨吗？");
+					}
+				}
+				
+			}
+			
+		</script>
+		<form id="userFrom" method="post">
+			<table border="0" cellspacing="" cellpadding="">
+				<tr>
+					<td>
+						用户名
+					</td>
+					<td>
+						<input type="text" name="username" id="username" value="" />
+						<span id="usernameError"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						密码
+					</td>
+					<td>
+						<input type="password" name="password0" id="password0" />
+						<span id="passwordError0"></span>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						确认密码
+					</td>
+					<td>
+						<input type="password" name="password1" id="password1" value="" />
+						<span id="passwordError2"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						手机号
+					</td>
+					<td>
+						<input type="text" name="cellnumber" id="cellnumber" value="" />
+						<span id="cellnumberError"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						邮箱
+					</td>
+					<td>
+						<input type="text" name="email" id="email" value="" />
+						<span id="emailError"></span>
+					</td>
+				</tr>
+			</table>
+			<input type="button" value="提交" id="submitBt" />
+			<br />
+			<input type="reset" value="重置" />
+		</form>
+	</body>
+</html>

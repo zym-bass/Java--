@@ -28,19 +28,7 @@ a{
 				text-decoration: none;
 			}
 			
-			a:link{ 
-				/*匹配没有访问过的超链接*/ 
-				color:rgb(153,153,153); 
-				
-				text-decoration: none;
-			}
-			a:visited{
-				/*匹配访问过的超链接*/ 
-				color: rgb(153,153,153); 
-				
-				
-				text-decoration: none;
-			}
+			
 			a:hover{
 				/*鼠标放在超链接上*/ 
 				color: red;

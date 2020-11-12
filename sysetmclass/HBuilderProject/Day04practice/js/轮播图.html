@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.js"></script>
+		
+	</head>
+	<body>
+		<div>
+			<img src="../img/1.jpg" height="692px" width="500px"/>
+			<input type="button" value="停止"  onclick="stopTime()"/>
+		</div>
+		<script type="text/javascript">
+			var i = 1;
+			setInterval(function(){
+				var imgObj = document.getElementsByTagName("img")[0];
+				imgObj.src="../img/"+i+".jpg";
+				i++;
+				if(i==3){
+					i=1;
+				}
+			},300)
+			
+			function stopTime(){
+				console.log("111");
+				clearInterval(i);
+			}
+		</script>
+		<script type="text/text/javascript">
+			$(function){
+				$("img").focus(function(){
+					alert("1111");
+				});
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function demo(){
+				//获取第一个div的标签内容
+				//1.获取div标签对象
+				var divObj = document.getElementById("d2");
+				//2.获取标签内容
+				console.log(divObj.innerHTML);
+				/*获取文本框中输入的值或者内容*/
+				var obj =  document.getElementsByTagName("input")[0];
+				console.log(obj.value);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d2"><a href="#">超链接</a></div>
+		<div class="mui-input-row">
+			<input type="text" id="d1" placeholder="普通输入框">
+		</div>
+		<input type="button" value="点击一下" onclick="demo()"/>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function demo(){
+				console.log("无参无返回值函数");
+			}
+			demo();
+			function demo1(){
+				console.log("无参有返回值函数");
+				return "hello";
+			}
+			var a = demo1();
+			console.log(a);
+			function demo2(a,b){
+				console.log("有参无返回值函数:"+(a+b));
+			}
+			demo2(10,20);
+			function demo3(a,b){
+				return a+b;
+			}
+			console.log(undefined==null);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

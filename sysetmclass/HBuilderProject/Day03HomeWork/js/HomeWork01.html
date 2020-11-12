@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	function beforeSubmit(form) {
+		if (form.username.value == '') {
+			alert('用户名不能为空！');
+			form.username.focus();
+			return false;
+		}
+		if (form.password.value == '') {
+			alert('密码不能为空！');
+			form.password.focus();
+			return false;
+		}
+		if (form.password.value.length < 6) {
+			alert('密码至少为6位，请重新输入！');
+			form.password.focus();
+			return false;
+		}
+		/* if (form.password.value != form.password2.value) {
+			alert('你两次输入的密码不一致，请重新输入！');
+			form.password2.focus();
+			return false;
+		} */
+		if (form.youxiang.value.length < 6) {
+			alert('邮箱错误');
+			form.password.focus();
+			return false;
+		}
+		
+		return true;
+	}
+</script>
+
+<fieldset>
+	<legend>用户注册</legend>
+	<form method="post" name="form" action="user.do?method=register" onSubmit="return beforeSubmit(this);">
+		<table border="1" width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><label>用户名：<input type="text" name="username" value=""></label></td>
+			</tr>
+			<tr>
+				<td><label>密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" value=""></label></td>
+			</tr>
+			<tr>
+				<td><label>邮&nbsp;&nbsp;&nbsp;箱：<input  name="youxiang" value=""></label></td>
+			</tr>
+			<!-- <tr>
+				<td><label>重复密码：<input type="password" name="password2" value=""></label></td>
+			</tr> -->
+			<tr>
+				<td><input value="注册" type="submit"> <input type="reset" value="重置"></td>
+			</tr>
+		</table>
+	</form>
+</fieldset>

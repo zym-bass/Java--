@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var str="HelloWorld";
+			/*获取第一个o字符*/
+			console.log(str[4]);
+			console.log(str.substring(0,5));
+			console.log(str.substring(5,11));
+			console.log(str.split("o"));
+			var d = new Date();
+			console.log(new Date());//获取当前系统时间
+			console.log(d.getTime());//获取系统时间的毫秒数
+			console.log(d.toLocaleDateString());//获取本地日期(年月日),字符串
+			console.log(d.toLocaleTimeString());//获取本地时间(时分秒),字符串
+			//
+			var arr = new Array(3);//创建数组
+			console.log(arr);
+			arr[4]=12;
+			arr[5]="hello";
+			console.log(arr.length);
+			console.log(arr);
+			console.log(arr.join("-"));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

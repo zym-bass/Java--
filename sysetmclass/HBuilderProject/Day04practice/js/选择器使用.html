@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.js" >
+		</script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#b1").click(function(){
+					console.log($("#a1").text());
+					console.log($("#a1").html());
+					console.log($("#b1").val());
+					
+				})
+			});
+			
+			$(function(){
+				$arr = $("div");
+				for(i in $arr ){
+					console.log( $($arr[i]).text());
+					/* console.log() */
+				}
+			});
+			
+		</script>
+	</head>
+	<body>
+		<a  href="轮播图.html" id="a1" ><p>超链接</p></a>
+		<input type="button" id="b1" value="点">
+		<div id="d1">1</div>
+		<div id="d2" >2</div>
+		<div id="d3">3</div>
+		<div id="d4">4</div>
+	</body>
+</html>

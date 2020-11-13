@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				/* //获取$("form input")的值
+				$arr = $("form input");
+				for(var i = 0;i<$arr.length;i++){
+					console.log($($arr[i]).val());
+				} */
+				/* console.log($("form > input").val()); */
+				/* $arr =$("label + input");
+				for(var i = 0;i<$arr.length;i++){
+					console.log($($arr[i]).val());
+				} */
+				console.log($("form ~ input").val());
+			})
+		</script>
+	</head>
+	<body>
+		<form>
+		  <label>Name:</label>
+		  <input name="name" value="name1"/>
+		  <fieldset>
+		      <label>Newsletter:</label>
+		      <input name="newsletter" value="newsletter" />
+		 </fieldset>
+		</form>
+		<input name="none" value="none" />
+	</body>
+</html>

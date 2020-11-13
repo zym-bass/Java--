@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#btn").click(function() {
+					console.log($("ul li:first").html());
+					console.log($("ul li:last").html());
+				});
+				$("#btn1").click(function() {
+					//获取奇数列表项的标签内容
+					$arr = $("ul li:even()");
+					$arr.each(function(i, dom) {
+						console.log($(dom).html());
+					});
+				});
+
+				$("#btn2").click(function() {
+					//console.log($("ul li:eq(2)").html());
+					//获取三四列表项
+					$arr = $("ul li:gt(1)");
+					$arr.each(function(i, dom) {
+						console.log($(dom).html());
+					});
+				});
+				$("#btn3").click(function() {
+					$arr = $("ul li:not(#d1)");
+					$arr.each(function(i, dom) {
+						console.log($(dom).html());
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>第一个列表项</li>
+			<li id="d1">第二个列表项</li>
+			<li>第三个列表项</li>
+			<li>第四个列表项</li>
+		</ul>
+		<input type="button" id="btn" value="first选择器" />
+		<input type="button" id="btn1" value="even_odd" />
+		<input type="button" id="btn2" value="eq_gt_lt" />
+		<input type="button" id="btn3" value="not" />
+	</body>
+</html>

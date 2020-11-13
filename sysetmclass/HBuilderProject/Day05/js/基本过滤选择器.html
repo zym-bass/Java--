@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://code.jquery.com/jquery-2.0.1.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$sd =$("ul li");
+				$sd.each(function(i , dom ){
+					console.log(i);
+					console.log($(dom).html());
+				});
+				
+				$("#d3").click(function(){
+					console.log($("ul li:first").html());
+					console.log($("ul li:last").html());
+				})
+				
+				
+				$arr = $("ul li:even()");
+				$arr.each(function(i , dom ){
+					console.log(i);
+					console.log($(dom).html());
+				});
+				
+				$odd = $("ul li:odd()");
+				$odd.each(function(i , dom ){
+					console.log(i);
+					console.log($(dom).html());
+				});
+				
+				console.log($("ul li:eq(3)").html());
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>列表一</li>
+			<li>列表二</li>
+			<li>列表三</li>
+			<li>列表四</li>
+		</ul>
+		<input type="button" name="" id="d3" value="点击" />
+	</body>
+</html>

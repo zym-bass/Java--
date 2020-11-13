@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//获取复选框标签的name属性值
+					console.log("attr方式获取:"+$("input:checkbox").attr("name"));
+					console.log("prop方式获取:"+$("input:checkbox").prop("name"));
+					//获取复选框标签的ddk的属性值
+					console.log("attr方式获取:"+$("input:checkbox").attr("ddk"));
+					console.log("prop方式获取:"+$("input:checkbox").prop("ddk"));
+					//选中复选框
+					//$("input:checkbox").prop("checked","checked");
+					$("input:checkbox").prop("checked",true);
+					//修改按钮的样式
+					$(this).prop("style","background-color:red;height:80px;width:100px;");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" name="ck" value="hobby" ddk="O(∩_∩)O哈哈~" />
+		<input type="button" id="btn" value="点击"/>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//点击按钮获取选中复选框的值
+				$("#btn").click(function(){
+					$arr = $("input:checkbox:checked");
+					//console.log($arr.length);
+					$arr.each(function(i,dom){
+						console.log($(dom).val());
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+		  <input type="checkbox" name="newsletter" value="Daily" />
+		  <input type="checkbox" name="newsletter" value="Weekly" />
+		  <input type="checkbox" name="newsletter"  value="Monthly" />
+		</form>
+		<input type="button"  id="btn" value="点击" />
+	</body>
+</html>

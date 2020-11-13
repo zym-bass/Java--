@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				border: 1px solid red;
+			}
+			.b{
+				height: 300px;
+				width: 300px;
+			}
+			.c{
+				background-color: #008000;
+			}
+		</style>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					$("div").addClass("a b c");
+				});
+				$("#btn1").click(function(){
+					$("div").removeClass("a c");
+				});
+				$("#btn2").click(function(){
+					$("div").toggleClass("c");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+		<input type="button" value="添加样式" id="btn" />
+		<input type="button" value="移除样式" id="btn1" />
+		<input type="button" value="切换样式" id="btn2" />
+	</body>
+</html>

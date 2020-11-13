@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					/* //点击按钮获取第一个div的标签内容
+					console.log($("#d1").html());
+					//第二个div和p的标签内容
+					$arr = $(".c1");//获取对应的标签对象
+					for( i in $arr){
+						console.log($arr[i].innerHTML);
+					} */
+					//获取div的纯文本内容
+					$divObj = $("div");
+					for( i in $divObj){
+						console.log($divObj[i].innerText);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+			<a href="">超链接</a>
+		</div>
+		<p class="c1">段落标签</p>
+		<div class="c1">div标签</div>
+		<input type="button" id="btn" value="基本选择器"/>
+	</body>
+</html>

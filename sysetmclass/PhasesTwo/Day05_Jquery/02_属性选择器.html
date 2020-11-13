@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href=""/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取有href属性的标签内容
+				/* $arr = $("a[href]");
+				// console.log($arr.length); 
+				$arr.each(function(i,dom){
+					console.log($(dom).html());
+				}); */
+				//获取有name属性,且值为milkman的标签内容
+				//console.log($("body [name='milkman']").val());
+				//获取name属性中包含man的标签内容
+				$arr = $("body [name*='man']");
+				$arr.each(function(i,dom){
+					console.log($(dom).val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input name="man-news" value="man-news" />
+		<input name="milkman" value="milkman"/>
+		<input name="letterman2" value="letterman2"/>
+		<input name="newmilk" value="newmilk" />
+		<a href="http://www.baidu.com">百度一下</a>
+		<a href="#">京东金融</a>
+	</body>
+</html>

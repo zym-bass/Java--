@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var task;
+			window.onload=function(){
+				task=setInterval(function(){
+					//获取当前系统时间
+					var date = new Date();
+					var d = date.toLocaleTimeString();
+					document.getElementsByTagName("div")[0].innerHTML="当前时间为:"+d;
+				},1000);
+			}
+			function stopTime(){
+				clearInterval(task);
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" value="暂停" id="btn" onclick="stopTime()" />
+	</body>
+</html>

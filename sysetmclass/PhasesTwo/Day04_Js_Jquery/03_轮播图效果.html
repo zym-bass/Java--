@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var i = 2;
+			setInterval(function(){
+				var imgObj = document.getElementsByTagName("img")[0];
+				imgObj.src="img/"+i+".jpg";
+				i++;
+				if(i==6){
+					i=1;
+				}
+			},3000)
+			//后退演示
+			function backDemo(){
+				history.back();
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="img/1.jpg" height="692px" width="500px"/>
+		</div>
+		<a href="index.html">超链接</a>
+		<input type="button" value="后退" onclick="backDemo()"/>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//点击按钮获取列表项的标签内容
+				$("#btn").click(function(){
+					$arr = $("ul li");
+					$arr.each(function(i,dom){
+						console.log(i);
+						console.log($(dom).html());
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>第一个列表项</li>
+			<li>第二个列表项</li>
+			<li>第三个列表项</li>
+			<li>第四个列表项</li>
+		</ul>
+		<input type="button" id="btn" value="点击"/>
+	</body>
+</html>

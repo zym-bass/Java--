@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#hidden").click(function(){
+					$("img").hide(5000,function(){
+						alert("小哥哥我走了哟，下次记得喊我")
+					});
+				});
+				$("#show").click(function(){
+					$("img").show(5000,function(){
+						alert("小哥哥,谢谢你的召唤,我来了哟，木啊")
+					});
+				});
+				$("#slideUp").click(function(){
+					$("img").slideUp(4000);
+				});
+				$("#slideDown").click(function(){
+					$("img").slideDown(4000);
+				});
+				$("#fadeOut").click(function(){
+					$("img").fadeOut(6000);
+				});
+				$("#fadeIn").click(function(){
+					$("img").fadeIn(6000);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<img src="img/096c31f8d6ce37fd.jpg"><br>
+		<input type="button" name="" id="hidden" value="隐藏" />
+		<input type="button" name="" id="show" value="显示" />
+		<input type="button" name="" id="slideUp" value="滑动隐藏" />
+		<input type="button" name="" id="slideDown" value="滑动显示" />
+		<input type="button" name="" id="fadeOut" value="淡入隐藏" />
+		<input type="button" name="" id="fadeIn" value="淡入显示" />
+	</body>
+</html>

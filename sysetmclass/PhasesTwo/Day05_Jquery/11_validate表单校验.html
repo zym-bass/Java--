@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//给表单添加validate插件校验
+				$("#signupForm").validate({
+					rules:{//校验规范
+						username:{
+							required:true,
+							rangelength:[5,12]
+						},
+						password:{
+							required:true,
+							rangelength:[5,10]
+						},
+						confirm_password:{
+							required:true,
+							equalTo:"#password"
+						},
+						email:{
+							required:true,
+							email:true
+						}
+					},
+					messages:{//当违反规范的时的提示信息
+						username:{
+							required:"用户名不能为空",
+							rangelength:"用户名长度必须在5-12位之间"
+						},
+						password:{
+							required:"密码不能为空",
+							rangelength:"密码长度必须在5-10之间"
+						},
+						confirm_password:{
+							required:"确认密码不能为空",
+							equalTo:"两次输入密码不一致"
+						},
+						email:{
+							required:"邮箱不能为空",
+							email:"邮箱格式不正确"
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form class="cmxform" id="signupForm" method="get" action="">
+				<fieldset>
+					<p>
+						<label for="username">用户名:</label>
+						<input id="username" name="username" type="text">
+					</p>
+					<p>
+						<label for="password">密码:</label>
+						<input id="password" name="password" type="password">
+					</p>
+					<p>
+						<label for="confirm_password">确认密码:</label>
+						<input id="confirm_password" name="confirm_password" type="password">
+					</p>
+					<p>
+						<label for="email">邮箱:</label>
+						<input id="email" name="email" type="email">
+					</p>
+				</fieldset>
+				<input  type="submit" value="提交">
+			</form>
+	</body>
+</html>

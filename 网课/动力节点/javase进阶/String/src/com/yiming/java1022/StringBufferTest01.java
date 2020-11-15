@@ -13,7 +13,7 @@ package com.yiming.java1022;
 public class StringBufferTest01 {
     public static void main(String[] args) {
         //创建一个初始化容量为16的byte[]数组。（字符串缓存区对象）
-        StringBuffer s = new StringBuffer();
+        StringBuffer s = new StringBuffer("wewfw"+"wfwfef");
 
         //拼接字符串，以后拼接字符串统一调用append()方法。
         s.append("a");
@@ -30,6 +30,7 @@ public class StringBufferTest01 {
         s1.append("wefwfwefwfwfwf");
         s1.append("wefwfwefwfwfwf");
         System.out.println(s1);
-
+        StringBuffer a = "23r2r2r" + "wwfwfw";
+        System.out.println(a);
     }
 }

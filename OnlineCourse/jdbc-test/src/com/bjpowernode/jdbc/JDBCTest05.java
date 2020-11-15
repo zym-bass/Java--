@@ -28,13 +28,7 @@ public class JDBCTest05 {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }finally{
-            if (conn!=null) {
-                try {
-                    conn.close();
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
-            }
+
             if (ps!=null) {
                 try {
                     ps.close();
@@ -42,7 +36,13 @@ public class JDBCTest05 {
                     throwables.printStackTrace();
                 }
             }
-
+            if (conn!=null) {
+                try {
+                    conn.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
         }
     }
 }

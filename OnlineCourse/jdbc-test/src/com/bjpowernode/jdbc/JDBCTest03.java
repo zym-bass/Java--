@@ -98,9 +98,11 @@ public class JDBCTest03 {
             e.printStackTrace();
         }finally{
             //6. 释放内存
-            if(conn!=null){
+
+
+            if(re!=null){
                 try {
-                    conn.close();
+                    re.close();
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
@@ -112,9 +114,9 @@ public class JDBCTest03 {
                     throwables.printStackTrace();
                 }
             }
-            if(re!=null){
+            if(conn!=null){
                 try {
-                    re.close();
+                    conn.close();
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }

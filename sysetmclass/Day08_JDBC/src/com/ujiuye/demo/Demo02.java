@@ -20,9 +20,11 @@ public class Demo02 {
 
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode", "root", "3333");
-			st = conn.createStatement();
 			String sql = "select *from s  ";			
+			st = conn.createStatement();
 			re = st.executeQuery(sql);
+			
+			//ResultSet re2 = st.executeQuery(sql);//1234567
 			while (re.next()) {
 				System.out.println("SNO:" + re.getInt("SNO") + "  SNAME:" + re.getString("SNAME"));
 			}
@@ -30,14 +32,7 @@ public class Demo02 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			if(re!=null) {
-				try {
-					re.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			
 			if(re!=null) {
 				try {
 					re.close();

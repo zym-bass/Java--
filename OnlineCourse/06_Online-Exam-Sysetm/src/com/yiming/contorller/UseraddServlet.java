@@ -38,9 +38,9 @@ public class UseraddServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(response.getContentType());
+
         response.setContentType("text/html;charset=UTF-8");
-        System.out.println(response.getContentType());
+
         //3. 【调用响应对象】将【处理结果】以二进制形式写入到响应体中
         out =response.getWriter();
 
@@ -48,7 +48,8 @@ public class UseraddServlet extends HttpServlet {
 
 
         if(result==1){
-            out.print("<font style='color:red;font-size:40'>注册成功</font>");
+         /*   out.print("<font style='color:red;font-size:40'>注册成功,3秒后进行一名管理系统。</font>");*/
+           response.sendRedirect("/index.html");
         }else {
             out.print("<font style='color:red;font-size:40'>注册失败</font>");
         }

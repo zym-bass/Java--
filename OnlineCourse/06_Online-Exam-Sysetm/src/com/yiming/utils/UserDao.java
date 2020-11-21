@@ -36,6 +36,17 @@ public class UserDao {
         }
         return 0 ;
     }
+
+    //更加用户账号和密码,检验用户登录
+    public Users login(String userName , String password){
+        String sql = "select * from user where userName=? and password=?";
+        try {
+            return C3p0dbutils.rq.query(sql,new BeanHandler<>(Users.class),userName,password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null ;
+    }
     /*@Test
     public void find02(){
         String sql = "select *from user";

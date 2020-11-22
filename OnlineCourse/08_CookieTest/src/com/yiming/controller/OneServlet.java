@@ -17,6 +17,7 @@ public class OneServlet extends HttpServlet {
         //2. 开卡
         Cookie card1 = new Cookie("userName",userName);
         Cookie card2 = new Cookie("money", money);
+        card2.setMaxAge(300);
         //3. 发卡
         response.addCookie(card1);
         response.addCookie(card2);

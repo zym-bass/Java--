@@ -24,7 +24,8 @@ public class OneServlet extends HttpServlet {
             numbers=1;
             session.setAttribute(goodsName ,numbers );
         }
-       /* response.sendRedirect("index.html");*/
+
+        response.sendRedirect("index.html");
        /* response.setContentType("text/html;charset=utf-8");*/
       /* request.getRequestDispatcher("index.html").forward(request,response);*/
     }

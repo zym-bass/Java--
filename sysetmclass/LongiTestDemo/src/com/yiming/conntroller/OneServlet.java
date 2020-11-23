@@ -44,7 +44,6 @@ public class OneServlet extends HttpServlet {
 		
 		/* doSome(username,password); */
 		
-		
 			String sql = "select sname from s where sname=? and sno=? ";
 			try {
 				System.out.println(qr.query(sql, new BeanHandler(String.class),username, password));

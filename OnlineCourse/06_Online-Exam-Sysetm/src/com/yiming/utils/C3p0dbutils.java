@@ -10,9 +10,4 @@ class C3p0dbutils {
         rq =new QueryRunner(new ComboPooledDataSource());
     }
 
-
-    @Test
-    public  void dosome(){
-        System.out.println(rq);
-    }
 }

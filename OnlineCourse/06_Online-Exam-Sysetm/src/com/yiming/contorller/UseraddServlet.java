@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class UseraddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +35,10 @@ public class UseraddServlet extends HttpServlet {
         //2. 【调用C3p0dbutilsDao】将用用户信息填充到insert命令中（DML）发送给数据库服务器
         user=new Users(null,username,password,sex,email);
         try {
+            Date  start = new Date();
             result = dao.add(user);
+            Date  end = new Date();
+            System.out.println("添加消耗的时间为："+(end.getTime()-start.getTime()));
         } catch (SQLException e) {
             e.printStackTrace();
         }

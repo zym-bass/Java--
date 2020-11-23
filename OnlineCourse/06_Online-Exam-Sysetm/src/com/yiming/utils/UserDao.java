@@ -1,15 +1,21 @@
 package com.yiming.utils;
 
 import com.yiming.entity.Users;
+import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.List;
 
 public class UserDao {
-
+    public QueryRunner get(HttpServletRequest re){
+        ServletContext application =  re.getServletContext();
+        return (QueryRunner)application.getAttribute("dbutils");
+    }
     //添加（注册）用户信息
     public int add(Users users ) throws SQLException {
         Object[] params = {users.getUserName(),users.getPassword(),users.getSex(),users.getEmail()};

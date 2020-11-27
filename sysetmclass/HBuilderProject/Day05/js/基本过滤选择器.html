@@ -5,8 +5,11 @@
 		<title></title>
 		<script src="http://code.jquery.com/jquery-2.0.1.min.js" type="text/javascript" charset="UTF-8"></script>
 		<script type="text/javascript">
+			//jQuery使用
 			$(function(){
+				//获取列表的jQuery对象
 				$sd =$("ul li");
+				//遍历jQuery对象的方法 $obj.each(function(i , dom ){});
 				$sd.each(function(i , dom ){
 					console.log(i);
 					console.log($(dom).html());
@@ -31,8 +34,9 @@
 				});
 				
 				console.log($("ul li:eq(3)").html());
-			})
+				
 			
+			})
 			
 		</script>
 	</head>

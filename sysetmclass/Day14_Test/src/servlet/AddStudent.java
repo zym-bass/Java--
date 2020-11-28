@@ -34,11 +34,12 @@ public class AddStudent extends HttpServlet {
 		Part part = req.getPart("photo");
 		String header = part.getHeader("content-disposition");
 		String fileName = header.substring(header.lastIndexOf("=")+2, header.length()-1);
-		String uuid = UUID.randomUUID().toString();
+		String uuid = UUID.randomUUID().toString(); 
 		String photo = uuid+fileName;//图片名称
 		//上传图片
 		String path = "e:/img";
 		part.write(path+File.separator+photo);
+		System.out.println(path+File.separator+photo);
 		//添加学生信息
 		Studentservice ss = new Studentservice();
 		Student s= new Student(sname,photo,hobby,sbir);

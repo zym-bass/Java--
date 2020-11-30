@@ -38,13 +38,11 @@ public class BmiServlet extends javax.servlet.http.HttpServlet {
         msg ="您好："+name+"先生/女士，您的bim值是："+bmi+","+msg;
         //把数据存入到request
         request.setAttribute("msg",msg);
-        System.out.println(msg);
         //转发到新的页面
        /* request.getRequestDispatcher("/result.jsp").forward(request,response);*/
         /*request.setAttribute("msg",msg);*/
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("html/text;charset=utf-8");
         PrintWriter out = response.getWriter();
-        out.print(msg);
         out.flush();
         out.close();
     }

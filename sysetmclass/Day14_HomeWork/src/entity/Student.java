@@ -62,6 +62,11 @@ package entity;
 		public void setGender(String gender) {
 			this.gender = gender;
 		}
+		@Override
+		public String toString() {
+			return "Student [sno=" + sno + ", sname=" + sname + ", photo=" + photo + ", hobby=" + hobby + ", sbir="
+					+ sbir + ", gender=" + gender + "]";
+		}
 		
 }
 

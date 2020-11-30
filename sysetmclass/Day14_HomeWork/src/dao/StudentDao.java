@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.Test;
 
 import entity.PageClass;
 import entity.Student;
@@ -13,6 +14,7 @@ import utils.JdbcUtils;
 
 
 public class StudentDao {
+	private static  StringBuffer sqlLike = new StringBuffer("select *from t_stu where 1=1 "); 
 	//添加学生信息
 		public int addStu(Student s) {
 			int n =0;
@@ -38,7 +40,7 @@ public class StudentDao {
 		//分页显示
 		public List<Student> queryStuByPage(PageClass pages){
 			List<Student> list = null;
-			String sql="select * from t_stu limit "+pages.getStartIndex()+","+pages.getNumbers()+"";
+			String sql="select * from ("+sqlLike.toString()+") t limit "+pages.getStartIndex()+","+pages.getNumbers()+"";
 			try {
 				list = JdbcUtils.qr.query(sql, new BeanListHandler<>(Student.class));
 			} catch (SQLException e) {
@@ -105,4 +107,31 @@ public class StudentDao {
 			return n;
 		}
 		
+		////通过姓名和生日查询是否有此人
+		public int querynb(String name ,String sbir) {
+			String sql = "select count(*) from t_stu where sname=? and sbir=?";
+			Number n = null;
+			try {
+				n = (Number)JdbcUtils.qr.query(sql,new ScalarHandler(),name,sbir);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(n==null) {
+				n=0;
+			}
+			return n.intValue();
+		}
+		//模糊查询
+		public void likequery(String sname , String gender ){
+			sqlLike.delete(28,sqlLike.length());
+			if(!"".equals(sname) || sname!=null  ) {
+				sqlLike.append(" and sname like '%"+sname+"%'");
+			}
+			if(!"-1".equals(gender)) {
+				sqlLike.append(" and gender="+gender);
+				
+			}
+		}
+	
 }

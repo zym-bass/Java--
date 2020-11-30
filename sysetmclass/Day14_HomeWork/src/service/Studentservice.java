@@ -37,7 +37,17 @@ public class Studentservice {
 	public int queryStuCount() {
 		return sd.queryStuCount();
 	}
+	
 	public List<Student> queryStuByPage(PageClass pages) {
 		return sd.queryStuByPage(pages);
+	}
+	//通过姓名和生日查询是否有此人
+	public int querynb(String name , String sbir) {
+		int n = sd.querynb(name , sbir);
+		return n; 
+	}
+	//模糊查询
+	public void likequery(String sname , String gender ){
+		sd.likequery(sname , gender);
 }
 }

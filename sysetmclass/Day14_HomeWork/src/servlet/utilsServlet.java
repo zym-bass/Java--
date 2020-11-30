@@ -11,8 +11,10 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import entity.PageClass;
@@ -189,5 +191,44 @@ public class utilsServlet extends SuperServlet {
 			resp.sendRedirect("error.html");
 		}
 
+	}
+	
+	//使用生日和姓名登陆
+	public static void login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		String name = req.getParameter("u");
+		String sbir = req.getParameter("p");
+		int n = 0;
+		if((n=ss.querynb(name, sbir))!=0){
+			HttpSession session = req.getSession();
+			session.setAttribute("userinfo",1);
+			Cookie ns = new Cookie("user",name+"&"+sbir);
+			
+			ns.setMaxAge(60*60*24);
+			resp.addCookie(ns);
+			req.getRequestDispatcher("queryStudent2.st").forward(req,resp);
+		}else {
+			req.getRequestDispatcher("addStu.jsp").forward(req,resp);
+			
+		}
+	}
+	//安全退出
+	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		HttpSession session = req.getSession();
+		//销毁session对象
+		session.invalidate();
+		//销毁Cookie对象数据
+		Cookie[] cs = req.getCookies();
+		if(cs!=null) {
+			for(Cookie c:cs) {
+				Cookie c1 = new Cookie(c.getName(),"");
+				resp.addCookie(c1);
+			}
+		}
+		resp.sendRedirect("index.jsp");
+	}
+	//模糊查询
+	public static void likequery(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		ss.likequery(req.getParameter("sname"), req.getParameter("gender"));
+		resp.sendRedirect("queryStudent2.st");
 	}
 }

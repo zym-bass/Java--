@@ -49,7 +49,18 @@ td, th {
 </script>
 
 </head>
+
 <body>
+<center>
+		<c:if test="${!empty userinfo}">
+  	欢迎进入到首页${pageScope.name}!!	 <a href="logout.st">安全退出</a>
+		</c:if>
+		<c:if test="${empty userinfo}">
+			<jsp:forward page="index.jsp"></jsp:forward>
+			<%-- <c:redirect url="login.jsp"></c:redirect> --%>
+		</c:if>
+	</center>
+	<>
 	<center>
 		<form action="likequery.st">
 			姓名：<input type="text" name="sname">
@@ -127,15 +138,7 @@ td, th {
 	<br />
 	<br />
 	<br />
-	<center>
-		<c:if test="${!empty userinfo}">
-  	欢迎进入到首页${pageScope.name}!!	 <a href="logout.st">安全退出</a>
-		</c:if>
-		<c:if test="${empty userinfo}">
-			<jsp:forward page="index.jsp"></jsp:forward>
-			<%-- <c:redirect url="login.jsp"></c:redirect> --%>
-		</c:if>
-	</center>
+	
 
 </body>
 </html>

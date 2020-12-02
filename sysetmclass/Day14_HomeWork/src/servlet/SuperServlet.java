@@ -28,11 +28,9 @@ public class SuperServlet extends HttpServlet {
 		String url = req.getRequestURI();
 		String method=null;
 		req.setAttribute("return", req.getParameter("return"));
-		if("?".contains(url)) {
-			
-		}else {
-			method=url.substring(url.lastIndexOf("/")+1,url.lastIndexOf("."));
-			System.out.println(method);		}
+		
+		method=url.substring(url.lastIndexOf("/")+1,url.lastIndexOf("."));
+		System.out.println(method);
 		Class<? extends SuperServlet> class1 = this.getClass();
 		try {
 			

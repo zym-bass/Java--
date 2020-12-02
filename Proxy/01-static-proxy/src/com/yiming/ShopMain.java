@@ -1,6 +1,6 @@
 package com.yiming;
 
-import com.yiming.shangjia.TapBao;
+import com.yiming.handler.TapBao;
 
 public class ShopMain {
     public static void main(String[] args) {

@@ -19,7 +19,7 @@ public class QueryStudent extends HttpServlet {
    @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.setCharacterEncoding("utf-8");
+		/*req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
 		
 		Studentservice ss = new Studentservice();
@@ -31,7 +31,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 		}
 		req.setAttribute("list", list);
 		
-		req.getRequestDispatcher("queryStudent.jsp").forward(req, resp);
+		req.getRequestDispatcher("queryStudent.jsp").forward(req, resp);*/
    }
 
 }

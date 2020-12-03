@@ -15,17 +15,17 @@ public class Studentservice {
 	}
 
 	// 查询学生信息
-	public List<Student> queryStu() {
+	/*public List<Student> queryStu() {
 		return sd.queryStu();
-	}
+	}*/
 	//删除学生信息
 	public boolean deleteStu(int sno) {
 		return sd.deleteStu(sno) > 0 ? true : false;
 	}
 	// 分页查询学生信息
-	public List<Student> query2Stu(int n) {
+	/*public List<Student> query2Stu(int n) {
 			return sd.query2Stu(n);
-	}
+	}*/
 	//查询修改学生信息
 	public Student query3Stu(int n) {
 		return sd.query3Stu(n);
@@ -37,7 +37,7 @@ public class Studentservice {
 	public int queryStuCount() {
 		return sd.queryStuCount();
 	}
-	
+	// 分页查询学生信息
 	public List<Student> queryStuByPage(PageClass pages) {
 		return sd.queryStuByPage(pages);
 	}

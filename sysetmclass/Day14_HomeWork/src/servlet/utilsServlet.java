@@ -57,7 +57,7 @@ public class utilsServlet extends SuperServlet {
 		}
 	}
 
-	// 查询学生信息
+	/*// 查询学生信息
 	public static void queryStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
@@ -73,7 +73,7 @@ public class utilsServlet extends SuperServlet {
 
 		req.getRequestDispatcher("queryStudent.jsp").forward(req, resp);
 	}
-
+*/
 	// 删除学生信息
 	public static void delecteStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		req.setCharacterEncoding("utf-8");

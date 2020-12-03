@@ -42,7 +42,13 @@
 
     </style>
     <script type="text/javascript">
-    
+    	$(function(){
+    		$("#newNav").click(function(){
+    			alert("123");
+    			$(location).attr('href', '../doctor/add.jsp');
+    			 
+    		});
+    	});
     </script>
 </head>
 <body>
@@ -108,7 +114,7 @@
 		  
 		  </div>
 		 <div>
-		 <button type="button" class="btn btn-success" id="newNav">添加新医生</button>
+		 <button type="button" class="btn btn-success" id="newNav" >添加新医生</button>
 		 <button type="button" class="btn btn-success" id="delAll">批量删除</button>
 		 </div>
 		 

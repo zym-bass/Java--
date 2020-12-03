@@ -74,7 +74,7 @@
     </tr>
     <tr>
         <td width="10%" class="tableleft">出生年月</td>
-        <td><input type="text" name="birthday" class="Wdate" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})" value=""/></td>
+        <td><input type="text" name="birthday" class="Wdate" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})" value=""/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">年龄</td>

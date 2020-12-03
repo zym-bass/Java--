@@ -26,10 +26,9 @@ public class OneFilter implements Filter{
 		HttpServletResponse resp1 = (HttpServletResponse)resp;
 		
 		String url = req1.getRequestURI();
-		System.out.println("99999999"+url);
-		System.out.println("yy.jpg".indexOf(url));
+		
 		if(url.indexOf("regist")!=-1 || url.indexOf("authImage")!=-1 ) {
-			System.out.println("---------------s");
+			
 			fc.doFilter(req,resp);
 			return;
 		}

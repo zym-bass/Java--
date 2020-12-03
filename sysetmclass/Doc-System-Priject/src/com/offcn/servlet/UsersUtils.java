@@ -26,7 +26,6 @@ public class UsersUtils extends SuperUserServlet {
 		if( (username= req.getParameter("username"))==null || "".equals(username)) {
 			
 		}else {
-			System.out.println(username);
 			if((users = us.checkName(username))==null) {
 				resp.getWriter().print(true);
 			}else {
@@ -56,7 +55,6 @@ public class UsersUtils extends SuperUserServlet {
 	//添加用户
 	public static void addUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Object[] users ={req.getParameter("name"),req.getParameter("email"),req.getParameter("username"),req.getParameter("password"),DateTimeUtils.times()}; 
-		
 		int n = us.addUser(users);
 		if(n!=0) {
 			req.getRequestDispatcher("index.jsp").forward(req, resp);

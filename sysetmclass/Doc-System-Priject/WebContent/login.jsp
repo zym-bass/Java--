@@ -97,7 +97,6 @@
 				$(this).prop("src","authImage?"+new Date().getTime());
 			});
 			
-			$()
 		});
 		
 	</script>

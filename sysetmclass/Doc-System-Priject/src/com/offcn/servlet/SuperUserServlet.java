@@ -28,9 +28,9 @@ public class SuperUserServlet extends HttpServlet {
     	Class<? extends SuperUserServlet> class1 = this.getClass();
     	
     	 try {
-    		HttpSession session = req.getSession(false);
     		
     		
+    		System.out.println(method);
 			Method md = class1.getMethod(method, HttpServletRequest.class , HttpServletResponse.class);
 			md.invoke(this,req, resp);
     	 } catch (Exception e) {

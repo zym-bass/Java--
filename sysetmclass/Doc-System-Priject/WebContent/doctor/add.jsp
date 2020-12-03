@@ -43,14 +43,14 @@
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-				window.location.href="${path}doctor?method=findDoctorsByPage";
-		 });
+			history.back();
+		});
     });
     </script>
 </head>
 <body>
 
-<form action="${path }/doctor" method="post" class="definewidth m20">
+<form action="queryDocByPage.doc" method="post" class="definewidth m20">
 <input type="hidden" name="method" value="insertDoctor">
 
 <table class="table table-bordered table-hover definewidth m10">

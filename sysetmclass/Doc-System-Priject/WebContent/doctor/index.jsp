@@ -12,15 +12,15 @@
 	<base href="<%=this.getServletContext().getContextPath() %>/doctor/">
     <title>门诊医生</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <script type="text/javascript" src="../Js/jquery.js"></script>
-    <script type="text/javascript" src="../Js/jquery.sorted.js"></script>
-    <script type="text/javascript" src="../Js/bootstrap.js"></script>
-    <script type="text/javascript" src="../Js/ckform.js"></script>
-    <script type="text/javascript" src="../Js/common.js"></script>
-    <script type="text/javascript" src="../Js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="${path}Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="${path}Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="${path}Css/style.css" />
+    <script type="text/javascript" src="${path}Js/jquery.js"></script>
+    <script type="text/javascript" src="${path}Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="${path}Js/bootstrap.js"></script>
+    <script type="text/javascript" src="${path}Js/ckform.js"></script>
+    <script type="text/javascript" src="${path}Js/common.js"></script>
+    <script type="text/javascript" src="${path}Js/jquery-3.4.1.js"></script>
 
     <style type="text/css">
         body {
@@ -44,16 +44,45 @@
     <script type="text/javascript">
     	$(function(){
     		$("#newNav").click(function(){
-    			alert("123");
+    			
     			$(location).attr('href', '../doctor/add.jsp');
     			 
     		});
+    	
+
+        	//删除医生信息
+        	$("#delAll").click(function(){
+        		
+        		//声明jQuery对象数组 将复选框中的对象存入其中
+        		$arr = $("#tb :checkbox:checked");//选中的复选框
+        		if($arr.length>=1){
+        			//2. 获取选中复选框对象的医生编号
+        			var array = new Array();
+        			$arr.each(function(i,dom){
+        				//3. 将选中的复选框对应的医生编号放入到数组中
+        				array[i]=$(dom).val();
+        			});
+        			//4， 将数组按照一定格式转变为字符串 v1,v2 , v3 ....
+        			var ids = array.join(",");
+        			//发送批量删除的请求-->同时将ids发送过去
+        			location.href="${path}delDoctor.doc?ids="+ids;
+        		}else{
+        			alert("请至少选中一个要删除的选项")	
+        		}
+        	})
     	});
+    	
+    	
+    	
+    	//全选和不全选
+    	function checkall(obj){
+    		$(".c1").prop("checked",$(obj).prop("checked"));
+    	}
     </script>
 </head>
 <body>
 
-<form action="${path }doctor?method=findDoctorsByPage" method="post" class="definewidth m20">
+<form action="${path }likeQuery.doc" method="post" class="definewidth m20">
 <table class="table table-bordered table-hover definewidth m10">
 	<tr>
 	  <td width="10%" class="tableleft">医生姓名：</td>
@@ -85,7 +114,7 @@
 <table class="table table-bordered table-hover definewidth m10" >
    <thead>
     <tr>
-    	<th><input type="checkbox" id="checkall" onChange="checkall();"></th>
+    	<th><input type="checkbox" id="checkall" onChange="checkall(this)"></th>
         <th>医生编号</th>
         <th>医生姓名</th>
         <th>联系方式</th>
@@ -93,24 +122,41 @@
         <th>操作</th>
     </tr>
     </thead>
-    <tbody>
-    	 
-	 </tbody>
+    <tbody id="tb">
+ 	 <c:forEach items="${list}" var="s">
+    	<tr>
+    	<td><input type="checkbox" class="c1" value="${s.did }"></th>
+        <td>${s.did}</th>
+        <td>${s.name}</th>
+        <td>${s.phone}</th>
+        <td>
+        <c:if test="${s.department==1}">急诊科</c:if>
+        <c:if test="${s.department==2}">儿科</c:if>
+        <c:if test="${s.department==3}">妇科</c:if>
+        <c:if test="${s.department==4}">皮肤科</c:if>
+        <c:if test="${s.department==5}">内分泌科</c:if>
+        <c:if test="${s.department==6}">牙科</c:if>
+        
+        </td>
+        <td><a href="detailsDoc.doc?did=${s.did}">详情</a>&nbsp;&nbsp;&nbsp;<a href='midifyDoc.doc?did=${s.did}'>修改</a></th>
+    </tr>
+    </c:forEach>
+     </tbody>
   </table>
   
   <table class="table table-bordered table-hover definewidth m10" >
   	<tr>
   		<th colspan="5">  <div class="inline pull-right page">
-          <a href='' >首页</a> 
+          <a href="../queryDocByPage.doc?courrent=1" >首页</a> 
           
-          <a href=''>上一页</a>
+          <a href='../queryDocByPage.doc?courrent=${page.lastPage}'>上一页</a>
           
-          <a href=''>下一页</a> 
+          <a href='../queryDocByPage.doc?courrent=${page.nextPage}'>下一页</a> 
           
-          <a href=''>尾页</a>
+          <a href='../queryDocByPage.doc?courrent=${page.countPage}'>尾页</a>
           
-		  &nbsp;&nbsp;&nbsp;共<span class='current'>  </span>条记录
-		  <span class='current'>  </span>页
+		  &nbsp;&nbsp;&nbsp;共<span class='current'>${page.rows }  </span>条记录
+		  <span class='current'>${page.courrentPage }/${page.countPage } </span>页
 		  
 		  </div>
 		 <div>

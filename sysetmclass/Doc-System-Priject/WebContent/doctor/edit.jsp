@@ -47,60 +47,60 @@
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-			window.location.href="${path}doctor?method=findDoctorsByPage";
+			history.back();
 		});
 		
     });
     </script>
 </head>
 <body>
-<form action="${path }doctor" method="post" class="definewidth m20">
-<input type="hidden" name="did" value=""/>
+<form action="${path }midifaDocid.doc" method="post" class="definewidth m20">
+<input type="hidden" name="did" value="${doc.did}"/>
 <input type="hidden" name="method" value="updateDoctor"/>
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">姓名</td>
-        <td><input type="text" name="name" value=""/></td>
+        <td><input type="text" name="name" value="${doc.name}"/></td>
     </tr>
     
     <tr>
         <td width="10%" class="tableleft">身份证号</td>
-        <td><input type="text" name="cardno" value=""/></td>
+        <td><input type="text" name="cardno" value="${doc.cardno }"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">手机</td>
-        <td><input type="text" name="phone" value=""/></td>
+        <td><input type="text" name="phone" value="${doc.phone}"/></td>
     </tr>
     <tr>
-        <td width="10%" class="tableleft">性别</td>
+        <td width="10%" class="tableleft"  >性别</td>
         <td>
-        	<input type="radio" name="sex" value="0" />男&nbsp;&nbsp;&nbsp;
-        	<input type="radio" name="sex"  value="1" />女
+        	<input type="radio" name="sex" value="0"   <c:if test="${doc.sex==0 }">checked</c:if> />男&nbsp;&nbsp;&nbsp;
+        	<input type="radio" name="sex"  value="1"   <c:if test="${doc.sex==1 }">checked</c:if> />女
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">出生年月</td>
         <td><input type="text" name="birthday" class="Wdate" 
-        onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})" value=""/></td>
+        onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})" value="${doc.birthday}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">年龄</td>
-        <td><input type="text" name="age" value=""/></td>
+        <td><input type="text" name="age" value="${doc.age }"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">电子邮箱</td>
-        <td><input type="text" name="email" value=""/></td>
+        <td><input type="text" name="email" value="${doc.email}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">所属科室</td>
         <td>
         	<select name="department">
-        		<option value="1" >急诊科</option>
-        		<option value="2" >儿科</option>
-        		<option value="3" >妇科</option>
-        		<option value="4" >皮肤科</option>
-        		<option value="5" >内分泌科</option>
-        		<option value="6" >牙科</option>
+        		<option value="1" <c:if test="${doc.department==1 }">selected</c:if>>急诊科</option>
+        		<option value="2" <c:if test="${doc.department==2 }">selected</c:if>>儿科</option>
+        		<option value="3" <c:if test="${doc.department==3 }">selected</c:if>>妇科</option>
+        		<option value="4" <c:if test="${doc.department==4 }">selected</c:if>>皮肤科</option>
+        		<option value="5" <c:if test="${doc.department==5 }">selected</c:if>>内分泌科</option>
+        		<option value="6" <c:if test="${doc.department==6 }">selected</c:if>>牙科</option>
         	</select>
         </td>
     </tr>
@@ -108,16 +108,16 @@
         <td width="10%" class="tableleft">学历</td>
         <td>
         	<select name="education">
-        		<option value="1" >专科</option>
-        		<option value="2" >本科</option>
-        		<option value="3" >研究生</option>
-        		<option value="4" >>博士</option>
+        		<option value="1" <c:if test="${doc.education==1 }">selected</c:if>>专科</option>
+        		<option value="2" <c:if test="${doc.education==2 }">selected</c:if>>本科</option>
+        		<option value="3" <c:if test="${doc.education==3 }">selected</c:if>>研究生</option>
+        		<option value="4" <c:if test="${doc.education==4 }">selected</c:if>>博士</option>
         	</select>
         </td>
     </tr>
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td><textarea name="remark"></textarea></td>
+        <td><textarea name="remark">${doc.remark}</textarea></td>
 	</tr>
     <tr>
         <td colspan="2">

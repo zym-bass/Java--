@@ -41,7 +41,7 @@
     $(function () {       
 		$('#backid').click(function(){
 			 //祖传方法
-			 window.history.back(-1);
+			 history.back();
 		 });
     });
     </script>
@@ -49,50 +49,59 @@
 <body>
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
-        <td width="10%" class="tableleft">姓名</td>
-        <td> </td>
+        <td width="10%" class="tableleft" >姓名</td>
+        <td> ${doc.name}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">证件号</td>
-        <td> </td>
+        <td>${doc.cardno } </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">手机</td>
-        <td> </td>
+        <td> ${doc.phone}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">性别</td>
         <td>
-        	 
+        	<c:if test="${doc.sex==1}"> 女</c:if>
+        	<c:if test="${doc.sex==0}"> 男</c:if>
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">年龄</td>
-        <td> </td>
+        <td>${doc.age } </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">出生年月</td>
-        <td> </td>
+        <td> ${doc.birthday}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">电子邮箱</td>
-        <td> </td>
+        <td> ${doc.email}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">所属科室</td>
         <td>
-        	
+        <c:if test="${doc.department==1}">急诊科</c:if>
+        <c:if test="${doc.department==2}">儿科</c:if>
+        <c:if test="${doc.department==3}">妇科</c:if>
+        <c:if test="${doc.department==4}">皮肤科</c:if>
+        <c:if test="${doc.department==5}">内分泌科</c:if>
+        <c:if test="${doc.department==6}">牙科</c:if>	
         </td>
     </tr>
     <tr>
-        <td width="10%" class="tableleft">学历</td>
+        <td width="10%" class="tableleft"  >学历</td>
         <td>
-        	
+        	<c:if test="${doc.education==1}">专科</c:if>
+        	<c:if test="${doc.education==2}">本科</c:if>
+        	<c:if test="${doc.education==3}">研究生</c:if>
+        	<c:if test="${doc.education==4}">博士</c:if>
         </td>
     </tr>
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td> </td>
+        <td>${doc.remark} </td>
 	</tr>
     <tr>
         <td colspan="2">

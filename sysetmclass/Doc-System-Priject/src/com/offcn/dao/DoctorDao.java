@@ -55,7 +55,7 @@ public class DoctorDao {
 		System.out.println(sqlfy.toString());
 	}
 	//分页查询
-	public List queryDocByPage(Page page) {
+	public List<Doctor> queryDocByPage(Page page) {
 		String sql = "select *from ("+sqlfy+") t  limit "+page.getStartIndex()+ ","+page.getNumbers();
 		List<Doctor> list = null;
 		try {

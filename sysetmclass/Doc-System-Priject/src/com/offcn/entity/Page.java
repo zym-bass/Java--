@@ -43,18 +43,22 @@ public class Page {
 
 	//初始化当前页
 	private void initCourrentPage(String  courrentPage) {
-		if(courrentPage==null || Integer.valueOf(courrentPage) <1) {
+		try {
+			if(courrentPage==null || Integer.valueOf(courrentPage) <1) {
+				this.courrentPage=1;
+			}else if(Integer.valueOf(courrentPage) >countPage){
+				this.courrentPage= countPage;
+			}else {
+				this.courrentPage= Integer.valueOf(courrentPage);
+			}
+		}catch (Exception e) {
 			this.courrentPage=1;
-		}else if(Integer.valueOf(courrentPage) >countPage){
-			this.courrentPage= countPage;
-		}else {
-			this.courrentPage= Integer.valueOf(courrentPage);
 		}
 	}
 	
 	//初始化总页数
 	private void initCountPage() {
-		countPage=rows%numbers ==0 ? rows/numbers : rows/numbers+1;
+		countPage= rows==0? 1: (rows%numbers ==0 ? rows/numbers : rows/numbers+1 );
 	}
 	//初始化下一页
 	private void initnextPage() {

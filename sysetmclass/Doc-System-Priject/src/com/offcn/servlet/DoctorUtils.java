@@ -82,18 +82,18 @@ public class DoctorUtils extends SuperUserServlet {
 		req.setAttribute("doc", doc);
 		
 		req.getRequestDispatcher("/doctor/edit.jsp").forward(req, resp);
-		
+		//detailsDoc(req,resp);
 	}
 	//修改医生个人信息
 	public static void midifaDocid(HttpServletRequest req, HttpServletResponse resp){
 		try {
-		System.out.println("--------000-");
-		Doctor doc = new Doctor(Integer.valueOf(req.getParameter("did")),req.getParameter("name"),
-				req.getParameter("cardno"),req.getParameter("phone"),
-				Integer.valueOf(req.getParameter("sex")),Integer.valueOf(req.getParameter("age")),req.getParameter("birthday"),
-				req.getParameter("email"),
-				Integer.valueOf(req.getParameter("department")),Integer.valueOf(req.getParameter("education")),
-				req.getParameter("remark"));
+			
+			Doctor doc = new Doctor(Integer.valueOf(req.getParameter("did")),req.getParameter("name"),
+			req.getParameter("cardno"),req.getParameter("phone"),
+			Integer.valueOf(req.getParameter("sex")),Integer.valueOf(req.getParameter("age")),req.getParameter("birthday"),
+			req.getParameter("email"),
+			Integer.valueOf(req.getParameter("department")),Integer.valueOf(req.getParameter("education")),
+			req.getParameter("remark"));
 		
 		if(ds.updateDoc(doc)) {
 			queryDocByPage(req,resp);

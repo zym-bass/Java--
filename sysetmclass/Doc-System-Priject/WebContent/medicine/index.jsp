@@ -39,16 +39,54 @@
                 padding-right: 5px;
             }
         }
-
-
+		.imgDiv{
+			text-align:center;
+			width:100%;
+			height:70px;
+			
+		}
+		.imgPlus{
+			height:100%;
+		}
     </style>
     <script type="text/javascript">
-	
+		$(function(){
+			
+			$("#newNav").click(function(){
+				$(location).attr("href","../medicine/add.jsp");
+				
+			});
+			//删除医生信息
+        	$("#delAll").click(function(){
+        		
+        		//声明jQuery对象数组 将复选框中的对象存入其中
+        		$arr = $("#tb :checkbox:checked");//选中的复选框
+        		if($arr.length>=1){
+        			//2. 获取选中复选框对象的医生编号
+        			var array = new Array();
+        			$arr.each(function(i,dom){
+        				//3. 将选中的复选框对应的医生编号放入到数组中
+        				array[i]=$(dom).val();
+        			});
+        			//4， 将数组按照一定格式转变为字符串 v1,v2 , v3 ....
+        			var mids = array.join(",");
+        			//发送批量删除的请求-->同时将ids发送过去
+        			location.href="${path}delMedicine.med?mids="+mids; 
+        		}else{
+        			alert("请至少选中一个要删除的选项");	
+        		};
+        	});
+		})
+		
+		//全选和不全选
+    	function checkall(obj){
+    		$(".c1").prop("checked",$(obj).prop("checked"));
+    	}
     </script>
 </head>
 <body>
 
-<form action="${path }medicine?method=findMedicineByPage" method="post" class="definewidth m20">
+<form action="${path }likeMed.med" method="post" class="definewidth m20">
 	<table class="table table-bordered table-hover definewidth m10">
 	    <tr>
 	        <td width="10%" class="tableleft">药品名称：</td>
@@ -76,9 +114,9 @@
 </form>
    
 <table class="table table-bordered table-hover definewidth m10" >
-   <thead>
+   <thead  >
     <tr>
-    	<th><input type="checkbox" id="checkall" onChange="checkall();"></th>
+    	<th><input type="checkbox" id="checkall" onChange="checkall(this)"></th>
         <th>药品编号</th>
         <th>药品名称</th>
         <th>图片</th>
@@ -87,25 +125,40 @@
         <th>操作</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="tb" >
+    	<c:forEach items="${list}"  var="s">
+    	<tr>
+    	<td><input type="checkbox" class="c1" value="'${s.mid}'" ></th>
+        <td>${s.mid}</th>
+        <td>${s.name}</th>
+        <td> <div class="imgDiv"><img   src="/prc/${s.picture}" class="imgPlus" ></div></td>
+        <td>
+        	<c:if test="${s.type==1}">处方药</c:if>
+        	<c:if test="${s.type==2}">中药</c:if>
+        	<c:if test="${s.type==3}">西药</c:if>
+        </td>
+        <td>${s.descs}</th>
+        <td><a href="${path}detailsMed.med?mid=${s.mid}">详情</a> <a href="${path}OnlyqueryMed.med?mid=${s.mid}">修改</a></th>
+    </tr>		
     	
+    	</c:forEach>
      </tbody>
   </table>
   
   <table class="table table-bordered table-hover definewidth m10" >
   	<tr><th colspan="5">  
   			<div class="inline pull-right page">
-	          <a href="" >首页</a> 
-	          <a href="">上一页</a>     
-	          <a href="" >下一页</a> 
-	          <a href="" >尾页</a>
+	          <a href="../queryMedByPage.med?courrent=1" >首页</a> 
+	          <a href="../queryMedByPage.med?courrent=${page.lastPage}">上一页</a>     
+	          <a href="../queryMedByPage.med?courrent=${page.nextPage}" >下一页</a> 
+	          <a href="../queryMedByPage.med?courrent=${page.countPage}" >尾页</a>
 			  &nbsp;&nbsp;&nbsp;
-			     共<span class='current'></span>条记录
-			  <span class='current'>  </span>页
+			     共<span class='current'>${page.rows}</span>条记录
+			  <span class='current'>${page.courrentPage}/${page.countPage}  </span>页
 		  </div>
 		 <div>
 			<button type="button" class="btn btn-success" id="newNav">添加新药</button>	
-			<button type="button" class="btn btn-success" onclick="delAll()">批量删除</button>		
+			<button type="button" class="btn btn-success" id="delAll">批量删除</button>		
 		 </div>
 		 
 		 </th></tr>

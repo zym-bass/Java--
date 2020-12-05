@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"   import="java.util.UUID"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	String path=request.getScheme()+"://"+request.getServerName()+":"+
@@ -25,7 +25,7 @@
     <style type="text/css">
         body {
             padding-bottom: 40px;
-        }
+        } 
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -39,24 +39,28 @@
             }
         }
 
-
     </style>
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-				window.location.href="${path}medicine?method=findMedicineByPage";
+			history.back();
 		 });
+		var time = new Date();
+		//返回毫秒数
+		$('#readonly1').val(time.getTime());
+		$('#readonly1').prop("readonly","readonly");
     });
+    
     </script>
 </head>
 <body>
 
-<form action="" method="post" class="definewidth m20" enctype="multipart/form-data">
+<form action=" ${path}addMed.med" method="post" class="definewidth m20" enctype="multipart/form-data">
 <input type="hidden" name="method" value="insertMedicine">
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">药品编号</td>
-        <td><input type="text" name="mid" value=""/></td>
+        <td><input id="readonly1" type="text" name="mid" value="" /></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">图片</td>
@@ -92,7 +96,7 @@
     </tr>
     <tr>
         <td width="10%" class="tableleft">详细描述</td>
-        <td><textarea name="description"></textarea></td>
+        <td><textarea name="description"  rows='3'  ></textarea></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">生产厂商</td>
@@ -105,7 +109,7 @@
    
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td><textarea name="remark"></textarea></td>
+        <td><textarea name="remark"  rows='3' style='resize:none;'  ></textarea></td>
 	</tr>
     <tr>
         <td colspan="2">

@@ -47,7 +47,7 @@
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-				window.location.href="${path}medicine?method=findMedicineByPage";
+				history.back();
 		 });
     });
     </script>
@@ -57,54 +57,56 @@
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">药品编号</td>
-        <td> </td>
+        <td>${med.mid}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">图片</td>
-        <td><img src=" " width="50px" height="50px"/></td>
+        <td><img src="/prc/${med.picture} " width="50px" height="50px"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">进价</td>
-        <td> </td>
+        <td>${med.inPrice}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">售价</td>
-        <td> </td>
+        <td>${med.salPrice}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">药品名称</td>
-        <td> </td>
+        <td>${med.name}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">药品类型</td>
         <td>
-        	 
+        	<c:if test="${med.type==1}">处方药</c:if>
+        	<c:if test="${med.type==2}">中药</c:if>
+        	<c:if test="${med.type==3}">西药</c:if> 
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">简单描述</td>
-        <td> </td>
+        <td>${med.descs}</td>
     </tr>
 
     <tr>
         <td width="10%" class="tableleft">保质期</td>
-        <td> </td>
+        <td>${med.qualityDate} </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">详细描述</td>
-        <td> </td>
+        <td>${med.description} </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">生产厂商</td>
-        <td> </td>
+        <td>${med.produceFirm}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">服用说明</td>
-        <td> </td>
+        <td>${med.readme} </td>
     </tr>
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td> </td>
+        <td>${med.remark} </td>
 	</tr>
     <tr>
         <td colspan="2">

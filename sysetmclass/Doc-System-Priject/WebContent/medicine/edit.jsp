@@ -47,72 +47,75 @@
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-				window.location.href="${path}medicine?method=findMedicineByPage";
+			history.back();
 		 });
+		$('#picture1').change(function(){
+			$(".img").prop("src",URL.createObjectURL($(this)[0].files[0]));
+		});
     });
     </script>
 </head>
 <body>
-<form action="" method="post" class="definewidth m20" enctype="multipart/form-data">
+<form action="${path}modifyMed.med" method="post" class="definewidth m20" enctype="multipart/form-data">
 <input type="hidden" name="method" value="updateMedicine">
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">药品编号</td>
-        <td><input type="text" name="mid" value="" readonly="readonly"/></td>
+        <td><input type="text" name="mid" value="${med.mid}" readonly="readonly"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">图片</td>
         <td>
-        <input type="hidden" name="oldpicture" value=""/>
-        <input type="file" name="picture"/>
-        <img  width="80px" height="50px" src="">
+        <input type="hidden" name="oldpicture" value="${med.picture}"/>
+        <input type="file"  id="picture1" name="picture" />
+        <img  class="img"  width="80px" height="50px" src="/prc/${med.picture}">
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">进价</td>
-        <td><input type="text" name="inPrice" value=""/></td>
+        <td><input type="text" name="inPrice" value="${med.inPrice}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">售价</td>
-        <td><input type="text" name="salPrice" value=""/></td>
+        <td><input type="text" name="salPrice" value="${med.salPrice}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">药品名称</td>
-        <td><input type="text" name="name" value=""/></td>
+        <td><input type="text" name="name" value="${med.name}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">药品类型</td>
         <td>
-        	<input type="radio" name="type" value="1" />处方药&nbsp;&nbsp;&nbsp;
-        	<input type="radio" name="type" value="2" />中药&nbsp;&nbsp;&nbsp;
-        	<input type="radio" name="type" value="3" />西药
+        	<input type="radio" name="type" value="1"  <c:if test="${med.type==1}">checked</c:if>/>处方药&nbsp;&nbsp;&nbsp;
+        	<input type="radio" name="type" value="2"  <c:if test="${med.type==2}">checked</c:if>/>中药&nbsp;&nbsp;&nbsp;
+        	<input type="radio" name="type" value="3"  <c:if test="${med.type==3}">checked</c:if>/>西药
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">简单描述</td>
-        <td><input type="text" name="descs" value=""/></td>
+        <td><input type="text" name="descs" value="${med.descs}"/></td>
     </tr>
 
     <tr>
         <td width="10%" class="tableleft">保质期</td>
-        <td><input type="text" name="qualityDate" value=""/>月</td>
+        <td><input type="text" name="qualityDate" value="${med.qualityDate}"/>月</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">详细描述</td>
-        <td><textarea name="description"></textarea></td>
+        <td><textarea name="description">${med.description}</textarea></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">生产厂商</td>
-        <td><textarea name="produceFirm"></textarea></td>
+        <td><textarea name="produceFirm">${med.produceFirm}</textarea></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">服用说明</td>
-        <td><input type="text" name="readme" value=""/></td>
+        <td><input type="text" name="readme" value="${med.readme}"/></td>
     </tr>
    
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td><textarea name="remark"></textarea></td>
+        <td><textarea name="remark">${med.remark}</textarea></td>
 	</tr>
     <tr>
         <td colspan="2">

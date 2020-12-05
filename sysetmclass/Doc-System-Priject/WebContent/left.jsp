@@ -43,7 +43,7 @@
 			<h3>业务办理</h3>
 			<ul>
 				<li><a href="queryDocByPage.doc" target="rightFrame">门诊医生管理</a></li>
-				<li><a href="#" target="rightFrame">药品管理</a></li>
+				<li><a href="queryMedByPage.med" target="rightFrame">药品管理</a></li>
 				<li><a href="#" target="rightFrame">挂号信息管理</a></li>
 				<li><a href="#" target="rightFrame">住院办理</a></li>
 				<li><a href="#" target="rightFrame">检查收费项管理</a></li>

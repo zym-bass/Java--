@@ -33,7 +33,7 @@ public class MedicineDao {
 		if(name!=null) {
 			sqlfy.append(" and name like '%"+name+"%'");
 		}
-		if(!"0".equals(type)) {
+		if(!"0".equals(type) && type!=null) {
 			sqlfy.append(" and type="+Integer.valueOf(type));
 		}	
 	}

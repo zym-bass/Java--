@@ -45,7 +45,7 @@ public class DoctorDao {
 		if(name!=null) {
 			sqlfy.append(" and name like '%"+name+"%'");
 		}
-		if(!"0".equals(department)) {
+		if(!"0".equals(department) && department!=null ) {
 			sqlfy.append(" and department="+Integer.valueOf(department));
 		}	
 	}

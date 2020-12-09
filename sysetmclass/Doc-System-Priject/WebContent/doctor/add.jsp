@@ -4,6 +4,7 @@
 	String path=request.getScheme()+"://"+request.getServerName()+":"+
 	request.getServerPort()+request.getContextPath()+"/";
 	pageContext.setAttribute("path", path);
+	
 %>
 <!DOCTYPE html>
 <html>

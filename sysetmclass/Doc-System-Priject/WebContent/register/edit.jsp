@@ -48,62 +48,62 @@
 <form action="" method="post" class="definewidth m20">
 
 <input name="method" value="updateRegister" type="hidden">
-<input name="rid" value=" " type="hidden">
-
+<input name="rid" value="${s.rid}" type="hidden">
+<input name="rid" value="${s.registerDate}" type="hidden">
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">姓名</td>
-        <td><input type="text" name="name" value=" "/></td>
+        <td><input type="text" name="name" value="${s.name}"/></td>
     </tr>
 
     <tr>
         <td width="10%" class="tableleft">身份证号</td>
-        <td><input type="text" name="idCard" value=" "/></td>
+        <td><input type="text" name="idCard" value="${s.idCard}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">社保号</td>
-        <td><input type="text" name="siNumber" value=" "/></td>
+        <td><input type="text" name="siNumber" value="${s.siNumber}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">挂号费</td>
-        <td><input type="text" name="registerMoney" value=" "/>元</td>
+        <td><input type="text" name="registerMoney" value="${s.registerMoney}"/>元</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">联系电话</td>
-        <td><input type="text" name="phone" value=" "/></td>
+        <td><input type="text" name="phone" value="${s.phone}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">是否自费</td>
         <td>
-        	<input type="radio" name="isPay" value="1" />否&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="isPay" value="0" />是</td>
+        	<input type="radio" name="isPay" value="1" <c:if test="${s.consultation==1}">checked</c:if>   />否&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="isPay" value="0"<c:if test="${s.consultation==0}">checked</c:if> />是</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">性别</td>
-        <td><input type="radio" name="sex" value="0" />男&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="sex" value="1" />女</td>
+        <td><input type="radio" name="sex" value="0"  <c:if test="${s.sex==1}">checked</c:if> />男&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="sex" value="1" <c:if test="${s.sex==2}">checked</c:if> />女</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">年龄</td>
-        <td><input type="text" name="age" value=""/></td>
+        <td><input type="text" name="age" value="${s.age}"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">初复诊</td>
         <td>
-        	<input type="radio" name="consultation" value="0" />初诊&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="consultation" value="1" />复诊
+        	<input type="radio" name="consultation" value="0" <c:if test="${s.consultation==0}">checked</c:if>/>初诊&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="consultation" value="1" <c:if test="${s.consultation==1}">checked</c:if>/>复诊
          </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">所挂科室</td>
         <td>
         	<select name="department" id="department">
-        		<option value="1" >急诊科</option>
-        		<option value="2" >儿科</option>
-        		<option value="3" >妇科</option>
-        		<option value="4" >皮肤科</option>
-        		<option value="5" >内分泌科</option>
-        		<option value="6" >牙科</option>	
+        		<option value="1" <c:if test="${s.department==1}">selected</c:if>>急诊科</option>
+        		<option value="2" <c:if test="${s.department==2}">selected</c:if>>儿科</option>
+        		<option value="3" <c:if test="${s.department==3}">selected</c:if>>妇科</option>
+        		<option value="4" <c:if test="${s.department==4}">selected</c:if>>皮肤科</option>
+        		<option value="5" <c:if test="${s.department==5}">selected</c:if>>内分泌科</option>
+        		<option value="6" <c:if test="${s.department==6}">selected</c:if>>牙科</option>	
         	</select>
         </td>
     </tr>
@@ -117,7 +117,7 @@
     </tr>
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td><textarea name="remark"></textarea></td>
+        <td><textarea name="remark">${s.remark}</textarea></td>
 	</tr>
     <tr>
         <td colspan="2">

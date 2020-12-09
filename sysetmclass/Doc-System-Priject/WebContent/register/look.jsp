@@ -40,7 +40,7 @@
     <script type="text/javascript">
     $(function () {       
 		$('#backid').click(function(){
-				window.history.back(-1);
+				history.back();
 		 });
     });
     </script>
@@ -49,66 +49,74 @@
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td width="10%" class="tableleft">病历号</td>
-        <td> </td>
+        <td>${s.rid}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">姓名</td>
-        <td> </td>
+        <td>${s.name}</td>
     </tr>
 
     <tr>
         <td width="10%" class="tableleft">身份证号</td>
-        <td> </td>
+        <td>${s.idCard}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">挂号费</td>
-        <td> 元</td>
+        <td>${s.registerMoney}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">社保号</td>
-        <td> </td>
+        <td>${s.siNumber}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">联系电话</td>
-        <td> </td>
+        <td>${s.phone}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">是否自费</td>
         <td>
-        	 
+            <c:if test="${s.isPay==0}">否</c:if>
+        	<c:if test="${s.isPay==1}">是</c:if>
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">性别</td>
         <td>
-	         
+            <c:if test="${s.sex==0}">男</c:if>
+        	<c:if test="${s.sex==1}">女</c:if>
        	</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">年龄</td>
-        <td> </td>
+        <td>${s.age}</td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">初复诊</td>
         <td>
-        	 
+             <c:if test="${s.consultation==0}">初诊</c:if>
+             <c:if test="${s.consultation==1}">复诊</c:if>
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">所挂科室</td>
         <td>
-        	 
+            <c:if test="${s.department==1}">急诊科</c:if>
+            <c:if test="${s.department==2}">儿科</c:if>
+            <c:if test="${s.department==3}">妇科</c:if>
+            <c:if test="${s.department==4}">皮肤科</c:if>
+            <c:if test="${s.department==5}">内分泌</c:if>
+            <c:if test="${s.department==6}">牙科</c:if>
         </td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">指定医生</td>
         <td>
-        	 
+            ${s.doctor.name}
         </td>
     </tr>
 	<tr>
         <td width="10%" class="tableleft">备注</td>
-        <td> </td>
+        <td>${s.remark}</td>
 	</tr>
     <tr>
         <td colspan="2">

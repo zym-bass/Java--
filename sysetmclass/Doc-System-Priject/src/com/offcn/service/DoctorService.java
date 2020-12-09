@@ -12,6 +12,7 @@ public class DoctorService {
 	public boolean  addDoctor (Object[] doctor) {
 		return dd.addDoctor(doctor)>0 ? true : false;
 	}
+	
 	//返回医生总信息数
 	public int queryDocCount() {
 		return dd.queryDocCount();
@@ -31,6 +32,10 @@ public class DoctorService {
 	//查询单个医生信息
 	public Doctor detailsDoc(Integer did) {
 		return dd.detailsDoc(did);
+	}
+	//使用部门编号查询单个医生信息
+	public List<Doctor> detailsDepartmentDoc(Integer department) {
+		return dd.detailsDepartmentDoc(department);
 	}
 	//修改单个医生信息
 	public boolean updateDoc(Doctor doc) {

@@ -42,17 +42,77 @@
 
     </style>
     <script type="text/javascript">
-    
-    
+    	$(function(){
+    		var date = new Date();
+    		$("#rid").val(date.getTime());
+    		
+    		$("#rid").prop("readonly",true);
+    		
+    		$.ajax({
+				url:"${path}detailsDepartmentDoc.doc",
+				data:{"department":$("#department").val()},
+				dataType:"json",
+				type:"post",
+				success:function(obt){
+					//将医生的姓名显示在下拉选
+					//console.log(typeof obt);
+					//var obt1 = JSON.parse(obt);
+					//console.log(typeof jjj)
+					
+					//将获取到的json对象遍历
+					$(obt).each(function(i,dom){
+    					//在页面加载的时候，添加下拉列表
+						$("#doctor").append("<option value='"+dom["did"]+"'>"+dom["name"]+"</option>");
+    				});
+					 /* $.each(obt,function(i,dom){
+						alert(i);
+						alert(dom);
+	    				$("#doctor").append("<option value='"+dom["did"]+"'>"+dom["name"]+"</option>");
+	    			});  */
+				}
+			});
+    		
+    		//
+    		$("#backid").click(function(){
+    			history.back();
+    		});
+    		$("#department").change(function(){
+    			$.ajax({
+    				url:"${path}detailsDepartmentDoc.doc",
+    				data:{"department":$("#department").val()},
+    				dataType:"json",
+    				type:"post",
+    				success:function(obt){
+    					//alert(obt);
+    					//将医生的姓名显示在下拉选
+    				/* 	$(obt).each(function(i,dom){
+    						alert(i);
+    						alert(dom);
+    						$("#doctor").append("<option value='"+dom["did"]+"'>"+dom["name"]+"</option>");
+    					}); */
+    					
+    					//每次加载后的下拉列表进行清除操作
+    					$("#doctor").empty();
+            			//将医生的姓名显示在下拉选
+            			//var obt1 = JSON.parse(obt);
+            			$.each(obt,function(i,dom){
+            				
+            				$("#doctor").append("<option value='"+dom["did"]+"'>"+dom["name"]+"</option>");
+            			});
+    				}
+    			});
+    			
+    		});
+    	});
     </script>
 </head>
 <body>
-<form action="" method="post" class="definewidth m20">
+<form action="${path}addRegister.reg" method="post" class="definewidth m20">
 	<input name="method" value="insertRegister" type="hidden">
 <table class="table table-bordered table-hover definewidth m10">
 	<tr>
         <td width="10%" class="tableleft">病历号</td>
-        <td><input type="text" name="rid" value=""/></td>
+        <td><input type="text" name="rid" value="" id="rid"/></td>
     </tr>
     <tr>
         <td width="10%" class="tableleft">姓名</td>

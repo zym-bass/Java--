@@ -44,7 +44,7 @@
 			<ul>
 				<li><a href="likeQuery.doc" target="rightFrame">门诊医生管理</a></li>
 				<li><a href="likeMed.med" target="rightFrame">药品管理</a></li>
-				<li><a href="#" target="rightFrame">挂号信息管理</a></li>
+				<li><a href="likesql.reg" target="rightFrame">挂号信息管理</a></li>
 				<li><a href="#" target="rightFrame">住院办理</a></li>
 				<li><a href="#" target="rightFrame">检查收费项管理</a></li>
 				<li><a href="#" target="rightFrame">检查收费项目登记</a></li>

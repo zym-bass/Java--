@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.offcn.entity.Doctor;
 import com.offcn.entity.Page;
 import com.offcn.service.DoctorService;
@@ -50,6 +52,10 @@ public class DoctorUtils extends SuperUserServlet {
 		
 		//通过页面对象实现分页查询并返回集合
 		List<Doctor> list = ds.queryDocByPage(page);
+	
+		/*for (Doctor doctor : list) {
+			System.out.println(doctor);
+		}*/
 		
 		req.setAttribute("page",page);
 		req.setAttribute("list",list);
@@ -64,6 +70,7 @@ public class DoctorUtils extends SuperUserServlet {
 			resp.getWriter().print("删除失败");
 		}
 	}
+	
 	//查询单个医生信息
 	public static void detailsDoc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -74,6 +81,20 @@ public class DoctorUtils extends SuperUserServlet {
 		req.getRequestDispatcher("/doctor/look.jsp").forward(req, resp);
 		
 	}
+	
+	//根据部门编号查询医生信息
+	public static void detailsDepartmentDoc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		String department = req.getParameter("department");
+		List<Doctor> list = ds.detailsDepartmentDoc(Integer.valueOf(department));
+		
+		
+		ObjectMapper om = new ObjectMapper();
+		String json = om.writeValueAsString(list);
+		
+		resp.getWriter().print(json);
+	}
+	
 	//前往修改页面
 	public static void midifyDoc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String did = req.getParameter("did");

@@ -45,13 +45,13 @@
     	$(function(){
     		$("#newNav").click(function(){
     			
-    			$(location).attr('href', '../doctor/add.jsp');
+    			$(location).prop('href', '../doctor/add.jsp');
     			 
     		});
     	
 
         	//删除医生信息
-        	$("#delAll").click(function(){
+        	$("#delAll1").click(function(){
         		
         		//声明jQuery对象数组 将复选框中的对象存入其中
         		$arr = $("#tb :checkbox:checked");//选中的复选框
@@ -125,10 +125,10 @@
     <tbody id="tb">
  	 <c:forEach items="${list}" var="s">
     	<tr>
-    	<td><input type="checkbox" class="c1" value="${s.did }"></th>
-        <td>${s.did}</th>
-        <td>${s.name}</th>
-        <td>${s.phone}</th>
+    	<td><input type="checkbox" class="c1" value="${s.did}"></td>
+        <td>${s.did}</td>
+        <td>${s.name}</td>
+        <td>${s.phone}</td>
         <td>
         <c:if test="${s.department==1}">急诊科</c:if>
         <c:if test="${s.department==2}">儿科</c:if>
@@ -138,7 +138,7 @@
         <c:if test="${s.department==6}">牙科</c:if>
         
         </td>
-        <td><a href="detailsDoc.doc?did=${s.did}">详情</a>&nbsp;&nbsp;&nbsp;<a href='midifyDoc.doc?did=${s.did}'>修改</a></th>
+        <td><a href="detailsDoc.doc?did=${s.did}">详情</a>&nbsp;&nbsp;&nbsp;<a href='midifydoc.doc?did=${s.did}'>修改</a></th>
     </tr>
     </c:forEach>
      </tbody>
@@ -161,7 +161,7 @@
 		  </div>
 		 <div>
 		 <button type="button" class="btn btn-success" id="newNav" >添加新医生</button>
-		 <button type="button" class="btn btn-success" id="delAll">批量删除</button>
+		 <button type="button" class="btn btn-success" id="delAll1">批量删除</button>
 		 </div>
 		 
 		 </th>

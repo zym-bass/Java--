@@ -32,7 +32,7 @@ public class DoctorDao {
 		String sql = "select count(*) from ("+sqlfy.toString()+") t  ";
 		Number n = 0 ;
 		try {
-			n = (Number) JdbcUtils.qr.query(sql, new ScalarHandler());
+			n =  JdbcUtils.qr.query(sql, new ScalarHandler<>());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,6 +78,18 @@ public class DoctorDao {
 		}
 		return n ;
 	}
+	//根据department部门编号查询医生信息
+	public  List<Doctor> detailsDepartmentDoc(Integer department) {
+		String sql = "select * from doctor where department=?";
+		List<Doctor> doc= null;
+		try {
+			doc = JdbcUtils.qr.query(sql, new BeanListHandler<>(Doctor.class),department);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return doc;
+	}
 	//查询单个医生信息
 	public  Doctor detailsDoc(Integer did) {
 		String sql = "select *from doctor where did=?";
@@ -102,4 +114,5 @@ public class DoctorDao {
 		}
 		return n ;
 	}
+	
 }

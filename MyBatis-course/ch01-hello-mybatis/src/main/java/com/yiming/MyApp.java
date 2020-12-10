@@ -32,7 +32,7 @@ public class MyApp {
         //7. 执行sql语句，通过sql语句来找到语句
         List<Student> list =  sqlSession.selectList(id);
 
-        //8. 输出结果
+        //8. 输出结果 jdk8 新特性
         list.forEach(student -> System.out.println(student));
 
         //9. 关闭SqlSession对象

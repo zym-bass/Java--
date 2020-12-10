@@ -1,0 +1,3 @@
+com\yiming\domain\Student.class
+com\yiming\dao\StudentDao.class
+com\yiming\MyApp.class

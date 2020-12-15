@@ -1,6 +1,8 @@
 package com.yiming;
 
 import com.yiming.entity.Person;
+import com.yiming.entity.PersonMapper;
+import com.yiming.utils.MybatisUtils;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,6 +12,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
 
 
 public class MyBatis_Test {
@@ -110,6 +113,34 @@ public class MyBatis_Test {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    //使用映射类接口实现myBatis
+
+    /**
+     * 查询所有
+     */
+    @Test
+    public void selectAll(){
+        try {
+            SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("sqlMapperConfig.xml"));
+            SqlSession sqlSession = factory.openSession();
+            PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
+            List<Person> list = mapper.selectAll();
+            list.forEach((Person s)->{
+                System.out.println(s);
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void addPerson(){
+        PersonMapper mapper = MybatisUtils.sqlSession.getMapper(PersonMapper.class);
+        System.out.println(mapper.addPerson(new Person("李洋", "女", new Date(), 22)));
+        MybatisUtils.sqlSession.commit();
+        MybatisUtils.sqlSession.close();
     }
 }

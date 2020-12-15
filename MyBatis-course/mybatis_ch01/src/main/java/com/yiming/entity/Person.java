@@ -1,3 +1,4 @@
+package com.yiming.entity;
 
 import java.util.Date;
 

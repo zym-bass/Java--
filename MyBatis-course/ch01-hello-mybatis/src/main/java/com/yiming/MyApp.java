@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.util.List;
 
 public class MyApp {
+
+
     public static void main(String[] args) throws IOException {
         //访问myBatis读取student数据
         //1. 定义mybatis主配置文件的名称，从类路径的根开始(target/classes)

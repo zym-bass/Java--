@@ -168,7 +168,7 @@ public class MyBatis_Test {
         ){
 
             PersonMapper mapper = session.getMapper(PersonMapper.class);
-            mapper.addPerson(new Person("李洋", "女", new Date(), 22));
+            mapper.addPerson(new Person("李洋2", "男", new Date(), 22));
             session.commit();
         }
     }

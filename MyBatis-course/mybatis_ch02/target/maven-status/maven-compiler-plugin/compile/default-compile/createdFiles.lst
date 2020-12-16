@@ -1,0 +1,3 @@
+com\yiming\mapper\PersonMapper.class
+com\yiming\entity\Person.class
+com\yiming\utils\MyBatisUtils.class

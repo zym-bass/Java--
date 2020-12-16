@@ -138,9 +138,11 @@ public class MyBatis_Test {
 
     @Test
     public void addPerson(){
-        PersonMapper mapper = MybatisUtils.sqlSession.getMapper(PersonMapper.class);
+        SqlSession session = MybatisUtils.creatSqlSession();
+        PersonMapper mapper = session.getMapper(PersonMapper.class);
         mapper.addPerson(new Person("李洋", "女", new Date(), 22));
-        MybatisUtils.sqlSession.commit();
-        MybatisUtils.sqlSession.close();
+        session.commit();
+        session.close();
+
     }
 }

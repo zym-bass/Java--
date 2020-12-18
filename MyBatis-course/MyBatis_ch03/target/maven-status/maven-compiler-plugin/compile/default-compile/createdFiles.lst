@@ -1,0 +1,15 @@
+com\yiming\entity\Teacher.class
+com\yiming\mapper\IdcardMapper.class
+com\yiming\mapper\StudentTeacherMapper.class
+com\yiming\entity\Idcard.class
+com\yiming\mapper\EmployeeMapper.class
+com\yiming\mapper\StudentMapper.class
+com\yiming\mapper\Person2Mapper.class
+com\yiming\mapper\DepartmentMapper.class
+com\yiming\mapper\TeacherMapper.class
+com\yiming\entity\Employee.class
+com\yiming\entity\StudentTeacher.class
+com\yiming\entity\Person2.class
+com\yiming\entity\Student.class
+com\yiming\entity\Department.class
+com\yiming\utils\MyBatisUtils.class

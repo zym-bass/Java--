@@ -8,6 +8,7 @@ import com.yiming.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,54 @@ public class EmployeeTest {
             employee.setName("赵");
             List<Employee> list = mapper.selectEmployeeLike(employee);
             list.forEach(e->System.out.println(e));
+        }
+    }
+    //添加员工信息
+    @Test
+    public void addBatchEmployees(){
+        try(
+                SqlSession sqlSession =MyBatisUtils.getSqlSession()
+        ){
+            EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+            List<Employee> list = new ArrayList<>();
+            list.add(new Employee("李洋","男"));
+            list.add(new Employee("李洋2","男"));
+            list.add(new Employee("李洋3","男"));
+            list.add(new Employee("李洋4","男"));
+            mapper.addBatchEmployees(list);
+            sqlSession.commit();
+        }
+    }
+    //批量修改员工信息
+    @Test
+    public void updateBatchEmployee(){
+        try(
+                SqlSession sqlSession =MyBatisUtils.getSqlSession()
+        ){
+            EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+            List<Employee> list = new ArrayList<>();
+            list.add(new Employee(9,"李洋5","男"));
+            list.add(new Employee(10,"李洋12","女"));
+            list.add(new Employee(11,"李洋13","男"));
+            list.add(new Employee(12,"李洋14","女"));
+            mapper.updateBatchEmployee(list);
+            sqlSession.commit();
+        }
+    }
+    //批量删除员工信息
+    @Test
+    public void DeleteBatchEmployee(){
+        try(
+                SqlSession sqlSession =MyBatisUtils.getSqlSession()
+        ){
+            EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+            List<Integer> list = new ArrayList<>();
+            list.add(9);
+            list.add(10);
+            list.add(11);
+            list.add(12);
+            mapper.DeleteBatchEmployee(list);
+            sqlSession.commit();
         }
     }
 

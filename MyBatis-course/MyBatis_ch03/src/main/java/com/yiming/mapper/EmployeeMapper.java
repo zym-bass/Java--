@@ -21,5 +21,14 @@ public interface EmployeeMapper{
 
     //修改员工信息
     void updateEmployee(Employee employee);
+
+    //批量添加数据
+    void addBatchEmployees(List<Employee> employees);
+
+    //批量修改员工信息
+    void updateBatchEmployee(List<Employee> employees);
+
+    //批量删除
+    void DeleteBatchEmployee(List<Integer> list);
 }
 

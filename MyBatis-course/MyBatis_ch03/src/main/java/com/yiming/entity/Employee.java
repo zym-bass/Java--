@@ -10,6 +10,11 @@ public class Employee {
         super();
     }
 
+    public Employee(String name, String gender) {
+        this.name = name;
+        this.gender = gender;
+    }
+
     public Employee(Integer id, String name, String gender) {
         this.id = id;
         this.name = name;

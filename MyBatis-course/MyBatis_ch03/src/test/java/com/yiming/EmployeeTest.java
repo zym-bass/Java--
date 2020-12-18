@@ -40,4 +40,15 @@ public class EmployeeTest {
             });
         }
     }
+
+    //修改员工信息
+    @Test
+    public void updateEmployee(){
+        try(
+                SqlSession sqlSession =MyBatisUtils.getSqlSession()
+        ){
+            EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+            mapper.updateEmployee(new Employee(1,"赵一名","男"));
+        }
+    }
 }

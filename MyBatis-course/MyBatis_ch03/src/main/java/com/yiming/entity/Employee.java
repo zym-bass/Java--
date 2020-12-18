@@ -10,6 +10,12 @@ public class Employee {
         super();
     }
 
+    public Employee(Integer id, String name, String gender) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+    }
+
     public Employee(String name, String gender, com.yiming.entity.Department department) {
         this.name = name;
         this.gender = gender;

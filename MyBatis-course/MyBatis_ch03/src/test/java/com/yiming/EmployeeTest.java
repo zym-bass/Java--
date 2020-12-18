@@ -33,8 +33,8 @@ public class EmployeeTest {
         ) {
             EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
             Map<String ,Object> map = new HashMap<>();
-            map.put("name","雷鸣");
-            map.put("id",2);
+            /*map.put("name","雷鸣");
+            map.put("id",2);*/
             mapper.getEmployeesByNameAge(map).forEach((Employee e) -> {
                 System.out.println(e);
             });

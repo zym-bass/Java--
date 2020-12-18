@@ -33,8 +33,8 @@ public class EmployeeTest {
         ) {
             EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
             Map<String ,Object> map = new HashMap<>();
-            /*map.put("name","雷鸣");
-            map.put("id",2);*/
+            map.put("name","雷鸣");
+            map.put("id",3);
             mapper.getEmployeesByNameAge(map).forEach((Employee e) -> {
                 System.out.println(e);
             });
@@ -48,7 +48,7 @@ public class EmployeeTest {
                 SqlSession sqlSession =MyBatisUtils.getSqlSession()
         ){
             EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-            mapper.updateEmployee(new Employee(1,"赵一名","男"));
+            mapper.updateEmployee(new Employee(1,"赵名","男"));
         }
     }
 }

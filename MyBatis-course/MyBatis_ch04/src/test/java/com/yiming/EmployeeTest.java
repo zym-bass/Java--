@@ -1,5 +1,7 @@
 package com.yiming;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yiming.entity.Department;
 import com.yiming.entity.DepartmentExample;
 import com.yiming.entity.Employee;
@@ -115,6 +117,28 @@ public class EmployeeTest {
                 employeeExample.setOrderByClause("e_id desc ");
                 employeeMapper.selectByExample(employeeExample).forEach( (Employee e) ->
                         System.out.println(e));
+            });
+
+        }
+    }
+
+    //分页查询
+    @Test
+    public void testEmployeePageHelper(){
+        try(SqlSession sqlSession =MyBatisUtils.getSqlSession()){
+            //1. 设置PageHelper
+            PageHelper.startPage(1,3);
+
+
+            EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+            EmployeeExample employeeExample = new EmployeeExample();
+            employeeExample.setOrderByClause("e_id desc ");
+
+
+            //创建PageInfo
+            PageInfo<Employee> employeePageInfo = new PageInfo<>(employeeMapper.selectByExample(employeeExample));
+            employeePageInfo.getList().forEach((Employee e)->{
+                System.out.println(e);
             });
 
         }

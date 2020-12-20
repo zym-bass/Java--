@@ -29,4 +29,24 @@ public class Student_Teacher_Test {
             });
         }
     }
+
+    //使用缓存机制对根据学生id查询学生信息和对应的老师
+    @Test
+    public  void FirstCacheGetStudentById(){
+        try(SqlSession session = MyBatisUtils.getSqlSession()){
+            StudentMapper mapper = session.getMapper(StudentMapper.class);
+
+            Student student1 = mapper.getStudentById(1);
+            System.out.println("第一次查询："+student1.getName());
+            //向map中放数据（"s_id=4",student1）;
+            //更新 插入 删除
+            student1.setName("刘龙");
+            mapper.updateStudentBySid(student1);
+
+            //第二次查询
+            Student student2 = mapper.getStudentById(1);
+            System.out.println("第二次查询："+student1.getName());
+            session.commit();
+        }
+    }
 }

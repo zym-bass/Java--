@@ -9,4 +9,6 @@ public interface StudentMapper {
     Student getStudentById(Integer sid);
     //根据老师id查询所对应的学生们
     List<Student> getStudentsByTid(Integer tid);
+    //根据id修改学生信息
+    void updateStudentBySid(Student student);
 }

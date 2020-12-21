@@ -1,10 +1,12 @@
 package com.yiming;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.yiming.dao.PersonDao;
 import com.yiming.dao.impl.PersonDaoImpl;
 import com.yiming.spring.SpringApplicationContext;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class PersonTest {
@@ -20,7 +22,7 @@ public class PersonTest {
     @Test
     public void savePerson2(){
         //创建spring容器对象
-        ApplicationContext ctx  = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AbstractApplicationContext ctx  = new ClassPathXmlApplicationContext("applicationContext.xml");
         /*
         *   1.利用Dom4j对applicationContext.xml进行解析，找到所有的bean标签
         *   2.找到bean标签中的id属性“personDao”,找到class属性‘com.yiming.impl’
@@ -31,6 +33,7 @@ public class PersonTest {
         * */
         PersonDao personDao = (PersonDao)ctx.getBean("personDao");
         personDao.savePerson("啦啦啦");
+        ctx.close();
     }
     //使用自定义容器
     @Test
@@ -47,4 +50,20 @@ public class PersonTest {
         PersonDao pd = (PersonDao)ctx.getBean("personDao3");
         pd.savePerson("lalal");
     }
+
+    //使用Bean中各种属性的注入方式
+    @Test
+    public void PersonDaoImpl2(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        PersonDao pd = (PersonDao) ctx.getBean("personDaoImpl2");
+        pd.savePerson("lalala");
+    }
+    //使用Bean中各种属性的注入方式
+    @Test
+    public void dataSource(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ComboPooledDataSource pd = (ComboPooledDataSource) ctx.getBean("dataSource");
+        System.out.println(pd);
+    }
+
 }

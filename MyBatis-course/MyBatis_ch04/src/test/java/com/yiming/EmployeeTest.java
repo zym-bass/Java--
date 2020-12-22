@@ -2,6 +2,7 @@ package com.yiming;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+
 import com.yiming.entity.Department;
 import com.yiming.entity.DepartmentExample;
 import com.yiming.entity.Employee;
@@ -9,10 +10,14 @@ import com.yiming.entity.EmployeeExample;
 import com.yiming.mapper.DepartmentMapper;
 import com.yiming.mapper.EmployeeMapper;
 import com.yiming.utils.MyBatisUtils;
+
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class EmployeeTest {
     //添加信息
@@ -143,5 +148,22 @@ public class EmployeeTest {
 
         }
     }
+    @Test
+    public void doSome(){
+        List<String> list = new ArrayList<>(Arrays.asList(null,"2","3","4"));
+        list.removeIf(String::isEmpty);
+
+        System.out.println(list.get(0));
+
+    }
+
+    /*//分页查询
+    @Test
+    public void testEmployeePage(){
+        try(SqlSession sqlSession =MyBatisUtils.getSqlSession()){
+            Cursor<Employee> cursor =sqlSession.getMapper(EmployeeMapper.class).
+
+        }
+    }*/
 
 }

@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
 
 public class PersonServiceTest {
     private ApplicationContext ctx ;

@@ -25,9 +25,9 @@ public class PersonTest {
         AbstractApplicationContext ctx  = new ClassPathXmlApplicationContext("applicationContext.xml");
         /*
         *   1.利用Dom4j对applicationContext.xml进行解析，找到所有的bean标签
-        *   2.找到bean标签中的id属性“personDao”,找到class属性‘com.yiming.impl’
+        *   2.找到bean标签中的id属性“personDao”,找到class属性‘com.yiming.dao.impl’
         *   3.利用反射技术实例化该类的对象
-        *      Class clazz = Class.forName("com.yiming.impl.PersonDaoImpl")
+        *      Class clazz = Class.forName("com.yiming.dao.impl.PersonDaoImpl")
         *      Object obj = clazz.newInstance();
         *   4.以id属性值为key，以实例化出来的obj值，保存到spring容器中
         * */

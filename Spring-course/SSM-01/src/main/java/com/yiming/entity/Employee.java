@@ -142,4 +142,24 @@ public class Employee {
     public void setPic(String pic) {
         this.pic = pic == null ? null : pic.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "eid=" + eid +
+                ", ename='" + ename + '\'' +
+                ", esex='" + esex + '\'' +
+                ", eage=" + eage +
+                ", telephone='" + telephone + '\'' +
+                ", hiredate=" + hiredate +
+                ", pnum='" + pnum + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", remark='" + remark + '\'' +
+                ", pFk=" + pFk +
+                ", dFk=" + dFk +
+                ", lFk=" + lFk +
+                ", pic='" + pic + '\'' +
+                '}';
+    }
 }

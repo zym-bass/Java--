@@ -9,7 +9,6 @@ public class Employee {
 
     private Integer eDepartId;
 
-
     public Integer geteId() {
         return eId;
     }
@@ -40,15 +39,5 @@ public class Employee {
 
     public void seteDepartId(Integer eDepartId) {
         this.eDepartId = eDepartId;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "eId=" + eId +
-                ", eName='" + eName + '\'' +
-                ", eGender='" + eGender + '\'' +
-                ", eDepartId=" + eDepartId +
-                '}';
     }
 }

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/emp")
-public class EmployeeController {
+    @Controller
+    @RequestMapping("/emp")
+    public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
@@ -25,6 +25,7 @@ public class EmployeeController {
         model.addAttribute("employeeList",employeeList);
         return "pages/result";
     }
+
 
 
 }

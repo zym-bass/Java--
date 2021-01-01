@@ -92,4 +92,19 @@ public class Customer {
     public void setAddtime(Date addtime) {
         this.addtime = addtime;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", comname='" + comname + '\'' +
+                ", companyperson='" + companyperson + '\'' +
+                ", comaddress='" + comaddress + '\'' +
+                ", comphone='" + comphone + '\'' +
+                ", camera='" + camera + '\'' +
+                ", present='" + present + '\'' +
+                ", remark='" + remark + '\'' +
+                ", addtime=" + addtime +
+                '}';
+    }
 }

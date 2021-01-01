@@ -5,6 +5,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <title>查看客户信息</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/skin/css/base.css">
+<script src="${pageContext.request.contextPath}/skin/js/jquery-3.4.1.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/skin/js/theAlert.css">
+<script src="${pageContext.request.contextPath}/skin/js/theAlert.js"></script>
+	<script >
+		$(function (){
+			$.ajax({
+				url:"${pageContext.request.contextPath}/cus/getCustomerById",
+				type:"post",
+				data:{"id":${id}},
+				dataType:"json",
+				success:function (rs) {
+					$("comname").val(rs.comname);
+					$("companyperson").val(rs.companyperson);
+					$("comaddress").val(rs.comaddress);
+					$("comphone").val(rs.comphone);
+					$("camera").val(rs.camera);
+					$("present").val(rs.present);
+				}
+			})
+		})
+	</script>
 </head>
 <body leftmargin="8" topmargin="8" background='${pageContext.request.contextPath}/skin/images/allbg.gif'>
 
@@ -25,54 +46,66 @@
 
 <form name="form2">
 
-<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
-<tr bgcolor="#E7E7E7">
-	<td height="24" colspan="2" background="${pageContext.request.contextPath}/skin/images/tbg.gif">&nbsp;查看客户信息&nbsp;</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22" >公司名称：</td>
-	<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">百度</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22">公司联系人：</td>
-	<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">李彦宏</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22">公司地址：</td>
-	<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">中关村软件园</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22">联系电话：</td>
-	<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">1325676888</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22">座机：</td>
-	<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">0102434334</td>
-</tr>
-<tr >
-	<td align="right" bgcolor="#FAFAF1" height="22">公司简介：</td>
-	<td align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22"><p>百度，全球最大的中文搜索引擎、最大的中文网站。2000年1月创立于北京中关村。</p></td>
-</tr>
+	<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+		<tr bgcolor="#E7E7E7">
+			<td height="24" colspan="2" background="${pageContext.request.contextPath}/skin/images/tbg.gif">&nbsp;查看客户信息&nbsp;</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22" >公司名称：</td>
+			<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<span id="comname"></span>
+			</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22">公司联系人：</td>
+			<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<span id="companyperson"></span>
+			</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22">公司地址：</td>
+			<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<span id="comaddress"></span>
+			</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22">联系电话：</td>
+			<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<span id="comphone"></span>
+			</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22">座机：</td>
+			<td  align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<span id="camera"></span>
+			</td>
+		</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" height="22">公司简介：</td>
+			<td align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+				<p><span id="present"></span></p>
+			</td>
+		</tr>
 
-<tr >
-	<td align="right" bgcolor="#FAFAF1" >备注：</td>
-	<td colspan=3 align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" >
-		暂无
-	</td>
-</tr>
+		<tr >
+			<td align="right" bgcolor="#FAFAF1" >备注：</td>
+			<td colspan=3 align='left' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" >
+				<span id="remark"></span>
+			</td>
+		</tr>
 
 
 
-<tr bgcolor="#FAFAF1">
-<td height="28" colspan=4 align=center>
-	&nbsp;
-	<a href="customer.jsp" class="coolbg">返回</a>
-</td>
-</tr>
-</table>
+		<tr bgcolor="#FAFAF1">
+			<td height="28" colspan=4 align=center>
+				&nbsp;
+				<a href="javascript:history.back(-1);" class="coolbg">返回</a>
+			</td>
+		</tr>
+	</table>
 
 </form>
-  
+
 
 </body>
 </html>

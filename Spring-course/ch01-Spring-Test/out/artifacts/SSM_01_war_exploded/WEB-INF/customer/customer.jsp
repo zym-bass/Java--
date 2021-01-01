@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <title>客户信息管理</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/skin/css/base.css">
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/skin/js/theAlert.css">
+    <script src="${pageContext.request.contextPath}/skin/js/theAlert.js"></script>
     <script src="${pageContext.request.contextPath}/skin/js/jquery-3.4.1.js"></script>
     <script>
         function get_date(data) {
@@ -34,41 +35,53 @@
 
         //首页
         function firstPage() {
-            showData(1);
+            showData(1,selectType,keyword,orderby);
         };
+
         //上一页
         function prePage(currentPage){
             if(currentPage>1){
-                showData(currentPage-1);
+                showData(currentPage-1,selectType,keyword,orderby);
             }else {
-                showData(1);
+                showData(1,selectType,keyword,orderby);
             };
         };
-
         //下一页
         function nextPage(currentPage,totalPage){
             if(currentPage<totalPage){
-                showData(currentPage+1);
+                showData(currentPage+1,selectType,keyword,orderby);
             }else {
-                showData(totalPage);
+                showData(totalPage,selectType,keyword,orderby);
             };
         };
 
         //尾页
         function lastPage(totalPage) {
-            showData(totalPage);
+            showData(totalPage,selectType,keyword,orderby);
+        };
+        var selectType;
+        var keyword;
+        var orderby;
+        //查询
+        function searchCustomer(){
+            selectType = $("#selectType").val();
+            keyword = $("#keyword").val();
+            orderby = $("#orderby").val();
+            showData(1,selectType,keyword,orderby);
         };
 
         /*当页面加载完成*/
         $(function () {
-            showData(1)
+            showData(1,selectType,keyword,orderby)
         });
 
-        function showData(currentPage) {
+        function showData(currentPage,selectType,keyword,orderby) {
+
+
             $.ajax({
                 url: "${pageContext.request.contextPath}/cus/getCustomers",
                 type: "post",
-                data: {"currentPage": currentPage},
+                data: {"currentPage": currentPage,"selectType": selectType,"keyword": keyword,"orderby": orderby},
                 dataType: "json",
                 cache: false,
                 success: function (rs) {
@@ -76,7 +89,7 @@
                     $.each(rs.records, function (index, element) {
                         var tr = "\n" +
                             "<tr align='center' bgcolor=\"#FFFFFF\" onMouseMove=\"javascript:this.bgColor='#FCFDEE';\" onMouseOut=\"javascript:this.bgColor='#FFFFFF';\" height=\"22\" >\n" +
-                            "\t<td><input name=\"id\" type=\"checkbox\" id=\"id\" value=\"101\" class=\"np\"></td>\n" +
+                            "\t<td><input name=\"id\" type=\"checkbox\" id=\"id\" value=\""+element.id+"\" class=\"np\"></td>\n" +
                             "\t<td>" + element.id + "</td>\n" +
                             "\t<td>" + element.companyperson + "</td>\n" +
                             "\t<td align=\"center\">" + element.comname + "</td>\n" +
@@ -100,6 +113,42 @@
         }
 
 
+        function deleteCustomer(){
+
+            var oSelectCustomer= $("input[name=id][type=checkbox]:checked");
+            alert(oSelectCustomer.length);
+            if(oSelectCustomer.length==0){
+
+                theAlert("至少要选择一条记录进行删除","alert");
+            }else{
+                var ids=new Array();
+                for(var i=0;i<oSelectCustomer.length;i++){
+                    alert(oSelectCustomer[i].value);
+                    ids.push(oSelectCustomer[i].value);
+                }
+                theAlert("您确定要删除这些记录吗?","confirm",function(bol){
+                    if(bol){
+                        $.ajax({
+                            url:"${pageContext.request.contextPath}/cus/deleteCustomer",
+                            type:"post",
+                            data:{"ids":ids},
+                            dataType:"json",
+                            cache:false,
+                            success:function(rs){
+                                if(rs.status==200){
+                                    window.location="${pageContext.request.contextPath}/cus/customer";
+                                }else if(rs.status==400){
+                                    theAlert(rs.msg,"alert");
+                                }
+                            }
+                        });
+                    }
+                });
+
+            }
+
+        }
+
     </script>
 
 </head>
@@ -116,7 +165,7 @@
                         当前位置:客户信息管理>>客户信息
                     </td>
                     <td>
-                        <input type='button' class="coolbg np" onClick="location='customer-add.jsp';" value='添加客户信息'/>
+                        <input type='button' class="coolbg np" onClick="location='${pageContext.request.contextPath}/cus/customer-add';" value='添加客户信息'/>
                     </td>
                 </tr>
             </table>
@@ -135,29 +184,30 @@
                     <tr>
                         <td width='90' align='center'>搜索条件：</td>
                         <td width='160'>
-                            <select name='cid' style='width:150'>
+                            <select id='selectType' style='width:150px'>
                                 <option value='0'>选择类型...</option>
                                 <option value='1'>客户所在公司名称</option>
-                                <option value='1'>联系人姓名</option>
+                                <option value='2'>联系人姓名</option>
                             </select>
                         </td>
                         <td width='70'>
                             关键字：
                         </td>
                         <td width='160'>
-                            <input type='text' name='keyword' value='' style='width:120px'/>
+                            <input type='text' id='keyword' name='keyword' value='' style='width:120px'/>
                         </td>
                         <td width='110'>
-                            <select name='orderby' style='width:120px'>
-                                <option value='id'>排序...</option>
-                                <option value='pubdate'>添加时间</option>
-                                <option value='pubdate'>修改时间</option>
+                            <select id='orderby' name='orderby' style='width:120px'>
+                                <option value='0'>排序...</option>
+                                <option value='1'>添加时间升序</option>
+                                <option value='2'>添加时间降序</option>
                             </select>
                         </td>
                         <td>
-                            &nbsp;&nbsp;&nbsp;<input name="imageField" type="image"
-                                                     src="${pageContext.request.contextPath}/skin/images/frame/search.gif"
-                                                     width="45" height="20" border="0" class="np"/>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="javascript:searchCustomer();">
+                                <img src="${pageContext.request.contextPath}/skin/images/frame/search.gif" width="45" height="20" border="0" alt="">
+                            </a>
                         </td>
                     </tr>
                 </table>
@@ -189,7 +239,7 @@
                 &nbsp;
                 <a href="javascript:selectAll();" class="coolbg">全选</a>
                 <a href="javascript:unSelectAll();" class="coolbg">反选</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="" class="coolbg">&nbsp;删除&nbsp;</a>
+                <a href="javascript:deleteCustomer();" class="coolbg">&nbsp;删除&nbsp;</a>
                 <a href="" class="coolbg">&nbsp;导出Excel&nbsp;</a>
             </td>
         </tr>

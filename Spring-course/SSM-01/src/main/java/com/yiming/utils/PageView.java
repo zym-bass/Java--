@@ -1,5 +1,7 @@
 package com.yiming.utils;
 
+import com.github.pagehelper.PageHelper;
+
 import java.util.List;
 
 public class PageView<T> {
@@ -9,7 +11,7 @@ public class PageView<T> {
 	private int   pageSize=10;
 	private Long  totalrecords;
 	private List<T> records;
-	
+
 	public PageView(){}
 	public PageView(int currentPage,int pageSize){
 		this.currentPage=currentPage;

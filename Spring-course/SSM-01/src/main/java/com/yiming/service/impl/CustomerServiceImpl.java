@@ -42,8 +42,10 @@ public class CustomerServiceImpl implements CustomerService {
         } else if (orderby == 2) {
             customerExample.setOrderByClause("addtime desc");
         }
+
         List<Customer> customers = customerMapper.selectByExample(customerExample);
-        System.out.println(customers);
+
+
         /*3. 创建PageInfo对象 */
         PageInfo<Customer> pageInfo = new PageInfo<>(customers);
         PageView<Customer> pageView = new PageView<>(currentPage,pageSize);

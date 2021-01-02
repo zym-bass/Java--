@@ -1,5 +1,7 @@
 package com.yiming.entity;
 
+import com.github.pagehelper.PageInfo;
+
 import java.util.Date;
 
 public class Customer {

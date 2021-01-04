@@ -1,5 +1,9 @@
+import com.yiming.Person;
+import com.yiming.utils.JsonUtils;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
+
+import java.util.Date;
 
 public class RedisTest {
 
@@ -20,5 +24,13 @@ public class RedisTest {
         System.out.println(name);
         jedis.close();
 
+    }
+
+    @Test
+    public void testAddJsonString(){
+        Jedis jedis = new Jedis("192.168.230.201",6379);
+        Person person = new Person(100,"张三","男",34,new Date());
+        jedis.set("person1",JsonUtils.objectToJson(person));
+        jedis.close();
     }
 }

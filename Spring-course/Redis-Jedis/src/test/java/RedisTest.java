@@ -33,4 +33,15 @@ public class RedisTest {
         jedis.set("person1",JsonUtils.objectToJson(person));
         jedis.close();
     }
+
+    @Test
+    public void testSelcetJsonString(){
+        Jedis jedis = new Jedis("192.168.230.201",6379);
+        String person1JSON = jedis.get("person1");
+        Person person1 = JsonUtils.jsonToEntity(person1JSON,Person.class);
+        System.out.println(person1);
+        jedis.close();
+    }
+
+
 }

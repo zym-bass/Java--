@@ -9,6 +9,17 @@ public class Person {
     private Integer age;
     private Date birthday;
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                '}';
+    }
+
     public Person() {
         super();
     }

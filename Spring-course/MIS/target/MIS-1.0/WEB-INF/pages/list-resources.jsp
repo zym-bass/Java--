@@ -48,19 +48,19 @@
 						<h5>资源添加</h5>
 					</div>
 					<div class="ibox-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" id="sourceForm">
 							
 							<div class="form-group">
 								<label class="col-sm-4 control-label">菜单资源名称：</label>
 
 								<div class="col-sm-7">
-									<input type="email" class="form-control">
+									<input type="text" class="form-control" name="name">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-4 control-label">父菜单：</label>
 								<div class="col-sm-7">
-									<select name="level" id="pid" >
+									<select name="pid" id="pid" >
 									</select>
 								</div>
 							</div>
@@ -68,19 +68,19 @@
 								<label class="col-sm-4 control-label">菜单资源路径：</label>
 
 								<div class="col-sm-7">
-									<input type="email" class="form-control">
+									<input type="text" class="form-control" name="url">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-4 control-label">备注：</label>
 								<div class="col-sm-7">
-									<textarea class="form-control"></textarea>
+									<textarea class="form-control" name="remark"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-3 col-sm-8">
 									<button class="btn btn-sm btn-white" type="submit">
-										<i class="fa fa-save"></i> 保存
+										<input type="button" value="保存" onclick="saveSources();">
 									</button>
 									<button class="btn btn-sm btn-white" type="submit">
 										<i class="fa fa-undo"></i> 重置
@@ -102,6 +102,33 @@
 	<script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.core.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.exedit.js"></script>
 	<script>
+		function saveSources(){
+
+			$.ajax({
+				url:"${pageContext.request.contextPath}/resources/addSources",
+				type:"post",
+				data:$("#sourceForm").serialize(),
+				dataType:"json",
+				cache:false,
+				success:function(rs){
+					if(rs.status==200){
+						swal({
+							title : "信息提示",
+							text : "rs.msg",
+						}, function() {//此函数是点击删除执行的函数
+							var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+							//刷新我们的树
+							treeObj.reAsyncChildNodes(null, "refresh");
+							$("#sourceForm")[0].reset();
+						});
+					}else if(rs.status==400){
+						swal("信息提示", rs.msg, "success");
+					}
+				}
+			});
+
+		}
+
 		$(document)
 				.ready(
 						function() {
@@ -177,7 +204,7 @@
 
 		//编辑
 		function editNode(id) {
-			window.location.href="${pageContext.request.contextPath}/main/update-resources";
+			window.location.href="${pageContext.request.contextPath}/resources/update-resources?id="+id;
 		}
 		
 		//删除
@@ -193,21 +220,32 @@
 			}, function() {//此函数是点击删除执行的函数
 				//这里写ajax代码
 				// 以下是成功的提示框，请在ajax回调函数中执行
-				swal("删除成功！", "您已经永久删除了这条信息。", "success");
+				$.ajax({
+					url:"${pageContext.request.contextPath}/resources/deleteSources",
+					type:"post",
+					data:{"id":id},
+					dataType:"json",
+					cache:false,
+					success:function(rs){
+						if (rs.status==200){
+							swal("删除成功！", "您已经永久删除了这条信息。", "success");
+							var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+							//刷新我们的树
+							treeObj.reAsyncChildNodes(null, "refresh");
+							$("#sourceForm")[0].reset();
+						}else if(rs.status==400){
+							swal("删除失败！", "您没有删除了这条信息。", "failing");
+						}
+					}
+				});
 			});
-			//ajax请求台
-			/* $.post("/crmpro/sources/remove", "id=" + id, function(data) {
-				// 刷新数据
-				var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
-				treeObj.reAsyncChildNodes(null, "refresh");
-			}, "text"); */
 		}
 
 		$(document).ready(function() {
 			$.fn.zTree.init($("#treeDemo"), setting);
 			//查询所有的父节点
 			$.ajax({
-				url:"${pageContext.request.contextPath}/resources/getSuperSources",
+				url:"${pageContext.request.contextPath}/resources/getParentNodes",
 				type:"post",
 				dataType:"json",
 				cache:false,

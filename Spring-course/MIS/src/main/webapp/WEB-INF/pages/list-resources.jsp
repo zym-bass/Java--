@@ -59,12 +59,8 @@
 							</div>
 							<div class="form-group">
 								<label class="col-sm-4 control-label">父菜单：</label>
-
 								<div class="col-sm-7">
-									<select name="level" class="selectpicker form-control">
-										<option>Mustard</option>
-										<option>Ketchup</option>
-										<option>Relish</option>
+									<select name="level" id="pid" >
 									</select>
 								</div>
 							</div>
@@ -121,7 +117,7 @@
 									text : "改修后将将，请谨慎操作！",
 									type : "warning",
 									showCancelButton : true,
-									confirmButtonColor : "#DD6B55",
+									confirmButtonColor : "#dd6b55",
 									confirmButtonText : "删除",
 									closeOnConfirm : false
 								}, function() {//此函数是点击删除执行的函数
@@ -131,28 +127,34 @@
 								});
 							});
 
-							$("#demo1")
-									.click(
-											function() {
-												//基本消息框－留着备用
-												swal({
-													title : "欢迎使用SweetAlert",
-													text : "Sweet Alert 是一个替代传统的 JavaScript Alert 的漂亮提示效果。"
-												})
-											});
+							$("#demo1").click(
+									function() {
+										//基本消息框－留着备用
+										swal({
+											title : "欢迎使用SweetAlert",
+											text : "Sweet Alert 是一个替代传统的 JavaScript Alert 的漂亮提示效果。"
+										})
+									});
 						});
 	</script>
-	<SCRIPT type="text/javascript">
+	<script type="text/javascript">
 		var setting = {
+			async: {
+				enable:true,
+				url:"${pageContext.request.contextPath}/resources/getRootSources",
+			},
 			view : {
 				addHoverDom : function(treeId, treeNode) {
-					var aObj = $("#" + treeNode.tId + "_a"); 			
-					if (treeNode.editNameFlag
-							|| $("#btnGroup" + treeNode.tId).length > 0)
+					var aObj = $("#" + treeNode.tId + "_a");
+					aObj.attr("href", "javascript:void(0);");
+					aObj.attr("target","_self");
+					if (treeNode.editNameFlag || $("#btnGroup" + treeNode.tId).length > 0)
 						return;
 					var s = '<span id="btnGroup'+treeNode.tId+'">';
 					if (treeNode.level == 1) {
 						if (treeNode.children.length == 0) {
+							s += '<span class="button edit" onclick="editNode('
+									+ treeNode.id + ')" ></span>';
 							s += '<span class="button remove" onclick="deleteNode('
 									+ treeNode.id + ')"></span>';
 						}
@@ -171,78 +173,7 @@
 			}
 
 		};
-		var zNodes = [ {
-			name : "pNode 01",
-			open : true,
-			children : [ {
-				name : "pNode 11",
-				children : [ {
-					name : "leaf node 111"
-				}, {
-					name : "leaf node 112"
-				}, {
-					name : "leaf node 113"
-				}, {
-					name : "leaf node 114"
-				} ]
-			}, {
-				name : "pNode 12",
-				children : [ {
-					name : "leaf node 121"
-				}, {
-					name : "leaf node 122"
-				}, {
-					name : "leaf node 123"
-				}, {
-					name : "leaf node 124"
-				} ]
-			}, {
-				name : "pNode 13 - no child",
-				isParent : true
-			} ]
-		}, {
-			name : "pNode 02",
-			children : [ {
-				name : "pNode 21",
-				open : true,
-				children : [ {
-					name : "leaf node 211"
-				}, {
-					name : "leaf node 212"
-				}, {
-					name : "leaf node 213"
-				}, {
-					name : "leaf node 214"
-				} ]
-			}, {
-				name : "pNode 22",
-				children : [ {
-					name : "leaf node 221"
-				}, {
-					name : "leaf node 222"
-				}, {
-					name : "leaf node 223"
-				}, {
-					name : "leaf node 224"
-				} ]
-			}, {
-				name : "pNode 23",
-				children : [ {
-					name : "leaf node 231"
-				}, {
-					name : "leaf node 232"
-				}, {
-					name : "leaf node 233"
-				}, {
-					name : "leaf node 234"
-				} ]
-			} ]
-		}, {
-			name : "pNode 3 - no child",
-			isParent : true
-		}
 
-		];
 
 		//编辑
 		function editNode(id) {
@@ -273,9 +204,26 @@
 		}
 
 		$(document).ready(function() {
-			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			$.fn.zTree.init($("#treeDemo"), setting);
+			//查询所有的父节点
+			$.ajax({
+				url:"${pageContext.request.contextPath}/resources/getSuperSources",
+				type:"post",
+				dataType:"json",
+				cache:false,
+				success:function(rs){
+
+					$.each(rs,function(index,element){
+						var  option = "<option value='"+element.id+"'>"+element.name+"</option>";
+
+						$("#pid").append(option);
+
+					});
+
+				}
+			});
 		});
-	</SCRIPT>
+	</script>
 </body>
 
 

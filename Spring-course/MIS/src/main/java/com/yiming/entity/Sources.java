@@ -1,5 +1,7 @@
 package com.yiming.entity;
 
+import java.util.List;
+
 public class Sources {
     private Integer id;
 
@@ -12,6 +14,26 @@ public class Sources {
     private Integer pid;
 
     private String icon;
+
+    private List<Sources> children;
+
+    private boolean open =true;
+
+    public List<Sources> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Sources> children) {
+        this.children = children;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
 
     public Integer getId() {
         return id;

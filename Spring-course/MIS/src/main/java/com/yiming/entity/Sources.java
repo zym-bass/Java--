@@ -17,7 +17,7 @@ public class Sources {
 
     private List<Sources> children;
 
-    private boolean open =true;
+    private boolean open =false;
 
     public List<Sources> getChildren() {
         return children;

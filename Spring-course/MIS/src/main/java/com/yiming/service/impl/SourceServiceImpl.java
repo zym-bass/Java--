@@ -3,10 +3,12 @@ package com.yiming.service.impl;
 import com.yiming.entity.Sources;
 import com.yiming.entity.SourcesExample;
 import com.yiming.mapper.SourcesMapper;
+import com.yiming.service.Role_Source;
 import com.yiming.service.SourcesService;
 import com.yiming.utils.OAResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
@@ -68,6 +70,7 @@ public class SourceServiceImpl implements SourcesService {
         if(sourcesMapper.deleteByPrimaryKey(id)==1){
             return OAResult.ok(200,"删除成功");
         }
+
         return OAResult.ok(400,"删除失败");
     }
 

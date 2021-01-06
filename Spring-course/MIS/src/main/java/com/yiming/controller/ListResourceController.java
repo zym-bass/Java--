@@ -1,10 +1,12 @@
 package com.yiming.controller;
 
 import com.yiming.entity.Sources;
+import com.yiming.service.Role_Source;
 import com.yiming.service.SourcesService;
 import com.yiming.utils.OAResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,9 @@ public class ListResourceController {
 
     @Autowired
     private SourcesService sourcesService;
+
+    @Autowired
+    private Role_Source role_source;
 
     //页面跳转，即方法调用
     @RequestMapping("/{page}")
@@ -52,9 +57,10 @@ public class ListResourceController {
     @ResponseBody
     @RequestMapping("deleteSources")
     public OAResult deleteSources(Integer id){
-
+        role_source.isRole_SourceBySid(id);
         return sourcesService.deleteSources(id);
     }
+
 
     //通过id获取资源对象
     @ResponseBody

@@ -9,8 +9,18 @@ public class RoleSources {
 
     private Integer roleFk;
 
+    public RoleSources() {
+        super();
+    }
+
+
     public Integer getRsid() {
         return rsid;
+    }
+
+    public RoleSources(Integer resourcesFk, Integer roleFk) {
+        this.resourcesFk = resourcesFk;
+        this.roleFk = roleFk;
     }
 
     public void setRsid(Integer rsid) {

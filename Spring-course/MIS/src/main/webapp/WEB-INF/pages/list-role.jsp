@@ -90,8 +90,7 @@
 
                     <div class="row">
                         <div class="table-responsive">
-                            <table>
-
+                            <table id="roleTable" lay-filter="test">
 
                             </table>
                         </div>
@@ -112,8 +111,85 @@
 <script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.exedit.js"></script>
 <script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.excheck.js"></script>
 <script src="${pageContext.request.contextPath}/layui/layui.js"></script>
-
+<script type="text/html" id="barDemo">
+<%--
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+--%>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
 <script>
+    function showRoles() {
+        layui.use('table', function () {
+            var table = layui.table;
+
+            //第一个实例
+            table.render({
+                elem: '#roleTable'
+                , height: 400
+                , url: '${pageContext.request.contextPath}/role/getAllRoles' //数据接口
+                , page: true //开启分页
+                , limits: [3, 5, 10, 20, 40]
+                , limit: 3
+                , even: true
+                , loading: true
+                , cols: [[ //表头
+                    {type: 'checkbox', fixed: 'left'},
+                    {field: 'roleid', title: '编号', width: 80, sort: true, fixed: 'left'}
+                    , {field: 'rolename', title: '角色名称', width: 140, fixed: 'left'}
+                    , {field: 'roledis', title: '角色描述', width: 180}
+                    , {
+                        field: 'status', title: '状态', width: 80,
+                        templet: function (data) {
+                            if (data.status == 0) {
+                                return "禁用";
+                            } else if (data.status == 1) {
+                                return "启用";
+                            }
+                        }
+                    }
+                    , {fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo'}
+                ]]
+            });
+            //监听行工具事件
+            table.on('tool(test)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+                var data = obj.data //获得当前行数据
+                    , layEvent = obj.event; //获得 lay-event 对应的值
+                if (layEvent === 'del') {
+                    swal({
+                        title : "您确定要删除该角色状态吗？",
+                        text : "请谨慎操作！",
+                        type : "warning",
+                        showCancelButton : true,
+                        confirmButtonColor : "#DD6B55",
+                        confirmButtonText : "删除",
+                        closeOnConfirm : false
+                    }, function() {
+                        $.ajax({
+                            url:"${pageContext.request.contextPath}/role/deleteRole",
+                            type:"post",
+                            data:{"roleid":data.roleid},
+                            dataType:"json",
+                            cache:false,
+                            success:function(rs){
+                                if (rs.status==200){
+                                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                                    $.fn.zTree.init($("#treeDemo"), setting);
+                                    showRoles();
+                                }else if(rs.status==400){
+                                    swal("删除失败！", "您没有删除了这条信息。", "failing");
+                                }
+                            }
+                        });
+                    });
+                } else if (layEvent === 'edit') {
+                    window.location.href="${pageContext.request.contextPath}/role/update-role?roleid="+data.roleid;
+                }
+            });
+        });
+
+    };
+
     var setting = {
         async: {
             enable: true,
@@ -126,7 +202,7 @@
     $(document).ready(function () {
         //初始化资源树
         $.fn.zTree.init($("#treeDemo"), setting);
-
+        showRoles();
     });
 
     //保存Role
@@ -162,6 +238,7 @@
                         }, function () {
                             $("#roleForm")[0].reset();
                             $.fn.zTree.init($("#treeDemo"), setting);
+                            showRoles();
                         });
                     } else if (rs.status == 400) {
                         swal("添加失败！", "您没有添加成这条信息。", "failing");

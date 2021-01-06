@@ -24,6 +24,7 @@
     <link href="${pageContext.request.contextPath}/css/style.min862f.css?v=4.1.0" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/plugins/zTreeStyle/zTreeStyle.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
 
 </head>
 
@@ -36,7 +37,7 @@
                     <h5>添加角色</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal"  id="roleForm">
+                    <form class="form-horizontal" id="roleForm">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">角色名称：</label>
 
@@ -62,7 +63,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">是否启用：</label>
                             <div class="col-sm-8">
-                                <div class="switch" >
+                                <div class="switch">
                                     <input type="radio" name="status" value="1" checked="checked">启用
                                     <input type="radio" name="status" value="0">禁用
 
@@ -83,63 +84,18 @@
         <div class="col-sm-7">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>角色列表 <small>点击修改信息将显示在左边表单</small></h5>
+                    <h5>角色列表 </h5>
                 </div>
                 <div class="ibox-content">
-                    <div class="hr-line-dashed2"></div>
+
                     <div class="row">
                         <div class="table-responsive">
-                            <table class="table table-striped list-table">
-                                <thead>
-                                <tr>
-                                    <th>选择</th>
-                                    <th>角色名称</th>
-                                    <th>角色描述：</th>
-                                    <th>是否启用</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input type="checkbox" checked=""></td>
-                                    <td>财务</td>
-                                    <td>财务</td>
-                                    <td>
-                                        是
-                                    </td>
-                                    <td>
-                                        <a href="update-role.jsp"><i
-                                                class="glyphicon glyphicon-edit  text-navy"></i></a>
-                                        <a href="javascript:void(0)" class="btndel"><i
-                                                class="glyphicon glyphicon-remove text-navy"></i></a>
-                                    </td>
-                                </tr>
+                            <table>
 
-                                </tbody>
+
                             </table>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <button class="btn btn-sm btn-primary" type="button"><i
-                                        class="fa fa-check-square-o"></i> 全选
-                                </button>
-                                <button class="btn btn-sm btn-primary" type="button"><i class="fa fa-square-o"></i> 反选
-                                </button>
-                                <button class="btn btn-sm btn-primary" type="button"><i
-                                        class="fa fa-times-circle-o"></i> 删除
-                                </button>
-                            </div>
-                            <div class="col-sm-7 text-right">
-                                <div class="btn-group">
 
-                                    <span>共有50页,当前是第3页</span>
-                                    <a href=''>首页</a>
-                                    <a href=''>上一页</a>
-                                    <a href=''>下一页</a>
-                                    <a href=''>尾页</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -155,6 +111,8 @@
 <script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.core.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.exedit.js"></script>
 <script src="${pageContext.request.contextPath}/js/plugins/ztree/jquery.ztree.excheck.js"></script>
+<script src="${pageContext.request.contextPath}/layui/layui.js"></script>
+
 <script>
     var setting = {
         async: {
@@ -170,41 +128,42 @@
         $.fn.zTree.init($("#treeDemo"), setting);
 
     });
+
     //保存Role
-    function saveRole(){
+    function saveRole() {
         //获取出对象
         var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
         //找到所有被选中的节点
         var nodes = treeObj.getCheckedNodes(true);
-        if(nodes.length==0){
-            swal("信息提示","必须给当前角色分配资源","warning");
-        }else {
+        if (nodes.length == 0) {
+            swal("信息提示", "必须给当前角色分配资源", "warning");
+        } else {
             var sourcesIds = new Array();
             //找到资源数被选中的资源
-            for (var i=0 ; i< nodes.length ;i++){
+            for (var i = 0; i < nodes.length; i++) {
                 sourcesIds.push(nodes[i].id);
             }
-            var  rolename=$("#rolename").val();
-            var  roledis =$("#roledis").val();
-            var  status = $("input[type=radio][name=status]:checked").val();
+            var rolename = $("#rolename").val();
+            var roledis = $("#roledis").val();
+            var status = $("input[type=radio][name=status]:checked").val();
             alert(sourcesIds);
             //发送异步请求
             $.ajax({
-                url:"${pageContext.request.contextPath}/role/addRole",
-                type:"post",
-                data:{"rolename":rolename,"roledis":roledis,"status":status,"sourcesIds":sourcesIds},
-                dataType:"json",
-                cache:false,
-                success:function(rs){
-                    if (rs.status==200){
+                url: "${pageContext.request.contextPath}/role/addRole",
+                type: "post",
+                data: {"rolename": rolename, "roledis": roledis, "status": status, "sourcesIds": sourcesIds},
+                dataType: "json",
+                cache: false,
+                success: function (rs) {
+                    if (rs.status == 200) {
                         swal({
-                            title:"信息提示",
-                            text:rs.msg,
-                        },function(){
+                            title: "信息提示",
+                            text: rs.msg,
+                        }, function () {
                             $("#roleForm")[0].reset();
                             $.fn.zTree.init($("#treeDemo"), setting);
                         });
-                    }else if(rs.status==400){
+                    } else if (rs.status == 400) {
                         swal("添加失败！", "您没有添加成这条信息。", "failing");
                     }
                 }
@@ -212,6 +171,7 @@
 
         }
     }
+
     /*$(document).ready(function() {
         // 设置按钮的样式
         $('.selectpicker').selectpicker('setStyle', 'btn-white').selectpicker('setStyle', 'btn-sm');

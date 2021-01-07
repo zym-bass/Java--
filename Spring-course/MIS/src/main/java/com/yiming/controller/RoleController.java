@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
+
+//角色管理功能页面
 @Controller
 @RequestMapping("/role")
 public class RoleController {
+
 
     @Autowired
     RoleService roleService;
@@ -28,13 +31,14 @@ public class RoleController {
         return "pages/"+page;
     }
 
-
+    //添加角色
     @RequestMapping("/addRole")
     @ResponseBody
     public OAResult addRole(Role role,@RequestParam("sourcesIds[]") int[] sourcesIds){
         return roleService.addRole(role,sourcesIds);
     }
 
+    //
     @RequestMapping("/getAllRoles")
     @ResponseBody
     public LayuiTable<Role> getAllRoles(int page ,int limit){

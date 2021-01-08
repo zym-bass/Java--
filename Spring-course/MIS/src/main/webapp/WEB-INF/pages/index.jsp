@@ -61,7 +61,7 @@
                             </li>
                           
                             <li>
-                                <a class="J_menuItem" href="${pageContext.request.contextPath}/main/list-dept" data-index="0">部门管理</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/dept/list-dept" data-index="0">部门管理</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="${pageContext.request.contextPath}/role/list-role" data-index="0">角色管理</a>
@@ -71,8 +71,6 @@
                             </li>
                         </ul> 
                     </li>
-                    
-
                 </ul>
             </div>
         </nav>

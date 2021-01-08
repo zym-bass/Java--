@@ -12,12 +12,12 @@
     <meta name="description" content="办公系统">
 
     <link rel="shortcut icon" href="favicon.ico"> 
-    	<link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
-    <link href="css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 </head>
 
 <body class="gray-bg">
@@ -139,11 +139,11 @@
  
     
     
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
-	<script src="js/plugins/select/bootstrap-select.min.js"></script>
-	<script src="js/plugins/layer/laydate/laydate.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/select/bootstrap-select.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/layer/laydate/laydate.js"></script>
    <script>
 	$(document).ready(function() {
 		// 设置按钮的样式
@@ -155,7 +155,6 @@
 		
 		
 		//--------------------下面是常用代码模版---------------------------------------
-		
 		//下拉列表使用ajax加载说明例子
 		function loadSelect(){
 			var option='<option value="0">-------请选择------</option><option value="4">用友软件</option><option selected value="5">浪潮软件</option>';

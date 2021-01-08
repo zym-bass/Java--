@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
- <!DOCTYPE html>
+         pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
 <html>
 <!-- Mirrored from www.gzsxt.cn/theme/hplus/table_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:01 GMT -->
 <head>
@@ -14,154 +14,159 @@
     <meta name="keywords" content="办公系统">
     <meta name="description" content="办公系统">
 
-    <link rel="shortcut icon" href="favicon.ico"> 
-    	<link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-    	<link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
-    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
-    <link href="css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" />
 
 </head>
 
 <body class="gray-bg">
-	<div class="wrapper2 wrapper-content2 animated fadeInRight">
-	    <div class="row">
-	    		<div class="col-sm-5">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>添加部门</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">部门编号：</label>
+<div class="wrapper2 wrapper-content2 animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加部门</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">部门编号：</label>
 
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control">
-                                </div>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">部门名称：</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">部门名称：</label>
 
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control">
-                                </div>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">区域：</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">区域：</label>
 
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control">
-                                </div>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-8">
-                                    <button class="btn btn-sm btn-white" type="submit"><i class="fa fa-save"></i> 保存</button>
-                                    <button class="btn btn-sm btn-white" type="submit"><i class="fa fa-undo"></i> 重置</button>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-8">
+                                <button class="btn btn-sm btn-white" type="submit"><i class="fa fa-save"></i> 保存</button>
+                                <button class="btn btn-sm btn-white" type="submit"><i class="fa fa-undo"></i> 重置</button>
                             </div>
-                        </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>部门列表</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table id="deptTable" lay-filter="test"></table>
+                            <script type="text/html" id="toolbarDemo">
+                                <div class="layui-btn-container">
+                                    <button class="layui-btn layui-btn-sm" lay-event="edit">编辑</button>
+                                    <button class="layui-btn layui-btn-sm" lay-event="delete">删除</button>
+                                </div>
+                            </script>
+                        </div>
+
                     </div>
                 </div>
             </div>
-	    		<div class="col-sm-7">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>部门列表 <small>点击修改信息将显示在左边表单</small></h5>
-                    </div>
-                    <div class="ibox-content">                    	
-                        <div class="hr-line-dashed2"></div>
-                        <div class="row">
-                            <div class="table-responsive">
-                            <table class="table table-striped list-table">
-                                <thead>
-                                    <tr>		
-                                        <th>选择</th>
-                                        <th>部门编号</th>
-                                        <th>部门名称</th>
-                                        <th>区域</th>
-                                        <th>操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input  type="checkbox" checked=""></td>
-										<td>10</td>
-										<td>会计部</td>
-										<td>广州	</td>
-                                        <td>
-	                                     <a href="update-dept.jsp"><i class="glyphicon glyphicon-edit  text-navy"></i></a>
-	                                     <a href="javascript:void(0)" class="btndel"><i class="glyphicon glyphicon-remove  text-navy"></i></a>
-                                        </td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row">
-	                        	<div class="col-sm-5">
-	                        		<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-check-square-o"></i> 全选</button>
-	                        		<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-square-o"></i> 反选</button>
-	                        		<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-times-circle-o"></i> 删除</button>
-	                    
-	                        	</div>
-							<div class="col-sm-7 text-right">
-								<div class="btn-group">
-	                              
-								    <span>共有50页,当前是第3页</span>
-	                                <a href=''>首页</a>
-	                                <a href=''>上一页</a>
-	                                <a href=''>下一页</a>
-	                                <a href=''>尾页</a>
-	                            </div>
-							</div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-	    	</div>
-	
-	</div>       
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.6"></script>
-     <script src="js/plugins/select/bootstrap-select.min.js"></script>
-    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+        </div>
 
-   <script>
-	$(document).ready(function() {
-		// 设置按钮的样式
-		$('.selectpicker').selectpicker('setStyle', 'btn-white').selectpicker('setStyle', 'btn-sm');
-		
-		//点击删除
-		$('.btndel').click(function () {
-		    swal({
-		        title: "您确定要删除这条信息吗",
-		        text: "删除后将无法恢复，请谨慎操作！",
-		        type: "warning",
-		        showCancelButton: true,
-		        confirmButtonColor: "#DD6B55",
-		        confirmButtonText: "删除",
-		        closeOnConfirm: false
-		    }, function () {//此函数是点击删除执行的函数
-		    		//这里写ajax代码
-		    		// 以下是成功的提示框，请在ajax回调函数中执行
-			    swal("删除成功！", "您已经永久删除了这条信息。", "success");
-		    });
-		});
-		
-		
-		$("#demo1").click(function() {
-			//基本消息框－留着备用
-			swal({
-				title: "欢迎使用SweetAlert",
-				text: "Sweet Alert 是一个替代传统的 JavaScript Alert 的漂亮提示效果。"
-			})
-		});
-	});
-    </script>  
+    </div>
+
+</div>
+<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="${pageContext.request.contextPath}/js/plugins/select/bootstrap-select.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="${pageContext.request.contextPath}/layui/layui.js"></script>
+<script>
+    function showDepts(){
+
+        layui.use('table',function(){
+            var table = layui.table;
+            table.render({
+                elem:"#deptTable",
+                height:"400",
+                url:"${pageContext.request.contextPath}/dept/getAllDepts",
+                toolbar: '#toolbarDemo',
+                even:true,
+                loading:true,
+                page:true,
+                limits:[2,5,10,20],
+                limit:5,
+                cols:[[
+                    {type: 'checkbox', fixed: 'left'},
+                    {field: 'deptno', title: '编号', width:80, sort: true},
+                    {field: 'dname', title: '部门名称', width:150},
+                    {field: 'local', title: '区域', width:100}
+
+
+                ]]
+            });
+            //头工具栏事件
+            table.on('toolbar(test)', function(obj){
+                var checkStatus = table.checkStatus(obj.config.id);
+                switch(obj.event){
+                    case 'edit':
+                        var data = checkStatus.data;
+                        if(data.length!=1){
+                            swal("信息提示", "只能选择一条记录进行修改", "warning");
+                        }else{
+                            window.location="${pageContext.request.contextPath}/dept/update-dept?deptno="+data[0].deptno;
+                        }
+                        break;
+                    case 'delete':
+                        var data = checkStatus.data;
+                        if(data.length<=0){
+                            swal("信息提示", "至少选择一条记录进行删除", "warning");
+                        }else{
+                            var deptnos=new Array();
+                            for(var i=0;i<data.length;i++){
+                                deptnos.push(data[i].deptno);
+                            }
+                            $.ajax({
+                                url:"${pageContext.request.contextPath}/dept/deleteDepts",
+                                type:"post",
+                                data:{"deptnos":deptnos},
+                                dataType:"json",
+                                cache:false,
+                                success:function(rs){
+                                    if(rs.status==200){
+                                        showDepts();
+                                    }else {
+                                        swal("信息提示", rs.msg, "error");
+                                    }
+                                }
+                            });
+                        }
+                        break;
+                };
+            });
+
+        });
+    }
+    $(document).ready(function() {
+        showDepts();
+    });
+
+</script>
 </body>
 
 

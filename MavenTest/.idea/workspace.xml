@@ -27,7 +27,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2ea27f2-6572-43b6-b042-51e69fa6bc18" name="Default Changelist" comment="" />
+    <list default="true" id="e2ea27f2-6572-43b6-b042-51e69fa6bc18" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/test01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-course/MIS/src/main/java/com/yiming/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-course/MIS/src/main/java/com/yiming/controller/EmployeeController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="JupyterTrust" id="ed6395f2-2e9d-487c-b4f2-a10100ad70db" />
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -274,6 +278,7 @@
       <workItem from="1607252110948" duration="285000" />
       <workItem from="1607252429572" duration="4560000" />
       <workItem from="1607299964372" duration="918000" />
+      <workItem from="1610095552665" duration="74000" />
     </task>
     <servers />
   </component>

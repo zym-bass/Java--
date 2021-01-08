@@ -9,9 +9,6 @@
   <artifactId>test01</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>test01</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
 
   <properties>

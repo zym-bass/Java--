@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ff718c8-5fc5-4da6-99d1-44664ee2ec69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../力扣解题/src/com/yiming/java1105/Topic02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../力扣解题/src/com/yiming/java1106/Topic03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../力扣解题/src/com/yiming/java1106/Topic04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/ReflectTese02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/ReflectTest01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/ReflectTest03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/ReflectTest04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/反射机制/src/com/yiming/reflect/className.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1jmTjJPiAV47GyLvbEsYj4tvz7m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="TREE" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ReflectTest04">
+    <configuration name="AddTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AddTest" />
+      <module name="函数型接口" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashMapTest01" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HashMapTest01" />
+      <module name="HashMap源码分析" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectTese02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.reflect.ReflectTese02" />
+      <module name="反射机制" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.reflect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectTest01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.reflect.ReflectTest01" />
+      <module name="反射机制" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.reflect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectTest04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.reflect.ReflectTest04" />
+      <module name="反射机制" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.reflect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="函数型接口" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ReflectTest04" />
+        <item itemvalue="Application.ReflectTese02" />
+        <item itemvalue="Application.ReflectTest01" />
+        <item itemvalue="Application.AddTest" />
+        <item itemvalue="Application.Test (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ff718c8-5fc5-4da6-99d1-44664ee2ec69" name="Default Changelist" comment="" />
+      <created>1604408400657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604408400657</updated>
+      <workItem from="1604408401793" duration="7759000" />
+      <workItem from="1604455973047" duration="1013000" />
+      <workItem from="1604490237098" duration="37803000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="392" y="107" width="816" height="733" key="#Intentions" timestamp="1604448832923">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="392" y="107" width="816" height="733" key="#Intentions/0.0.1600.900@0.0.1600.900" timestamp="1604448832923" />
+    <state x="605" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1604671141412">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="605" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1604671141412" />
+    <state x="92" y="92" width="1416" height="716" key="DiffContextDialog" timestamp="1604448024420">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="92" y="92" width="1416" height="716" key="DiffContextDialog/0.0.1600.900@0.0.1600.900" timestamp="1604448024420" />
+    <state x="1057" y="194" key="EnvironmentVariablesDialog" timestamp="1604493498270">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="1057" y="194" key="EnvironmentVariablesDialog/0.0.1600.900@0.0.1600.900" timestamp="1604493498270" />
+    <state x="579" y="190" key="FileChooserDialogImpl" timestamp="1604585476998">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="579" y="190" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1604585476998" />
+    <state width="1556" height="286" key="GridCell.Tab.0.bottom" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state width="1556" height="286" key="GridCell.Tab.0.center" timestamp="1604727634927">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1604727634927" />
+    <state width="1556" height="286" key="GridCell.Tab.0.left" timestamp="1604727634927">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1604727634927" />
+    <state width="1556" height="286" key="GridCell.Tab.0.right" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state width="1556" height="286" key="GridCell.Tab.1.bottom" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.1.bottom/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state width="1556" height="286" key="GridCell.Tab.1.center" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.1.center/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state width="1556" height="286" key="GridCell.Tab.1.left" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.1.left/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state width="1556" height="286" key="GridCell.Tab.1.right" timestamp="1604727634928">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="286" key="GridCell.Tab.1.right/0.0.1600.900@0.0.1600.900" timestamp="1604727634928" />
+    <state x="186" y="32" key="new project wizard" timestamp="1604727631871">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="186" y="32" key="new project wizard/0.0.1600.900@0.0.1600.900" timestamp="1604727631871" />
+    <state x="856" y="200" width="672" height="677" key="run.anything.popup" timestamp="1604502630331">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="856" y="200" width="672" height="677" key="run.anything.popup/0.0.1600.900@0.0.1600.900" timestamp="1604502630331" />
+    <state x="872" y="168" width="672" height="678" key="search.everywhere.popup" timestamp="1604496651541">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="872" y="168" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1604496651541" />
+    <state x="522" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604448016607">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="522" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1600.900@0.0.1600.900" timestamp="1604448016607" />
+  </component>
+</project>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39638543-2484-4b66-8d83-4ca78f82bce1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../第十二章方法覆盖和多态/out/production/第十二章方法覆盖和多态/Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../第十二章方法覆盖和多态/out/production/第十二章方法覆盖和多态/Bird.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1j2l92yY3314dLd2VGMcm22RvPu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.AbstractTest02">
+    <configuration name="AbstractTest01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AbstractTest01" />
+      <module name="第16章接口-抽象类-以及两者之间的区别" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbstractTest02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AbstractTest02" />
+      <module name="第16章接口-抽象类-以及两者之间的区别" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AbstractTest02" />
+        <item itemvalue="Application.AbstractTest01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39638543-2484-4b66-8d83-4ca78f82bce1" name="Default Changelist" comment="" />
+      <created>1603009913651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603009913651</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="579" y="190" key="FileChooserDialogImpl" timestamp="1603019691664">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="579" y="190" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1603019691664" />
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom" timestamp="1603019711685">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1603019711685" />
+    <state width="1556" height="226" key="GridCell.Tab.0.center" timestamp="1603019711684">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1603019711684" />
+    <state width="1556" height="226" key="GridCell.Tab.0.left" timestamp="1603019711684">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1603019711684" />
+    <state width="1556" height="226" key="GridCell.Tab.0.right" timestamp="1603019711684">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1603019711684" />
+    <state x="170" y="59" key="new project wizard" timestamp="1603019711195">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="170" y="59" key="new project wizard/0.0.1600.900@0.0.1600.900" timestamp="1603019711195" />
+  </component>
+</project>

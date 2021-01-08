@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a104258-7014-44e6-8461-e6770e46525b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/controller/OneServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/controller/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/controller/TwoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/dao/C3p0dbutils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/dao/fileadd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/src/com/yiming/entiy/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/web/false.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/12_HomeWork/web/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/14_Filter对请求对象进行增强服务/src/com/yiming/controller/OneServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/14_Filter对请求对象进行增强服务/src/com/yiming/controller/TwoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/14_Filter对请求对象进行增强服务/src/com/yiming/filter/OneFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineCourse/14_Filter对请求对象进行增强服务/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineCourse/06_Online-Exam-Sysetm/src/com/yiming/utils/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineCourse/06_Online-Exam-Sysetm/src/com/yiming/utils/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sysetmclass/.recommenders/caches/identified-project-coordinates.json" beforeDir="false" afterPath="$PROJECT_DIR$/sysetmclass/.recommenders/caches/identified-project-coordinates.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jlp64hxD4PCzD7ECdmjuS2jpxm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/OnlineCourse/12_HomeWork" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java--\OnlineCourse\12_HomeWork\web\WEB-INF\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a104258-7014-44e6-8461-e6770e46525b" name="Default Changelist" comment="" />
+      <created>1604388354063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604388354063</updated>
+      <workItem from="1604388355508" duration="85000" />
+      <workItem from="1606227333838" duration="153000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="254" y="104" width="1092" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606227462294">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="254" y="104" width="1092" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.900@0.0.1600.900" timestamp="1606227462294" />
+    <state x="980" y="204" key="FileChooserDialogImpl" timestamp="1606227485153">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="980" y="204" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1606227485153" />
+    <state x="280" y="23" key="SettingsEditor" timestamp="1606227479640">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="280" y="23" key="SettingsEditor/0.0.1600.900@0.0.1600.900" timestamp="1606227479640" />
+  </component>
+</project>

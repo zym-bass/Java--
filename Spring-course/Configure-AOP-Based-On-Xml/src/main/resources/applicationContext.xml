@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.1.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+    <!--把目标类交给spring容器管理-->
+    <bean id="personDao" class="com.yiming.dao.impl.PersonDaoImpl"></bean>
+
+    <!--把PersonAspect交给spring容器管理-->
+    <bean id="personAspect" class="com.yiming.service.PersonAspect"></bean>
+
+
+    <aop:config>
+        <aop:aspect id="myAspect01" ref="personAspect" order="2">
+            <aop:pointcut id="myPointCut01"  expression="execution(* com.yiming.dao.impl.*.*(..))" />
+            <aop:before method="doBeforeAdvice" pointcut-ref="myPointCut01" ></aop:before>
+            <aop:after-returning method="doReturningAdvice" pointcut-ref="myPointCut01" returning="result"></aop:after-returning>
+            <aop:after method="doAfterAdvice" pointcut-ref="myPointCut01"></aop:after>
+            <aop:after-throwing method="doExceptionAdvice" throwing="e" pointcut-ref="myPointCut01"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+</beans>

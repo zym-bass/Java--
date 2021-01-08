@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../ch-ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/../MIS" />
+    <file type="web" url="file://$PROJECT_DIR$/../Spring-Jdbc-Servlet" />
+    <file type="web" url="file://$PROJECT_DIR$/../Spring-MyBatis-Servlet" />
+    <file type="web" url="file://$PROJECT_DIR$/../SpringMVC01" />
+    <file type="web" url="file://$PROJECT_DIR$/../SpringMVC02" />
+    <file type="web" url="file://$PROJECT_DIR$/../SSM-01" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spring-Jdbc-Servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spring-dbutils-Servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spring-MyBatis-Servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/../AutoProxy-Based-On-JDK/pom.xml" />
+        <option value="$PROJECT_DIR$/../Configure-AOP-Based-On-AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/../Configure-AOP-Based-On-Xml/pom.xml" />
+        <option value="$PROJECT_DIR$/../Spring-transcation/pom.xml" />
+        <option value="$PROJECT_DIR$/../SpringMVC01/pom.xml" />
+        <option value="$PROJECT_DIR$/../SpringMVC02/pom.xml" />
+        <option value="$PROJECT_DIR$/../SSM-01/pom.xml" />
+        <option value="$PROJECT_DIR$/../ch-ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/../Redis-Jedis/pom.xml" />
+        <option value="$PROJECT_DIR$/../MIS/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

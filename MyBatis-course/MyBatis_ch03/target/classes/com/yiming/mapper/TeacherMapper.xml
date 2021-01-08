@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.mapper.TeacherMapper">
+    <resultMap id="BaseResultMap" type="Teacher">
+        <id column="t_id" property="id"></id>
+        <result column="t_name" property="name"></result>
+    </resultMap>
+
+    <!--<select id="getTeachersBySid" resultMap="">
+        select
+    </select>-->
+    <select id="getTeacherById" resultMap="BaseResultMap">
+        select  *from teacher where t_id=#{id}
+    </select>
+</mapper>

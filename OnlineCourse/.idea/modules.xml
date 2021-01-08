@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/03_ServletLifeCycle/03_ServletLifeCycle.iml" filepath="$PROJECT_DIR$/03_ServletLifeCycle/03_ServletLifeCycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_HttpServletResponseTest/04_HttpServletResponseTest.iml" filepath="$PROJECT_DIR$/04_HttpServletResponseTest/04_HttpServletResponseTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_HttpServletRequest-Introduct/05_HttpServletRequest-Introduct.iml" filepath="$PROJECT_DIR$/05_HttpServletRequest-Introduct/05_HttpServletRequest-Introduct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_Online-Exam-Sysetm/06_Online-Exam-Sysetm.iml" filepath="$PROJECT_DIR$/06_Online-Exam-Sysetm/06_Online-Exam-Sysetm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07_ServletContextTest/07_ServletContextTest.iml" filepath="$PROJECT_DIR$/07_ServletContextTest/07_ServletContextTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_CookieTest/08_CookieTest.iml" filepath="$PROJECT_DIR$/08_CookieTest/08_CookieTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_HttpSessionTest/09_HttpSessionTest.iml" filepath="$PROJECT_DIR$/09_HttpSessionTest/09_HttpSessionTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10_HttpServletRequest-data-share/10_HttpServletRequest-data-share.iml" filepath="$PROJECT_DIR$/10_HttpServletRequest-data-share/10_HttpServletRequest-data-share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_ServletContextListener/11_ServletContextListener.iml" filepath="$PROJECT_DIR$/11_ServletContextListener/11_ServletContextListener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_HomeWork/12_HomeWork.iml" filepath="$PROJECT_DIR$/12_HomeWork/12_HomeWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_ServletContextAttribuetListener/12_ServletContextAttribuetListener.iml" filepath="$PROJECT_DIR$/12_ServletContextAttribuetListener/12_ServletContextAttribuetListener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13_FilterTest/13_FilterTest.iml" filepath="$PROJECT_DIR$/13_FilterTest/13_FilterTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14_Filter对请求对象进行增强服务/14_Filter对请求对象进行增强服务.iml" filepath="$PROJECT_DIR$/14_Filter对请求对象进行增强服务/14_Filter对请求对象进行增强服务.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16_JSPTest/16_JSPTest.iml" filepath="$PROJECT_DIR$/16_JSPTest/16_JSPTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17_JSP文件Java命令书写则/17_JSP文件Java命令书写则.iml" filepath="$PROJECT_DIR$/17_JSP文件Java命令书写则/17_JSP文件Java命令书写则.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homeWorkTest/homeWorkTest.iml" filepath="$PROJECT_DIR$/homeWorkTest/homeWorkTest.iml" />
+    </modules>
+  </component>
+</project>

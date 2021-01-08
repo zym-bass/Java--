@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.yiming</groupId>
+  <artifactId>parent_maven</artifactId>
+  <version>1.1</version>
+  <packaging>pom</packaging>
+
+  <name>parent_maven</name>
+  <url>http://maven.apache.org</url>
+	
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<c3p0-version>0.9.5.2</c3p0-version>
+    <mysql-version>5.1.47</mysql-version>
+    <dbutils-version>1.6</dbutils-version>
+    <servlet-api-version>3.1.0</servlet-api-version>
+    <logging-version>1.2</logging-version>
+    <junit-version>4.12</junit-version>
+  </properties>
+	<!-- 声明引入的依赖 -->
+	<dependencyManagement>
+	  <dependencies>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>${junit-version}</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	     <!-- c3p0 -->
+		<dependency>
+		    <groupId>com.mchange</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>${c3p0-version}</version>
+		</dependency>
+		
+		<!-- mysql驱动 -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql-version}</version>
+		</dependency>
+		<!-- commons-dbutils -->
+		<dependency>
+		    <groupId>commons-dbutils</groupId>
+		    <artifactId>commons-dbutils</artifactId>
+		    <version>${dbutils-version}</version>
+		</dependency>
+		
+		
+		
+		
+		<!-- commons-logging -->
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>${logging-version}</version>
+		</dependency>
+	  </dependencies>
+  </dependencyManagement>
+</project>

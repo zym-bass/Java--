@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.mapper.IdcardMapper">
+
+
+    <resultMap id="BaseResultMap" type="Idcard">
+        <id column="i_id" property="id"></id>
+        <result column="i_cardno" property="cardno"></result>
+        <result column="i_uselife" property="uselife"></result>
+    </resultMap>
+
+    <select id="getIdcardByid" resultMap="BaseResultMap">
+        select * from idcard where i_person2_id=#{id}
+    </select>
+
+</mapper>

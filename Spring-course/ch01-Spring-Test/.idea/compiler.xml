@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-transcation" />
+        <module name="Spring-MyBatis-Servlet" />
+        <module name="Configure-AOP-Based-On-AOP" />
+        <module name="Spring-dbutils-Servlet" />
+        <module name="ch01-Spring-Test" />
+        <module name="SSM-01" />
+        <module name="Redis-Jedis-Test" />
+        <module name="MIS" />
+        <module name="Spring-Jdbc-Servlet" />
+        <module name="ch-ssm" />
+        <module name="Configure-AOP-Based-On-Xml" />
+        <module name="SpringMVC01" />
+        <module name="SpringMVC02" />
+        <module name="AutoProxy-Based-On-JDK" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

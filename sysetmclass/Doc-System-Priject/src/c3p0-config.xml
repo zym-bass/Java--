@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<default-config>
+		<!-- 这四个参数是必写项 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql:///hospitaldb?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC
+		</property>
+		<property name="user">root</property>
+		<property name="password">3333</property>
+		<!-- 以下是c3p0连接池的可选项 -->
+		<property name="initialPoolSize">10</property>
+		<property name="maxIdleTime">30</property>
+		<property name="maxPoolSize">20</property>
+		<property name="minPoolSize">5</property>
+		<property name="maxStatements">200</property>
+	</default-config>
+</c3p0-config>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f62716b7-431c-4037-b4fa-9b8eeda3bcff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/02-dynamic-proxy/src/com/yiming/MainShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-dynamic-proxy/src/com/yiming/factory/UsbKingFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-dynamic-proxy/src/com/yiming/handler/MySellHander.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-dynamic-proxy/src/com/yiming/service/UsbSell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-static-proxy/src/com/yiming/ShopMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/01-static-proxy/src/com/yiming/ShopMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-static-proxy/src/com/yiming/shangjia/TapBao.java" beforeDir="false" afterPath="$PROJECT_DIR$/01-static-proxy/src/com/yiming/handler/TapBao.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1l0hVgSKPUlEyYnwPDXqY5yOMti" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yiming.service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainShop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.MainShop" />
+      <module name="02-dynamic-proxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainShop" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f62716b7-431c-4037-b4fa-9b8eeda3bcff" name="Default Changelist" comment="" />
+      <created>1606739942483</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606739942483</updated>
+      <workItem from="1606739943854" duration="2074000" />
+      <workItem from="1606823036147" duration="3348000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1005" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1606823426391">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="1005" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1606823426391" />
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom" timestamp="1606826784698">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1606826784698" />
+    <state width="1556" height="226" key="GridCell.Tab.0.center" timestamp="1606826784698">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1606826784698" />
+    <state width="1556" height="226" key="GridCell.Tab.0.left" timestamp="1606826784698">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1606826784698" />
+    <state width="1556" height="226" key="GridCell.Tab.0.right" timestamp="1606826784698">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="226" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1606826784698" />
+    <state x="902" y="182" width="596" height="536" key="find.popup" timestamp="1606823560491">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="902" y="182" width="596" height="536" key="find.popup/0.0.1600.900@0.0.1600.900" timestamp="1606823560491" />
+    <state x="341" y="59" key="new project wizard" timestamp="1606823095821">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="341" y="59" key="new project wizard/0.0.1600.900@0.0.1600.900" timestamp="1606823095821" />
+  </component>
+</project>

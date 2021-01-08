@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.yiming.mapper.PersonMapper">
+
+    <select id="getAllPerson" resultType="Person">
+        select * from person
+    </select>
+
+    <insert id="addPerson" >
+        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        insert into person(name,gender,birthday,age) values(#{name},#{gender},#{birthday},#{age})
+    </insert>
+
+    <delete id="deletePerson" >
+        delete from person where id=#{id}
+    </delete>
+
+    <update id="updatePerson" >
+        update person set name=#{name} ,gender=#{gender} , birthday=#{birthday} , age=#{age} where id=#{id}
+    </update>
+
+    <select id="getPersonByGenderAndAge"  resultMap="PersonResultMap" >
+        select *from person where gender=#{gender} and age=#{age}
+    </select>
+
+    <sql id="person_column">
+        id,name,gender,birthday,age
+    </sql>
+
+    <select id="getPersonByLikeName" resultMap="PersonResultMap">
+        select <include refid="person_column"></include> from person where name like"%" #{name} "%"
+    </select>
+
+
+    <resultMap id="PersonResultMap" type="Person">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="gender" property="gender"></result>
+        <result column="age" property="age"></result>
+        <result column="birthday" property="birthday"></result>
+    </resultMap>
+</mapper>

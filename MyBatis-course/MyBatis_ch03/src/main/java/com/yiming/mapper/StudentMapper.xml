@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.mapper.StudentMapper">
+    <resultMap id="BaseResultMap" type="Student">
+        <id column="s_id" property="id"></id>
+        <result column="s_name" property="name"></result>
+    </resultMap>
+
+    <select id="getStudentById" resultMap="StudentResultMaps">
+        select  *from student where s_id=#{id}
+    </select>
+    <resultMap id="StudentResultMaps" type="Student" extends="BaseResultMap">
+        <collection property="studentTeachers" ofType="StudentTeacher" column="s_id" select="com.yiming.mapper.StudentTeacherMapper.getStudentTeachersBySid">
+        </collection>
+    </resultMap>
+
+    <update id="updateStudentBySid" >
+        update  student
+        <set>
+            <if test="#{name}!=null">
+                s_name=#{name}
+            </if>
+        </set>
+        where s_id=#{id}
+    </update>
+</mapper>

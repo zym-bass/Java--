@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.mapper.EmployeeMapper">
+
+    <!--员工表和java实体类表的对应-->
+    <resultMap id="baseResultMap" type="Employee">
+        <id column="e_id" property="id"></id>
+        <result column="e_name" property="name"></result>
+        <result column="e_gender" property="gender"></result>
+    </resultMap>
+
+
+    <!--根据员工id查询员工信息并且得到对应部门信息-->
+    <select id="getEmployeeById" resultMap="EmployeeResultMapper">
+        select *from employee e , department d where e.e_depart_id=d.d_id and e.e_id=#{id};
+    </select>
+    <resultMap id="EmployeeResultMapper" type="Employee" extends="baseResultMap">
+        <association property="department" javaType="Department" column="e_depart_id"
+                     select="com.yiming.mapper.DepartmentMapper.getDepartmentById"></association>
+    </resultMap>
+
+    <!--得到部门编号对应的员工信息返回集合-->
+    <select id="getEmployeesByDid" resultMap="baseResultMap">
+        select *from employee where e_depart_id=#{id}
+    </select>
+
+    <!--根据姓名和大于编号的查询信息-->
+    <select id="getEmployeesByNameAge" resultMap="baseResultMap">
+        select *from employee
+        <trim prefix="where" prefixOverrides="and|or"  >
+                <if test="name!=null and name!=''">
+                    and e_name=#{name}
+                </if>
+                <if test="id!=null">
+                    and e_id>#{id}
+                </if>
+        </trim>
+       <!-- <where>
+            <choose>
+                <when test="name!=null and name!=''">
+                    and e_name=#{name}
+                </when>
+                <when test="id!=null">
+                    and e_id>#{id}
+                </when>
+                <otherwise>
+                    and 1=1
+                </otherwise>
+            </choose>
+        </where>-->
+    </select>
+
+    <!--修改员工信息-->
+    <update id="updateEmployee" keyProperty="Employee">
+        update employee
+        <trim prefix="set" suffixOverrides="," >
+            <if test="name!=null">
+                e_name=#{name},
+            </if>
+            <if test="gender!=null">
+                e_gender=#{gender},
+            </if>
+        </trim>
+        <where>
+            e_id=#{id}
+        </where>
+    </update>
+
+    <!--根据姓名模糊查询信息-->
+    <select id="selectEmployeeLike" resultMap="baseResultMap">
+        <bind name="name" value="'%' + _parameter.getName() + '%'" />
+        SELECT * FROM employee
+        WHERE e_name LIKE #{name}
+    </select>
+
+    <!--添加员工信息-->
+    <insert id="addBatchEmployees" >
+        insert into employee(e_name,e_gender) values
+        <foreach collection="list" item="emp" separator=",">
+            (#{emp.name},#{emp.gender})
+        </foreach>
+    </insert>
+
+    <!--批量更新-->
+    <update id="updateBatchEmployee">
+        <foreach collection="list" item="emp" separator=";">
+            update employee
+            <set>
+                <if test="emp.name!=null">
+                    e_name=#{emp.name},
+                </if>
+                <if test="emp.gender!=null">
+                    e_gender=#{emp.gender},
+                </if>
+            </set>
+            where e_id=#{emp.id}
+        </foreach>
+    </update>
+
+    <!--批量删除-->
+    <delete id="DeleteBatchEmployee">
+        delete  from employee where e_id in
+        <foreach collection="list" item="id" open="(" separator=","  close=")">
+         #{id}
+        </foreach>
+    </delete>
+</mapper>

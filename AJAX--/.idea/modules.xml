@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_AJAX-My/01_AJAX-My.iml" filepath="$PROJECT_DIR$/01_AJAX-My/01_AJAX-My.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_AJAX-My-partial/02_AJAX-My-partial.iml" filepath="$PROJECT_DIR$/02_AJAX-My-partial/02_AJAX-My-partial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_AJAX-queryinfo/03_AJAX-queryinfo.iml" filepath="$PROJECT_DIR$/03_AJAX-queryinfo/03_AJAX-queryinfo.iml" />
+    </modules>
+  </component>
+</project>

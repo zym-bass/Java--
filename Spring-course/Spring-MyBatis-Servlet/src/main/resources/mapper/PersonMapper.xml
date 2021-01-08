@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.dao.PersonMapper">
+
+    <insert id="savePerson" >
+       insert into person(name,gender,age,birthday) values(#{name},#{gender},#{age},#{birthday})
+    </insert>
+
+    <update id="updatePerson" >
+        update person set name=#{name},gender=#{gender},age=#{age},birthday=#{birthday} where id=#{id}
+    </update>
+
+    <delete id="deletePerson">
+        delete from person where id=#{id}
+    </delete>
+
+    <select id="getPersonById" resultType="Person">
+        select * from person where id=?
+    </select>
+
+    <select id="getPersons" resultType="Person">
+        select * from person
+    </select>
+</mapper>

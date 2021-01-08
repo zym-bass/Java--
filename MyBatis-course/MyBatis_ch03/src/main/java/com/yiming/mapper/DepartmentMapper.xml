@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.yiming.mapper.DepartmentMapper">
+    <!--根据id查询部门信息-->
+    <select id="getDepartmentById" resultMap="DepartmentResultMap" >
+        select *from department where d_id=#{id}
+    </select>
+
+
+    <!--部门的ResultMap-->
+    <resultMap id="DepartmentResultMap" type="Department">
+        <id column="d_id" property="id"></id>
+        <result column="d_name" property="name"></result>
+    </resultMap>
+
+    <!--根据id查询部门内的员工-->
+    <select id="getDepartmentByIds" resultMap="DepartmentResultMaps" >
+        select * from department where d_id=#{id};
+    </select>
+
+    <!--部门和员工信息集合的ResultMap-->
+    <resultMap id="DepartmentResultMaps" type="Department"  extends="DepartmentResultMap">
+        <collection   property="employees" ofType="Employee"  column="d_id" select="com.yiming.mapper.EmployeeMapper.getEmployeesByDid">
+        </collection>
+    </resultMap>
+</mapper>

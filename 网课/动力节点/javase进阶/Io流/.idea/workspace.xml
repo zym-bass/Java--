@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b56756ce-a9f3-4948-8d06-dd11434791db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../多线程/src/com/yiming/java1101/ReturnTest01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../多线程/src/com/yiming/java1101/number.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1jVQpYFQMmUrjzU7beodfImLKxK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../多线程/src/com/yiming/packet" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java--\网课\动力节点\javase进阶\多线程\src\com\yiming\packet" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ReturnTest01">
+    <configuration name="ReturnTest01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.java1101.ReturnTest01" />
+      <module name="多线程" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.java1101.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadTest08" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.java1101.ThreadTest08" />
+      <module name="多线程" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.java1101.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadTest09" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.java1101.ThreadTest09" />
+      <module name="多线程" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.java1101.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimerTset01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.java1101.TimerTset01" />
+      <module name="多线程" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.java1101.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="number" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yiming.java1101.number" />
+      <module name="多线程" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yiming.java1101.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ReturnTest01" />
+        <item itemvalue="Application.number" />
+        <item itemvalue="Application.ThreadTest09" />
+        <item itemvalue="Application.ThreadTest08" />
+        <item itemvalue="Application.TimerTset01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b56756ce-a9f3-4948-8d06-dd11434791db" name="Default Changelist" comment="" />
+      <created>1603886963399</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603886963399</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="249" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604193263617">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="548" y="249" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900@0.0.1600.900" timestamp="1604193263617" />
+    <state x="544" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1604328446773">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="544" y="150" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1604328446773" />
+    <state x="580" y="204" key="FileChooserDialogImpl" timestamp="1603894713551">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="580" y="204" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1603894713551" />
+    <state width="740" height="220" key="GridCell.Tab.0.bottom" timestamp="1604383061601">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="740" height="220" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1604383061601" />
+    <state width="740" height="220" key="GridCell.Tab.0.center" timestamp="1604383061601">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="740" height="220" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1604383061601" />
+    <state width="740" height="220" key="GridCell.Tab.0.left" timestamp="1604383061601">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="740" height="220" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1604383061601" />
+    <state width="740" height="220" key="GridCell.Tab.0.right" timestamp="1604383061601">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="740" height="220" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1604383061601" />
+    <state width="1556" height="278" key="GridCell.Tab.1.bottom" timestamp="1604383061569">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="278" key="GridCell.Tab.1.bottom/0.0.1600.900@0.0.1600.900" timestamp="1604383061569" />
+    <state width="1556" height="278" key="GridCell.Tab.1.center" timestamp="1604383061569">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="278" key="GridCell.Tab.1.center/0.0.1600.900@0.0.1600.900" timestamp="1604383061569" />
+    <state width="1556" height="278" key="GridCell.Tab.1.left" timestamp="1604383061569">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="278" key="GridCell.Tab.1.left/0.0.1600.900@0.0.1600.900" timestamp="1604383061569" />
+    <state width="1556" height="278" key="GridCell.Tab.1.right" timestamp="1604383061569">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1556" height="278" key="GridCell.Tab.1.right/0.0.1600.900@0.0.1600.900" timestamp="1604383061569" />
+    <state x="536" y="70" key="SettingsEditor" timestamp="1604192891490">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="536" y="70" key="SettingsEditor/0.0.1600.900@0.0.1600.900" timestamp="1604192891490" />
+    <state x="359" y="185" width="882" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604156262874">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="359" y="185" width="882" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.900@0.0.1600.900" timestamp="1604156262874" />
+    <state x="170" y="59" key="new project wizard" timestamp="1604209478277">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="170" y="59" key="new project wizard/0.0.1600.900@0.0.1600.900" timestamp="1604209478277" />
+    <state x="456" y="200" key="run.anything.popup" timestamp="1604279455576">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="456" y="200" key="run.anything.popup/0.0.1600.900@0.0.1600.900" timestamp="1604279455576" />
+    <state x="863" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1604240915501">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="863" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1604240915501" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.EOFException" package="java.io" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="s" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

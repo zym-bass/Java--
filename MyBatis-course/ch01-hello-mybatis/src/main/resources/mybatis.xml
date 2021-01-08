@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--
+    mybatis的主配置文件：主要定义了数据库的配置信息，sql映射文件的位置
+    1. 约束文件
+    <!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    mybatis-3-config.did：约束文件的名称
+
+    2. configuration 配置（根标签）
+        <environments> 环境配置：数据库的连接信息
+        id:一个唯一值，自定义，表示环境的名称
+
+-->
+<configuration>
+    <!--
+        环境配置：数据库的连接信息
+        default:必须和某个environment的id值一样
+    -->
+    <environments default="mydev">
+        <environment id="mydev">
+            <!--
+                transactionManager 事务管理者
+                type:JDBC(表示使用jdbc中的Connection对象的commit,rollback做事务处理)
+            -->
+            <transactionManager type="JDBC"/>
+            <!--
+                dataSource 数据源
+                type：表示数据源的类型，POOLED 表示使用连接池的
+            -->
+            <dataSource type="POOLED">
+                <!--
+                    driver,user,username,password是固定的，不能自定义
+                -->
+                <!-- driver数据库的驱动类名  注册驱动 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+
+                <!--以下都是获取连接-->
+                <!--连接数据库的url字符串 -->
+                <property name="url" value="jdbc:mysql://localhost:3306/bjpowernode"/>
+
+                <!--连接数据库的用户名-->
+                <property name="username" value="root"/>
+                <!--密码-->
+                <property name="password" value="3333"/>
+
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- sql mapper (sql映射文件)的位置 -->
+    <mappers>
+        <!--
+            一个mapper标签指定一个文件的位置
+            从类路径开始的路径信息。target/classes(类路径)
+        -->
+        <mapper resource="com/yiming/dao/StudentDao.xml"/>
+    </mappers>
+
+</configuration>

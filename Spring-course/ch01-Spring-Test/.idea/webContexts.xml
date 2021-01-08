@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/../MIS/src/main/webapp/WEB-INF/pages/list-resources.jsp" value="file://$PROJECT_DIR$/../MIS/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/../MIS/src/main/webapp/WEB-INF/pages/list-role.jsp" value="file://$PROJECT_DIR$/../MIS/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/../SSM-01/src/main/webapp/WEB-INF/customer/customer.jsp" value="file://$PROJECT_DIR$/../SSM-01/src/main/webapp/WEB-INF/customer" />
+        <entry key="file://$PROJECT_DIR$/../SSM-01/src/main/webapp/WEB-INF/main/top.jsp" value="file://$PROJECT_DIR$/../SSM-01/src/main/webapp/WEB-INF/main" />
+      </map>
+    </option>
+  </component>
+</project>

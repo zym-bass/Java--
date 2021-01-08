@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiming.mapper.IndexvalueMapper">
+  <resultMap id="BaseResultMap" type="com.yiming.entity.Indexvalue">
+    <id column="in_id" jdbcType="INTEGER" property="inId" />
+    <result column="in_turnover" jdbcType="DOUBLE" property="inTurnover" />
+    <result column="in_business" jdbcType="VARCHAR" property="inBusiness" />
+    <result column="comname_fk" jdbcType="INTEGER" property="comnameFk" />
+    <result column="in_remark" jdbcType="VARCHAR" property="inRemark" />
+    <result column="in_file" jdbcType="VARCHAR" property="inFile" />
+    <result column="emp_fk5" jdbcType="INTEGER" property="empFk5" />
+    <result column="in_starttime" jdbcType="DATE" property="inStarttime" />
+    <result column="in_endtime" jdbcType="DATE" property="inEndtime" />
+    <result column="in_updatetime" jdbcType="DATE" property="inUpdatetime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    in_id, in_turnover, in_business, comname_fk, in_remark, in_file, emp_fk5, in_starttime, 
+    in_endtime, in_updatetime
+  </sql>
+  <select id="selectByExample" parameterType="com.yiming.entity.IndexvalueExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from indexvalue
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from indexvalue
+    where in_id = #{inId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from indexvalue
+    where in_id = #{inId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yiming.entity.IndexvalueExample">
+    delete from indexvalue
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yiming.entity.Indexvalue">
+    insert into indexvalue (in_id, in_turnover, in_business, 
+      comname_fk, in_remark, in_file, 
+      emp_fk5, in_starttime, in_endtime, 
+      in_updatetime)
+    values (#{inId,jdbcType=INTEGER}, #{inTurnover,jdbcType=DOUBLE}, #{inBusiness,jdbcType=VARCHAR}, 
+      #{comnameFk,jdbcType=INTEGER}, #{inRemark,jdbcType=VARCHAR}, #{inFile,jdbcType=VARCHAR}, 
+      #{empFk5,jdbcType=INTEGER}, #{inStarttime,jdbcType=DATE}, #{inEndtime,jdbcType=DATE}, 
+      #{inUpdatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yiming.entity.Indexvalue">
+    insert into indexvalue
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="inId != null">
+        in_id,
+      </if>
+      <if test="inTurnover != null">
+        in_turnover,
+      </if>
+      <if test="inBusiness != null">
+        in_business,
+      </if>
+      <if test="comnameFk != null">
+        comname_fk,
+      </if>
+      <if test="inRemark != null">
+        in_remark,
+      </if>
+      <if test="inFile != null">
+        in_file,
+      </if>
+      <if test="empFk5 != null">
+        emp_fk5,
+      </if>
+      <if test="inStarttime != null">
+        in_starttime,
+      </if>
+      <if test="inEndtime != null">
+        in_endtime,
+      </if>
+      <if test="inUpdatetime != null">
+        in_updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="inId != null">
+        #{inId,jdbcType=INTEGER},
+      </if>
+      <if test="inTurnover != null">
+        #{inTurnover,jdbcType=DOUBLE},
+      </if>
+      <if test="inBusiness != null">
+        #{inBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="comnameFk != null">
+        #{comnameFk,jdbcType=INTEGER},
+      </if>
+      <if test="inRemark != null">
+        #{inRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="inFile != null">
+        #{inFile,jdbcType=VARCHAR},
+      </if>
+      <if test="empFk5 != null">
+        #{empFk5,jdbcType=INTEGER},
+      </if>
+      <if test="inStarttime != null">
+        #{inStarttime,jdbcType=DATE},
+      </if>
+      <if test="inEndtime != null">
+        #{inEndtime,jdbcType=DATE},
+      </if>
+      <if test="inUpdatetime != null">
+        #{inUpdatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yiming.entity.IndexvalueExample" resultType="java.lang.Long">
+    select count(*) from indexvalue
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update indexvalue
+    <set>
+      <if test="record.inId != null">
+        in_id = #{record.inId,jdbcType=INTEGER},
+      </if>
+      <if test="record.inTurnover != null">
+        in_turnover = #{record.inTurnover,jdbcType=DOUBLE},
+      </if>
+      <if test="record.inBusiness != null">
+        in_business = #{record.inBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comnameFk != null">
+        comname_fk = #{record.comnameFk,jdbcType=INTEGER},
+      </if>
+      <if test="record.inRemark != null">
+        in_remark = #{record.inRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inFile != null">
+        in_file = #{record.inFile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empFk5 != null">
+        emp_fk5 = #{record.empFk5,jdbcType=INTEGER},
+      </if>
+      <if test="record.inStarttime != null">
+        in_starttime = #{record.inStarttime,jdbcType=DATE},
+      </if>
+      <if test="record.inEndtime != null">
+        in_endtime = #{record.inEndtime,jdbcType=DATE},
+      </if>
+      <if test="record.inUpdatetime != null">
+        in_updatetime = #{record.inUpdatetime,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update indexvalue
+    set in_id = #{record.inId,jdbcType=INTEGER},
+      in_turnover = #{record.inTurnover,jdbcType=DOUBLE},
+      in_business = #{record.inBusiness,jdbcType=VARCHAR},
+      comname_fk = #{record.comnameFk,jdbcType=INTEGER},
+      in_remark = #{record.inRemark,jdbcType=VARCHAR},
+      in_file = #{record.inFile,jdbcType=VARCHAR},
+      emp_fk5 = #{record.empFk5,jdbcType=INTEGER},
+      in_starttime = #{record.inStarttime,jdbcType=DATE},
+      in_endtime = #{record.inEndtime,jdbcType=DATE},
+      in_updatetime = #{record.inUpdatetime,jdbcType=DATE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yiming.entity.Indexvalue">
+    update indexvalue
+    <set>
+      <if test="inTurnover != null">
+        in_turnover = #{inTurnover,jdbcType=DOUBLE},
+      </if>
+      <if test="inBusiness != null">
+        in_business = #{inBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="comnameFk != null">
+        comname_fk = #{comnameFk,jdbcType=INTEGER},
+      </if>
+      <if test="inRemark != null">
+        in_remark = #{inRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="inFile != null">
+        in_file = #{inFile,jdbcType=VARCHAR},
+      </if>
+      <if test="empFk5 != null">
+        emp_fk5 = #{empFk5,jdbcType=INTEGER},
+      </if>
+      <if test="inStarttime != null">
+        in_starttime = #{inStarttime,jdbcType=DATE},
+      </if>
+      <if test="inEndtime != null">
+        in_endtime = #{inEndtime,jdbcType=DATE},
+      </if>
+      <if test="inUpdatetime != null">
+        in_updatetime = #{inUpdatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where in_id = #{inId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yiming.entity.Indexvalue">
+    update indexvalue
+    set in_turnover = #{inTurnover,jdbcType=DOUBLE},
+      in_business = #{inBusiness,jdbcType=VARCHAR},
+      comname_fk = #{comnameFk,jdbcType=INTEGER},
+      in_remark = #{inRemark,jdbcType=VARCHAR},
+      in_file = #{inFile,jdbcType=VARCHAR},
+      emp_fk5 = #{empFk5,jdbcType=INTEGER},
+      in_starttime = #{inStarttime,jdbcType=DATE},
+      in_endtime = #{inEndtime,jdbcType=DATE},
+      in_updatetime = #{inUpdatetime,jdbcType=DATE}
+    where in_id = #{inId,jdbcType=INTEGER}
+  </update>
+</mapper>
